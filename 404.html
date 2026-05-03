@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Strona nie znaleziona | NET4ZERO</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { 'n4z-green':'#4CAF50','n4z-blue':'#03A9F4','n4z-cream':'#F0E5D8' }, fontFamily: { sans: ['Inter','system-ui','sans-serif'] } } } }
+  </script>
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .gradient-n4z { background: linear-gradient(135deg, #4CAF50 0%, #03A9F4 100%); }
+    .gradient-text { background: linear-gradient(135deg, #4CAF50 0%, #03A9F4 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  </style>
+</head>
+<body class="bg-n4z-cream text-slate-900 antialiased min-h-screen flex items-center justify-center p-6">
+
+<div class="max-w-2xl text-center">
+  <picture>
+    <source srcset="logo-160.webp 2x, logo-80.webp 1x" type="image/webp">
+    <img src="logo-80.webp" alt="NET4ZERO" class="w-20 h-20 mx-auto mb-8" width="80" height="80">
+  </picture>
+
+  <p class="text-9xl font-black gradient-text leading-none">404</p>
+  <h1 class="text-4xl sm:text-5xl font-black mt-6">Tej strony nie ma.</h1>
+  <p class="text-xl text-slate-700 mt-6 leading-relaxed">Może została usunięta, przeniesiona, albo wpisałeś adres ze schowka. Nic strasznego — wracaj do głównej.</p>
+
+  <div class="mt-10 flex flex-wrap justify-center gap-4">
+    <a href="/" class="gradient-n4z text-white font-semibold px-8 py-4 rounded-lg shadow-lg hover:opacity-90">Strona główna →</a>
+    <a href="/#kontakt" class="bg-white border-2 border-slate-900 text-slate-900 font-semibold px-8 py-4 rounded-lg hover:bg-slate-900 hover:text-white transition">Kontakt</a>
+  </div>
+
+  <div class="mt-16 text-sm text-slate-600">
+    <p class="mb-2">Najczęściej szukane:</p>
+    <div class="flex flex-wrap justify-center gap-3">
+      <a href="/#ipz" class="text-n4z-green hover:underline">Czym jest IPZ</a> ·
+      <a href="/#lokalizacja" class="text-n4z-green hover:underline">Mam lokalizację</a> ·
+      <a href="/#inwestor" class="text-n4z-green hover:underline">Chcę zainwestować</a> ·
+      <a href="/#faq" class="text-n4z-green hover:underline">FAQ</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

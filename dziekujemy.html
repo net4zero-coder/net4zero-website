@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dziękujemy — NET4ZERO</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { 'n4z-green':'#4CAF50','n4z-blue':'#03A9F4','n4z-cream':'#F0E5D8' }, fontFamily: { sans: ['Inter','system-ui','sans-serif'] } } } }
+  </script>
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .gradient-n4z { background: linear-gradient(135deg, #4CAF50 0%, #03A9F4 100%); }
+    .gradient-text { background: linear-gradient(135deg, #4CAF50 0%, #03A9F4 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  </style>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NWN45P2K');</script>
+
+  <!-- GA4 Conversion Event: form_submitted -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'generate_lead',
+      'form_type': new URLSearchParams(window.location.search).get('form') || 'unknown'
+    });
+  </script>
+</head>
+<body class="bg-n4z-cream text-slate-900 antialiased min-h-screen flex items-center justify-center p-6">
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NWN45P2K" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<div class="max-w-2xl text-center">
+  <picture>
+    <source srcset="logo-160.webp 2x, logo-80.webp 1x" type="image/webp">
+    <img src="logo-80.webp" alt="NET4ZERO" class="w-20 h-20 mx-auto mb-8" width="80" height="80">
+  </picture>
+
+  <div class="w-24 h-24 mx-auto rounded-full gradient-n4z flex items-center justify-center text-white text-5xl font-black shadow-xl mb-8">✓</div>
+
+  <h1 class="text-4xl sm:text-5xl font-black">Dziękujemy!</h1>
+  <p class="text-xl text-slate-700 mt-6 leading-relaxed">Otrzymaliśmy Państwa zgłoszenie. <strong>Odpowiadamy w ciągu 24 godzin roboczych</strong> na adres podany w formularzu.</p>
+
+  <div class="mt-10 bg-white rounded-2xl p-8 text-left max-w-xl mx-auto">
+    <p class="font-semibold mb-4">Co dalej:</p>
+    <ol class="space-y-3 text-slate-700">
+      <li class="flex gap-3"><span class="w-7 h-7 rounded-full gradient-n4z flex items-center justify-center text-white font-black text-sm flex-shrink-0">1</span>Konkretna osoba z zespołu zapozna się z Państwa zgłoszeniem.</li>
+      <li class="flex gap-3"><span class="w-7 h-7 rounded-full gradient-n4z flex items-center justify-center text-white font-black text-sm flex-shrink-0">2</span>Otrzymają Państwo odpowiedź mailową lub telefoniczną.</li>
+      <li class="flex gap-3"><span class="w-7 h-7 rounded-full gradient-n4z flex items-center justify-center text-white font-black text-sm flex-shrink-0">3</span>Umówimy bezpłatną 30-minutową konsultację.</li>
+    </ol>
+  </div>
+
+  <div class="mt-10 flex flex-wrap justify-center gap-4">
+    <a href="/" class="gradient-n4z text-white font-semibold px-8 py-4 rounded-lg shadow-lg hover:opacity-90">← Strona główna</a>
+  </div>
+
+  <p class="mt-8 text-sm text-slate-500">Pilne? Zadzwoń: <a href="tel:+48575161266" class="text-n4z-green hover:underline">+48 575 161 266</a></p>
+</div>
+
+</body>
+</html>

@@ -8,3 +8,7 @@ node_modules/
 .idea/
 .vscode/
 Thumbs.db
+package-lock.json
+package.json
+
+.vercel

@@ -25,3 +25,4 @@
     <priority>0.3</priority>
   </url>
 </urlset>
+<!-- /dziekujemy.html i /404.html celowo wykluczone z sitemap (noindex) -->
