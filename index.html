@@ -75,7 +75,10 @@
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "NET4ZERO Sp. z o.o.",
+    "alternateName": "NET4ZERO",
     "url": "https://www.net4zero.pl",
+    "logo": "https://www.net4zero.pl/logo-512.webp",
+    "image": "https://www.net4zero.pl/og-image.png",
     "email": "biuro@net4zero.pl",
     "telephone": "+48575161266",
     "address": {
@@ -85,10 +88,81 @@
       "postalCode": "02-011",
       "addressCountry": "PL"
     },
-    "vatID": "7011226958",
-    "taxID": "529901015"
+    "vatID": "PL7011226958",
+    "taxID": "0001132236",
+    "foundingDate": "2024",
+    "description": "Pierwsza w Polsce sieć osiedlowych recyklomatów (RVM) w systemie kaucyjnym. Wdrażamy, integrujemy, obsługujemy.",
+    "sameAs": []
   }
   </script>
+
+  <!-- Schema.org Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Wdrożenie recyklomatu osiedlowego (Inny Punkt Zbierający, IPZ)",
+    "provider": {
+      "@type": "Organization",
+      "name": "NET4ZERO Sp. z o.o."
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Polska"
+    },
+    "description": "Wdrożenie pod klucz recyklomatu osiedlowego — urządzenie, leasing, operator kaucji, płatności, logistyka, serwis, branding, pozyskanie lokalizacji. Status Innego Punktu Zbierającego (IPZ).",
+    "audience": [
+      {"@type":"Audience","audienceType":"Spółdzielnie mieszkaniowe"},
+      {"@type":"Audience","audienceType":"Gminy i jednostki samorządu"},
+      {"@type":"Audience","audienceType":"Inwestorzy i partnerzy operacyjni"}
+    ]
+  }
+  </script>
+
+  <!-- Schema.org FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Czy wdrożenie wymaga CAPEX z budżetu lokalizacji?",
+        "acceptedAnswer": {"@type":"Answer","text":"Nie. Lokalizacja (spółdzielnia, gmina, ZGL) wydzierżawia NET4ZERO 30 m² i pobiera czynsz dzierżawny od 300 zł brutto miesięcznie. Nie kupuje maszyny, nie finansuje, nie serwisuje."}
+      },
+      {
+        "@type": "Question",
+        "name": "Czy musimy się rejestrować w BDO?",
+        "acceptedAnswer": {"@type":"Answer","text":"Nie. Zwolnienie ustawowe wynika z art. 45 ust. 1 pkt 1 i 13 ustawy o odpadach, pod warunkiem że punkt ma umowę z operatorem systemu kaucyjnego. Tę umowę zapewnia NET4ZERO."}
+      },
+      {
+        "@type": "Question",
+        "name": "Czy zarabiam na zwracanych kaucjach (jako inwestor)?",
+        "acceptedAnswer": {"@type":"Answer","text":"Nie. Kaucja jest neutralna finansowo - wartość wpłacona przez konsumenta wraca do niego 1:1 przy zwrocie opakowania. Saldo systemowe rozlicza operator. Inwestor zarabia z trzech innych źródeł: handling fee od operatora, powierzchnia reklamowa, programy promocyjne marek napojów."}
+      },
+      {
+        "@type": "Question",
+        "name": "Jaki jest pakiet wejściowy dla inwestora?",
+        "acceptedAnswer": {"@type":"Answer","text":"Pakiet Operator - 10 maszyn pod klucz. NET4ZERO obsługuje 8 obszarów wdrożenia: dobór urządzenia, leasing, integracja z operatorem kaucji, płatności, rozliczenia, serwis, branding, pozyskanie lokalizacji."}
+      },
+      {
+        "@type": "Question",
+        "name": "Jak długo trwa wdrożenie?",
+        "acceptedAnswer": {"@type":"Answer","text":"Około 8 tygodni od podpisu umowy: tydzień 1 - konsultacja i audyt, 2-3 - umowa ramowa, 3-6 - finansowanie i zamówienie, 6-8 - montaż i testy, 8 - uruchomienie."}
+      }
+    ]
+  }
+  </script>
+
+  <!-- Performance: preload critical font + dns-prefetch -->
+  <link rel="preload" href="https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50ojIa1ZL7.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://consent.cookiebot.com">
+  <link rel="dns-prefetch" href="https://www.clarity.ms">
+
+  <!-- Vercel Web Analytics (privacy-first, agregowane, brak cookies) -->
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script defer src="/_vercel/speed-insights/script.js"></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
