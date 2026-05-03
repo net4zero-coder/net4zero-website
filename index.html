@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NET4ZERO — recyklomat na osiedlu. System kaucyjny dla spółdzielni i gmin</title>
+  <meta name="description" content="Pierwsza w Polsce sieć osiedlowych recyklomatów. Wydzierżaw nam teren albo zainwestuj w sieć RVM. Status IPZ, zwolnienie z BDO, wdrożenie pod klucz.">
+  <meta name="keywords" content="system kaucyjny, recyklomat, RVM, IPZ, inny punkt zbierający, spółdzielnia mieszkaniowa, gmina, art. 40g, BDO, handling fee">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.net4zero.pl/">
+  <link rel="icon" type="image/png" href="logoPNG.png">
+  <link rel="apple-touch-icon" href="logoPNG.png">
+
+  <!-- Google Search Console verification -->
+  <meta name="google-site-verification" content="PLACEHOLDER_GSC_VERIFICATION_TOKEN">
+
+  <!-- Google Consent Mode v2 — defaults (denied until user accepts via Cookiebot) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'functionality_storage': 'granted',
+      'personalization_storage': 'denied',
+      'security_storage': 'granted',
+      'wait_for_update': 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('set', 'url_passthrough', false);
+  </script>
+
+  <!-- Cookiebot CMP — auto-blocks all tracking until consent -->
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="PLACEHOLDER_COOKIEBOT_CBID" data-blockingmode="auto" type="text/javascript"></script>
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PLACEHOLDER');</script>
+
+  <!-- Microsoft Clarity (blocked by Cookiebot until consent) -->
+  <script type="text/plain" data-cookieconsent="statistics">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "PLACEHOLDER_CLARITY_ID");
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:url" content="https://www.net4zero.pl/">
+  <meta property="og:title" content="NET4ZERO — recyklomat na osiedlu. System kaucyjny dla spółdzielni i gmin">
+  <meta property="og:description" content="Pierwsza w Polsce sieć osiedlowych recyklomatów. Wydzierżaw nam teren albo zainwestuj w sieć RVM. Status IPZ, zwolnienie z BDO, wdrożenie pod klucz.">
+  <meta property="og:site_name" content="NET4ZERO">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="NET4ZERO — recyklomat na osiedlu">
+  <meta name="twitter:description" content="Pierwsza w Polsce sieć osiedlowych recyklomatów. Status IPZ, zwolnienie z BDO, wdrożenie pod klucz.">
+
+  <!-- Schema.org Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "NET4ZERO Sp. z o.o.",
+    "url": "https://www.net4zero.pl",
+    "email": "biuro@net4zero.pl",
+    "telephone": "+48575161266",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Aleje Jerozolimskie 109/70",
+      "addressLocality": "Warszawa",
+      "postalCode": "02-011",
+      "addressCountry": "PL"
+    },
+    "vatID": "7011226958",
+    "taxID": "529901015"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { 'n4z-green':'#4CAF50','n4z-blue':'#03A9F4','n4z-cream':'#F0E5D8','n4z-dark':'#0F172A' }, fontFamily: { sans: ['Inter','system-ui','sans-serif'] } } } }
+  </script>
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .gradient-n4z { background: linear-gradient(135deg, #4CAF50 0%, #03A9F4 100%); }
+    .gradient-text { background: linear-gradient(135deg, #4CAF50 0%, #03A9F4 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    details summary { cursor: pointer; list-style: none; }
+    details summary::-webkit-details-marker { display: none; }
+    details[open] .chev { transform: rotate(180deg); }
+    .chev { transition: transform 0.2s; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  </style>
+</head>
+<body class="bg-white text-slate-900 antialiased">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLACEHOLDER"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- HEADER -->
+<header class="border-b border-slate-100 sticky top-0 bg-white/95 backdrop-blur z-40">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="#hero" class="flex items-center gap-3" aria-label="NET4ZERO — strona główna">
+      <img src="logoPNG.png" alt="NET4ZERO — logo" class="w-10 h-10" width="40" height="40">
+      <span class="font-bold text-xl">NET<span class="gradient-text">4</span>ZERO</span>
+    </a>
+    <nav class="hidden md:flex gap-7 text-sm font-medium text-slate-700" aria-label="Główna nawigacja">
+      <a href="#ipz" class="hover:text-n4z-green">Czym jest IPZ</a>
+      <a href="#lokalizacja" class="hover:text-n4z-green">Mam lokalizację</a>
+      <a href="#inwestor" class="hover:text-n4z-green">Chcę zainwestować</a>
+      <a href="#wdrozenie" class="hover:text-n4z-green">Wdrożenie</a>
+      <a href="#faq" class="hover:text-n4z-green">FAQ</a>
+      <a href="#kontakt" class="hover:text-n4z-green">Kontakt</a>
+    </nav>
+    <a href="#kontakt" class="gradient-n4z text-white font-semibold px-5 py-2 rounded-lg text-sm hidden sm:inline-block">Kontakt</a>
+  </div>
+</header>
+
+<!-- 1. HERO -->
+<section id="hero" class="bg-n4z-cream py-20 px-6">
+  <div class="max-w-6xl mx-auto">
+    <p class="text-n4z-green font-semibold text-sm uppercase tracking-widest text-center">System kaucyjny od 1 października 2025</p>
+    <h1 class="text-5xl sm:text-7xl font-black mt-6 leading-[1.05] text-center max-w-5xl mx-auto">Recyklomat na osiedlu.<br><span class="gradient-text">System kaucyjny tam, gdzie mieszkają ludzie.</span></h1>
+    <p class="text-xl text-slate-700 mt-8 leading-relaxed max-w-3xl mx-auto text-center">Pierwsza w Polsce sieć osiedlowych punktów zwrotu butelek i puszek. Wdrażamy, integrujemy, obsługujemy. Bez Twojego CAPEX-u — albo z Twoim, jeśli inwestujesz.</p>
+
+    <div class="mt-14 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      <a href="#lokalizacja" class="group bg-white rounded-3xl p-8 hover:shadow-2xl transition border-2 border-transparent hover:border-n4z-green">
+        <div class="w-12 h-12 rounded-xl gradient-n4z flex items-center justify-center text-white text-xl font-black mb-4">A</div>
+        <p class="text-xs font-mono uppercase tracking-wider text-slate-500 mb-2">Ścieżka A · Spółdzielnia, gmina, ZGL, szkoła, urząd</p>
+        <h2 class="text-2xl font-bold mb-3">Mam lokalizację.</h2>
+        <p class="text-slate-700 mb-6">Wydzierżawiają nam Państwo 30 m². Pobierają czynsz. Zostają Innym Punktem Zbierającym (IPZ). Bez maszyny, bez BDO, bez ryzyka operacyjnego.</p>
+        <span class="inline-flex items-center gap-2 gradient-n4z text-white font-semibold px-6 py-3 rounded-lg shadow-md">Wydzierżaw nam teren →</span>
+      </a>
+      <a href="#inwestor" class="group bg-slate-900 text-white rounded-3xl p-8 hover:shadow-2xl transition">
+        <div class="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center text-white text-xl font-black mb-4">B</div>
+        <p class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Ścieżka B · Inwestor, partner operacyjny, fundusz</p>
+        <h2 class="text-2xl font-bold mb-3">Chcę zainwestować.</h2>
+        <p class="text-slate-300 mb-6">Kupujesz maszyny (gotówka lub leasing). Zostajesz właścicielem infrastruktury. My obsługujemy 8 obszarów wdrożenia pod klucz.</p>
+        <span class="inline-flex items-center gap-2 bg-white text-slate-900 font-semibold px-6 py-3 rounded-lg shadow-md">Zainwestuj w sieć RVM →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- USP STRIP -->
+<section class="bg-slate-900 text-white py-10 px-6">
+  <div class="max-w-5xl mx-auto text-center">
+    <p class="text-lg sm:text-xl">Jedyna firma w Polsce integrująca <strong class="gradient-text">8 obszarów wdrożenia recyklomatu</strong> pod klucz — od doboru urządzenia po serwis.</p>
+  </div>
+</section>
+
+<!-- 2. CO TO JEST IPZ -->
+<section id="ipz" class="py-24 px-6 bg-white">
+  <div class="max-w-5xl mx-auto">
+    <p class="text-n4z-green font-semibold text-sm uppercase tracking-widest text-center mb-3">Inny Punkt Zbierający (IPZ)</p>
+    <h2 class="text-4xl sm:text-5xl font-bold text-center max-w-4xl mx-auto leading-tight">Rama prawna, która umożliwia zbiórkę poza handlem.</h2>
+
+    <div class="mt-12 bg-n4z-cream rounded-3xl p-8 sm:p-10 border-l-4 border-n4z-green">
+      <p class="text-lg text-slate-700 leading-relaxed">System kaucyjny, który ruszył <strong>1 października 2025 r.</strong>, opiera się nie tylko na handlu. <strong>Art. 40g ust. 1 pkt 3 ustawy o gospodarce opakowaniami i odpadami opakowaniowymi</strong> wymaga zapewnienia powszechnego dostępu do zbiórki — w tym przez <strong>inne punkty zbierające (IPZ)</strong> poza tradycyjną siecią handlową. Operatorzy systemu mają obowiązek zapewnić co najmniej jeden stacjonarny punkt odbioru w każdej gminie.</p>
+    </div>
+
+    <div class="mt-12 grid md:grid-cols-2 gap-12">
+      <div>
+        <h3 class="text-2xl font-bold mb-4">Kto może zostać IPZ</h3>
+        <ul class="space-y-3 text-slate-700">
+          <li class="flex items-start gap-3"><span class="text-n4z-green font-bold mt-0.5">→</span> Spółdzielnie mieszkaniowe</li>
+          <li class="flex items-start gap-3"><span class="text-n4z-green font-bold mt-0.5">→</span> Wspólnoty mieszkaniowe</li>
+          <li class="flex items-start gap-3"><span class="text-n4z-green font-bold mt-0.5">→</span> Gminy i jednostki samorządu</li>
+          <li class="flex items-start gap-3"><span class="text-n4z-green font-bold mt-0.5">→</span> Gminne PSZOK-i</li>
+          <li class="flex items-start gap-3"><span class="text-n4z-green font-bold mt-0.5">→</span> Urzędy</li>
+          <li class="flex items-start gap-3"><span class="text-n4z-green font-bold mt-0.5">→</span> Szkoły</li>
+          <li class="flex items-start gap-3"><span class="text-n4z-green font-bold mt-0.5">→</span> Kluby sportowe</li>
+          <li class="flex items-start gap-3"><span class="text-n4z-green font-bold mt-0.5">→</span> Prywatni inwestorzy</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-2xl font-bold mb-4">Korzyści wynikające z ustawy</h3>
+        <ul class="space-y-3 text-slate-700 text-sm">
+          <li><strong class="text-slate-900">Brak paragonu</strong> — system nie wymaga dowodu zakupu przy zwrocie</li>
+          <li><strong class="text-slate-900">Handling fee</strong> — koszty zbiórki finansuje operator systemu, nie prowadzący punktu</li>
+          <li><strong class="text-slate-900">Logistyka</strong> — operator zapewnia odbiór i transport surowców do zakładów przetwarzania</li>
+          <li><strong class="text-slate-900">Zwolnienie z zezwolenia</strong> na zbieranie odpadów (art. 45 ust. 1 pkt 1 ustawy o odpadach)</li>
+          <li><strong class="text-slate-900">Zwolnienie z wpisu do BDO</strong> w zakresie zbierania, jeśli punkt ma umowę z operatorem (art. 45 ust. 1 pkt 13)</li>
+          <li><strong class="text-slate-900">Sprawozdania od operatora</strong> — roczne raporty o masie odpadów zebranych na terenie gminy (pomoc w realizacji unijnych progów recyklingu)</li>
+          <li><strong class="text-slate-900">Własność surowca</strong> — odpady stają się własnością operatora (brak problemu z rozliczeniem przez prowadzącego punkt)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 bg-slate-900 text-white rounded-2xl p-8 text-center">
+      <p class="text-lg">NET4ZERO podpisuje umowę z operatorem za Państwa. Państwo udostępniają <strong class="gradient-text">30 m²</strong> i pobierają czynsz dzierżawny.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3. DLA LOKALIZACJI (ŚCIEŻKA A) -->
+<section id="lokalizacja" class="py-24 px-6 bg-n4z-cream">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <p class="text-n4z-green font-semibold text-sm uppercase tracking-widest mb-3">Ścieżka A · Mam lokalizację</p>
+      <h2 class="text-4xl sm:text-5xl font-bold">Dla spółdzielni, gminy, ZGL, szkoły, urzędu.</h2>
+      <p class="text-lg text-slate-600 mt-4 max-w-3xl mx-auto">Państwo nie kupują maszyny. Nie finansują. Nie serwisują. Wydzierżawiają nam 30 m² i pobierają czynsz.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white rounded-2xl p-8">
+        <p class="text-sm font-semibold text-n4z-green uppercase tracking-wider mb-3">Co wnosi lokalizacja</p>
+        <h3 class="text-2xl font-bold mb-4">30 m² utwardzonej powierzchni</h3>
+        <ul class="space-y-2 text-slate-700 text-sm">
+          <li>• Parking, plac, dziedziniec — z dojazdem dla serwisu</li>
+          <li>• Prawo do dysponowania powierzchnią (właściciel lub administrator)</li>
+          <li>• Dostęp do prądu (przyłącze ~1 kW)</li>
+        </ul>
+      </div>
+      <div class="bg-white rounded-2xl p-8">
+        <p class="text-sm font-semibold text-n4z-green uppercase tracking-wider mb-3">Co dostaje lokalizacja</p>
+        <h3 class="text-2xl font-bold mb-4">Stały czynsz + status IPZ</h3>
+        <ul class="space-y-2 text-slate-700 text-sm">
+          <li>• <strong>Czynsz dzierżawny od 300 zł brutto/mc</strong> (negocjowalny)</li>
+          <li>• Status Innego Punktu Zbierającego dla osiedla / gminy</li>
+          <li>• Punkt zwrotu kaucji w miejscu zamieszkania mieszkańców</li>
+          <li>• Materiały informacyjne dla rezydentów</li>
+          <li>• Pomoc w realizacji unijnych poziomów recyklingu (gminy)</li>
+        </ul>
+      </div>
+      <div class="bg-white rounded-2xl p-8">
+        <p class="text-sm font-semibold text-red-600 uppercase tracking-wider mb-3">Czego NIE musi lokalizacja</p>
+        <h3 class="text-2xl font-bold mb-4">Zero CAPEX, zero obowiązków</h3>
+        <ul class="space-y-2 text-slate-700 text-sm">
+          <li>• Kupować maszyny</li>
+          <li>• Ubezpieczać sprzętu</li>
+          <li>• Serwisować urządzenia</li>
+          <li>• Rozliczać kaucji z mieszkańcami</li>
+          <li>• Prowadzić ewidencji w BDO (zwolnienie ustawowe)</li>
+          <li>• Podpisywać umowy z operatorem systemu</li>
+        </ul>
+      </div>
+      <div class="bg-white rounded-2xl p-8">
+        <p class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">Czas i forma umowy</p>
+        <h3 class="text-2xl font-bold mb-4">~8 tygodni od podpisu</h3>
+        <ul class="space-y-2 text-slate-700 text-sm">
+          <li>• Tydzień 1: konsultacja, audyt powierzchni</li>
+          <li>• Tydzień 2-3: umowa dzierżawy, uzgodnienia</li>
+          <li>• Tydzień 6-8: instalacja i uruchomienie</li>
+          <li>• <strong>Forma:</strong> dzierżawa terenu, czas nieokreślony, wypowiedzenie 3 m-ce po okresie inwestycji</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="text-center mt-12">
+      <a href="#formularz-lokalizacja" class="inline-block gradient-n4z hover:opacity-90 text-white font-semibold px-8 py-4 rounded-lg shadow-lg">Sprawdź, czy Państwa lokalizacja się kwalifikuje →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 4. DLA INWESTORA (ŚCIEŻKA B) -->
+<section id="inwestor" class="py-24 px-6 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <p class="text-n4z-green font-semibold text-sm uppercase tracking-widest mb-3">Ścieżka B · Chcę zainwestować</p>
+      <h2 class="text-4xl sm:text-5xl font-bold">Pakiet Operator: 10 maszyn pod klucz.</h2>
+      <p class="text-lg text-slate-600 mt-4 max-w-3xl mx-auto">Kupujesz urządzenia (gotówka lub leasing), zostajesz właścicielem infrastruktury. My integrujemy 8 obszarów wdrożenia.</p>
+    </div>
+
+    <!-- 8 OBSZARÓW -->
+    <div class="bg-n4z-cream rounded-3xl p-8 sm:p-12">
+      <h3 class="text-2xl font-bold mb-8 text-center">8 obszarów wdrożenia, które obsługujemy</h3>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-white rounded-xl p-5">
+          <div class="w-10 h-10 rounded-lg gradient-n4z flex items-center justify-center text-white font-black mb-3">1</div>
+          <p class="font-bold text-sm">Dobór i zakup urządzenia</p>
+          <p class="text-xs text-slate-600 mt-1">Renomowani producenci RVM, ceny partnerskie</p>
+        </div>
+        <div class="bg-white rounded-xl p-5">
+          <div class="w-10 h-10 rounded-lg gradient-n4z flex items-center justify-center text-white font-black mb-3">2</div>
+          <p class="font-bold text-sm">Koordynacja leasingu</p>
+          <p class="text-xs text-slate-600 mt-1">Polski lider rynku leasingowego</p>
+        </div>
+        <div class="bg-white rounded-xl p-5">
+          <div class="w-10 h-10 rounded-lg gradient-n4z flex items-center justify-center text-white font-black mb-3">3</div>
+          <p class="font-bold text-sm">Integracja z operatorem kaucji</p>
+          <p class="text-xs text-slate-600 mt-1">Operator systemu kaucyjnego</p>
+        </div>
+        <div class="bg-white rounded-xl p-5">
+          <div class="w-10 h-10 rounded-lg gradient-n4z flex items-center justify-center text-white font-black mb-3">4</div>
+          <p class="font-bold text-sm">Wypłaty bezgotówkowe kaucji</p>
+          <p class="text-xs text-slate-600 mt-1">BLIK, karta, przelew — globalny dostawca</p>
+        </div>
+        <div class="bg-white rounded-xl p-5">
+          <div class="w-10 h-10 rounded-lg gradient-n4z flex items-center justify-center text-white font-black mb-3">5</div>
+          <p class="font-bold text-sm">Konto techniczne i rozliczenia</p>
+          <p class="text-xs text-slate-600 mt-1">Kompensaty, raportowanie, księgowość</p>
+        </div>
+        <div class="bg-white rounded-xl p-5">
+          <div class="w-10 h-10 rounded-lg gradient-n4z flex items-center justify-center text-white font-black mb-3">6</div>
+          <p class="font-bold text-sm">Serwis, ubezpieczenie, logistyka</p>
+          <p class="text-xs text-slate-600 mt-1">Stała opłata miesięczna, SLA</p>
+        </div>
+        <div class="bg-white rounded-xl p-5">
+          <div class="w-10 h-10 rounded-lg gradient-n4z flex items-center justify-center text-white font-black mb-3">7</div>
+          <p class="font-bold text-sm">Branding + powierzchnia reklamowa</p>
+          <p class="text-xs text-slate-600 mt-1">Kolorystyka klienta, monetyzacja ekranów</p>
+        </div>
+        <div class="bg-white rounded-xl p-5">
+          <div class="w-10 h-10 rounded-lg gradient-n4z flex items-center justify-center text-white font-black mb-3">8</div>
+          <p class="font-bold text-sm">Pozyskanie lokalizacji</p>
+          <p class="text-xs text-slate-600 mt-1">Umowy dzierżawy z SM / gminami</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAKIET OPERATOR -->
+    <div class="mt-12 bg-slate-900 text-white rounded-3xl p-8 sm:p-12">
+      <p class="text-sm font-semibold gradient-text uppercase tracking-wider mb-3">Pakiet wejściowy</p>
+      <h3 class="text-3xl font-bold mb-6">Pakiet Operator — 10 maszyn</h3>
+      <div class="grid md:grid-cols-3 gap-6 text-sm">
+        <div>
+          <p class="font-semibold mb-2 gradient-text">Co dostajesz</p>
+          <ul class="space-y-1 text-slate-300">
+            <li>→ 8 obszarów wdrożenia pod klucz</li>
+            <li>→ Lokalizacje pozyskane przez NET4ZERO</li>
+            <li>→ Dedykowany Project Manager</li>
+            <li>→ Agregacja wolumenu w negocjacjach z operatorem</li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-semibold mb-2 gradient-text">Finansowanie</p>
+          <ul class="space-y-1 text-slate-300">
+            <li>→ Leasing (partner finansowy NET4ZERO)</li>
+            <li>→ Gotówka</li>
+            <li>→ Mieszane</li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-semibold mb-2 gradient-text">Skalowanie</p>
+          <ul class="space-y-1 text-slate-300">
+            <li>→ Powyżej 10 maszyn — pakiety negocjowane indywidualnie</li>
+            <li>→ Drugi vertical: Smart DRS (kubki na eventach i obiektach sportowych)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKĄD INWESTOR ZARABIA + KAUCJA NEUTRALNA -->
+    <div class="mt-12">
+      <h3 class="text-3xl font-bold mb-8 text-center">Skąd inwestor zarabia</h3>
+
+      <div class="bg-yellow-50 border-l-4 border-yellow-500 rounded-2xl p-8 mb-8">
+        <p class="text-lg text-slate-800 leading-relaxed"><strong>Kaucja jest neutralna finansowo.</strong> Inwestor nie czerpie z niej zysku — wartość kaucji jest 1:1 zwracana konsumentowi przy oddaniu opakowania, a saldo systemowe rozlicza operator. Przychód inwestora pochodzi z trzech innych źródeł:</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-n4z-cream rounded-2xl p-8">
+          <div class="w-12 h-12 rounded-xl gradient-n4z flex items-center justify-center text-white font-black mb-4">1</div>
+          <h4 class="font-bold text-lg mb-3">Handling fee od operatora systemu kaucyjnego</h4>
+          <p class="text-sm text-slate-700 leading-relaxed">Stała opłata za każde przyjęte opakowanie, ustawowo finansowana przez operatora. Stawka <em>negocjowana indywidualnie</em> w zależności od wolumenu, lokalizacji i modelu urządzenia. <strong>Główny i przewidywalny strumień przychodu.</strong></p>
+        </div>
+        <div class="bg-n4z-cream rounded-2xl p-8">
+          <div class="w-12 h-12 rounded-xl gradient-n4z flex items-center justify-center text-white font-black mb-4">2</div>
+          <h4 class="font-bold text-lg mb-3">Powierzchnia reklamowa</h4>
+          <p class="text-sm text-slate-700 leading-relaxed">Ekran LCD nad miejscem podawczym oraz branding bryły urządzenia. Sprzedawany lokalnie (sieci osiedlowe, marki) lub poprzez NET4ZERO w pakiecie z innymi maszynami w sieci.</p>
+        </div>
+        <div class="bg-n4z-cream rounded-2xl p-8">
+          <div class="w-12 h-12 rounded-xl gradient-n4z flex items-center justify-center text-white font-black mb-4">3</div>
+          <h4 class="font-bold text-lg mb-3">Programy promocyjne marek napojów</h4>
+          <p class="text-sm text-slate-700 leading-relaxed">Bonusy za zwrot konkretnych opakowań, kampanie loyaltowe, aktywacje produktowe. Strumień opcjonalny, zależny od kontraktów z brandami — rośnie wraz z gęstością sieci.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODEL FINANSOWY -->
+    <div class="mt-12 bg-white border-2 border-slate-200 rounded-3xl p-8 sm:p-12">
+      <h3 class="text-2xl font-bold mb-4">Model finansowy</h3>
+      <p class="text-slate-700 leading-relaxed mb-6">Każda lokalizacja jest kalkulowana indywidualnie w trzech scenariuszach (P10 / P50 / P90), z uwzględnieniem gęstości zaludnienia, wynegocjowanej stawki handling fee i potencjału reklamowego. <strong>Pełny model z IRR 60 miesięcy</strong> przekazujemy po podpisaniu NDA i audycie lokalizacji.</p>
+      <a href="#formularz-inwestor" class="inline-block gradient-n4z hover:opacity-90 text-white font-semibold px-8 py-4 rounded-lg shadow-lg">Zamów audyt i model finansowy →</a>
+    </div>
+  </div>
+</section>
+
+<!-- 5. JAK DZIAŁA WDROŻENIE -->
+<section id="wdrozenie" class="py-24 px-6 bg-n4z-cream">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="text-n4z-green font-semibold text-sm uppercase tracking-widest mb-3">Wdrożenie</p>
+      <h2 class="text-4xl sm:text-5xl font-bold">8 tygodni. Powtarzalny proces.</h2>
+    </div>
+    <div class="grid md:grid-cols-5 gap-6">
+      <div class="bg-white rounded-2xl p-6">
+        <div class="w-12 h-12 rounded-lg gradient-n4z flex items-center justify-center text-white font-black text-xl mb-4">1</div>
+        <p class="font-bold mb-2">Konsultacja i audyt lokalizacji</p>
+        <p class="text-sm text-slate-600">Analiza demografii, weryfikacja powierzchni, dobór modelu RVM.</p>
+        <p class="text-xs text-slate-400 mt-3 font-mono">Tydzień 1</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6">
+        <div class="w-12 h-12 rounded-lg gradient-n4z flex items-center justify-center text-white font-black text-xl mb-4">2</div>
+        <p class="font-bold mb-2">Umowa ramowa i wybór pakietu</p>
+        <p class="text-sm text-slate-600">Finalizacja modelu finansowego, podpisanie umów.</p>
+        <p class="text-xs text-slate-400 mt-3 font-mono">Tydzień 2-3</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6">
+        <div class="w-12 h-12 rounded-lg gradient-n4z flex items-center justify-center text-white font-black text-xl mb-4">3</div>
+        <p class="font-bold mb-2">Finansowanie i zamówienie</p>
+        <p class="text-sm text-slate-600">Proces leasingowy, produkcja maszyny u producenta.</p>
+        <p class="text-xs text-slate-400 mt-3 font-mono">Tydzień 3-6</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6">
+        <div class="w-12 h-12 rounded-lg gradient-n4z flex items-center justify-center text-white font-black text-xl mb-4">4</div>
+        <p class="font-bold mb-2">Montaż, integracja, testy</p>
+        <p class="text-sm text-slate-600">Transport, instalacja, integracja z operatorem, testy funkcjonalne.</p>
+        <p class="text-xs text-slate-400 mt-3 font-mono">Tydzień 6-8</p>
+      </div>
+      <div class="bg-white rounded-2xl p-6">
+        <div class="w-12 h-12 rounded-lg gradient-n4z flex items-center justify-center text-white font-black text-xl mb-4">5</div>
+        <p class="font-bold mb-2">Uruchomienie i start serwisu</p>
+        <p class="text-sm text-slate-600">Odbiór techniczny, szkolenie, kampania informacyjna dla mieszkańców.</p>
+        <p class="text-xs text-slate-400 mt-3 font-mono">Tydzień 8</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. FAQ -->
+<section id="faq" class="py-24 px-6 bg-white">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-12">
+      <p class="text-n4z-green font-semibold text-sm uppercase tracking-widest mb-3">FAQ</p>
+      <h2 class="text-4xl sm:text-5xl font-bold">Najczęstsze pytania.</h2>
+    </div>
+
+    <div class="mb-12">
+      <h3 class="text-2xl font-bold mb-6 flex items-center gap-3"><span class="w-10 h-10 rounded-lg gradient-n4z flex items-center justify-center text-white font-black text-lg">A</span> Dla lokalizacji (SM / gmina / ZGL)</h3>
+      <div class="space-y-3">
+        <details class="bg-n4z-cream rounded-2xl p-6">
+          <summary class="flex justify-between items-center font-semibold">Czy musimy mieć własny grunt? <span class="chev text-n4z-green">▼</span></summary>
+          <p class="mt-4 text-slate-700">Wystarczy prawo do dysponowania 30 m² utwardzonej powierzchni z dojazdem dla serwisu. Może to być własność, użytkowanie wieczyste lub dzierżawa od miasta z prawem do dalszego oddania w dzierżawę.</p>
+        </details>
+        <details class="bg-n4z-cream rounded-2xl p-6">
+          <summary class="flex justify-between items-center font-semibold">Co z RODO przy wypłacie kaucji? <span class="chev text-n4z-green">▼</span></summary>
+          <p class="mt-4 text-slate-700">Operator systemu kaucyjnego i NET4ZERO są administratorami danych w odpowiednim zakresie. Klauzula informacyjna jest dostępna w punkcie zwrotu. Spółdzielnia / gmina nie przetwarza danych osobowych mieszkańców związanych ze zwrotem opakowań.</p>
+        </details>
+        <details class="bg-n4z-cream rounded-2xl p-6">
+          <summary class="flex justify-between items-center font-semibold">Jaka minimalna liczba mieszkańców, żeby się opłacało? <span class="chev text-n4z-green">▼</span></summary>
+          <p class="mt-4 text-slate-700">Od ok. <strong>1 500 osób w zasięgu 5 minut pieszo</strong> od recyklomatu. Dla mniejszych skupisk rekomendujemy konsolidację z sąsiednimi lokalizacjami.</p>
+        </details>
+        <details class="bg-n4z-cream rounded-2xl p-6">
+          <summary class="flex justify-between items-center font-semibold">Czy musimy się rejestrować w BDO? <span class="chev text-n4z-green">▼</span></summary>
+          <p class="mt-4 text-slate-700">Nie. Zwolnienie ustawowe wynika z art. 45 ust. 1 pkt 1 i 13 ustawy o odpadach — pod warunkiem, że punkt ma umowę z operatorem systemu. Tę umowę zapewnia NET4ZERO.</p>
+        </details>
+        <details class="bg-n4z-cream rounded-2xl p-6">
+          <summary class="flex justify-between items-center font-semibold">Jaki jest czynsz dzierżawny? <span class="chev text-n4z-green">▼</span></summary>
+          <p class="mt-4 text-slate-700">Od <strong>300 zł brutto miesięcznie</strong>. Stawka zależy od lokalizacji, ekspozycji i potencjału ruchu — negocjowana indywidualnie.</p>
+        </details>
+        <details class="bg-n4z-cream rounded-2xl p-6">
+          <summary class="flex justify-between items-center font-semibold">Czy możemy zerwać umowę? <span class="chev text-n4z-green">▼</span></summary>
+          <p class="mt-4 text-slate-700">Umowa dzierżawy zawierana jest na czas nieokreślony z 3-miesięcznym wypowiedzeniem po okresie inwestycji.</p>
+        </details>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="text-2xl font-bold mb-6 flex items-center gap-3"><span class="w-10 h-10 rounded-lg gradient-n4z flex items-center justify-center text-white font-black text-lg">B</span> Dla inwestora</h3>
+      <div class="space-y-3">
+        <details class="bg-n4z-cream rounded-2xl p-6">
+          <summary class="flex justify-between items-center font-semibold">Czy zarabiam na zwracanych kaucjach? <span class="chev text-n4z-green">▼</span></summary>
+          <div class="mt-4 text-slate-700 space-y-3">
+            <p><strong>Nie.</strong> Kaucja jest neutralna — wartość, którą wpłaca konsument przy zakupie napoju, wraca do niego przy zwrocie opakowania. Saldo i nieodebrane kaucje rozlicza operator systemu, nie prowadzący punktu.</p>
+            <p>Przychód inwestora pochodzi z handling fee od operatora, powierzchni reklamowej i ewentualnych programów marek napojów. Pełny rozkład w modelu finansowym po audycie lokalizacji.</p>
+          </div>
+        </details>
+        <details class="bg-n4z-cream rounded-2xl p-6">
+          <summary class="flex justify-between items-center font-semibold">Jakie są realne przychody z 1 maszyny? <span class="chev text-n4z-green">▼</span></summary>
+          <div class="mt-4 text-slate-700 space-y-3">
+            <p>Przychód zależy od trzech zmiennych: wolumenu zwrotów (gęstość zaludnienia × konwersja), wynegocjowanej stawki handling fee z operatorem oraz wartości powierzchni reklamowej w danej dzielnicy.</p>
+            <p>Po wypełnieniu formularza audytu przygotowujemy kalkulację w trzech scenariuszach (ostrożny / bazowy / optymistyczny) z konkretnymi liczbami dla podanej lokalizacji. Modele i założenia źródłowe — pod NDA.</p>
+            <a href="#formularz-inwestor" class="inline-block text-n4z-green font-semibold hover:underline">Zamów kalkulację →</a>
+          </div>
+        </details>
+        <details class="bg-n4z-cream rounded-2xl p-6">
+          <summary class="flex justify-between items-center font-semibold">Czy stawka handling fee jest taka sama dla wszystkich? <span class="chev text-n4z-green">▼</span></summary>
+          <p class="mt-4 text-slate-700">Nie. Operator negocjuje stawki indywidualnie w zależności od skali sieci, lokalizacji, modelu urządzenia i wolumenu zwrotów. NET4ZERO prowadzi negocjacje w imieniu klienta i agreguje wolumen z całej swojej sieci wdrożeń, co przekłada się na lepsze warunki niż w pojedynczej umowie.</p>
+        </details>
+        <details class="bg-n4z-cream rounded-2xl p-6">
+          <summary class="flex justify-between items-center font-semibold">Co jeśli maszyna się zepsuje? <span class="chev text-n4z-green">▼</span></summary>
+          <p class="mt-4 text-slate-700">Serwis i SLA są w stałej opłacie miesięcznej. Czas reakcji i wymiany komponentów określa umowa serwisowa.</p>
+        </details>
+        <details class="bg-n4z-cream rounded-2xl p-6">
+          <summary class="flex justify-between items-center font-semibold">Czy obsługujecie również opakowania szklane? <span class="chev text-n4z-green">▼</span></summary>
+          <p class="mt-4 text-slate-700">Zależy od modelu urządzenia. Doradzamy wybór maszyny pod profil odpadowy lokalizacji.</p>
+        </details>
+        <details class="bg-n4z-cream rounded-2xl p-6">
+          <summary class="flex justify-between items-center font-semibold">Czy możecie wdrożyć kubkomaty na obiektach sportowych? <span class="chev text-n4z-green">▼</span></summary>
+          <p class="mt-4 text-slate-700">Tak — to drugi vertical NET4ZERO (Smart DRS, system kaucji jednorazowej dla eventów i obiektów sportowych). Warunki i pakiety inne niż dla recyklomatów osiedlowych.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. KONTAKT — DWA FORMULARZE -->
+<section id="kontakt" class="py-24 px-6 bg-n4z-cream">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="text-n4z-green font-semibold text-sm uppercase tracking-widest mb-3">Kontakt</p>
+      <h2 class="text-4xl sm:text-5xl font-bold">Dwie ścieżki, dwa formularze.</h2>
+      <p class="text-lg text-slate-600 mt-4 max-w-3xl mx-auto">Odpowiadamy w ciągu 24 godzin roboczych.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8">
+      <!-- FORMULARZ A: LOKALIZACJA -->
+      <form id="formularz-lokalizacja" class="bg-white rounded-3xl p-8 sm:p-10 shadow-xl space-y-5" novalidate>
+        <div class="flex items-center gap-3 mb-2">
+          <div class="w-12 h-12 rounded-xl gradient-n4z flex items-center justify-center text-white text-xl font-black">A</div>
+          <div>
+            <p class="text-xs font-mono uppercase tracking-wider text-slate-500">Ścieżka A</p>
+            <h3 class="text-2xl font-bold">Wydzierżaw nam teren</h3>
+          </div>
+        </div>
+        <p class="text-sm text-slate-600">Sprawdzimy, czy Państwa lokalizacja kwalifikuje się jako Inny Punkt Zbierający.</p>
+
+        <div>
+          <label class="block text-sm font-semibold mb-2" for="loc-typ">Typ podmiotu *</label>
+          <select id="loc-typ" required class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white focus:border-n4z-green focus:outline-none">
+            <option value="">— wybierz —</option>
+            <option>Spółdzielnia mieszkaniowa</option>
+            <option>Wspólnota mieszkaniowa</option>
+            <option>Gmina / urząd</option>
+            <option>ZGL / TBS</option>
+            <option>Szkoła / uczelnia</option>
+            <option>Klub sportowy / inny obiekt</option>
+            <option>Inny</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold mb-2" for="loc-org">Nazwa organizacji *</label>
+          <input id="loc-org" type="text" required placeholder="np. SM Wrocław Południe" class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white focus:border-n4z-green focus:outline-none">
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-semibold mb-2" for="loc-miasto">Miasto *</label>
+            <input id="loc-miasto" type="text" required placeholder="np. Wrocław" class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white focus:border-n4z-green focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-2" for="loc-osoby">Mieszkańcy w zasięgu 5–10 min pieszo *</label>
+            <input id="loc-osoby" type="number" required placeholder="np. 2500" class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white focus:border-n4z-green focus:outline-none">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold mb-2" for="loc-pow">Dostępna powierzchnia (m²) *</label>
+          <input id="loc-pow" type="number" required placeholder="min. 30 m²" class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white focus:border-n4z-green focus:outline-none">
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-semibold mb-2" for="loc-tel">Telefon *</label>
+            <input id="loc-tel" type="tel" required placeholder="+48 ..." class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white focus:border-n4z-green focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-2" for="loc-email">E-mail *</label>
+            <input id="loc-email" type="email" required class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white focus:border-n4z-green focus:outline-none">
+          </div>
+        </div>
+
+        <label class="flex items-start gap-3 text-xs text-slate-600">
+          <input type="checkbox" required class="mt-1">
+          <span>Wyrażam zgodę na przetwarzanie danych przez NET4ZERO Sp. z o.o. zgodnie z <a href="klauzula-rodo.html" class="text-n4z-green underline">klauzulą informacyjną RODO</a>. *</span>
+        </label>
+
+        <button type="submit" class="w-full gradient-n4z hover:opacity-90 text-white font-semibold py-4 rounded-lg shadow-lg">Sprawdź kwalifikację →</button>
+      </form>
+
+      <!-- FORMULARZ B: INWESTOR -->
+      <form id="formularz-inwestor" class="bg-slate-900 text-white rounded-3xl p-8 sm:p-10 shadow-xl space-y-5" novalidate>
+        <div class="flex items-center gap-3 mb-2">
+          <div class="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center text-white text-xl font-black">B</div>
+          <div>
+            <p class="text-xs font-mono uppercase tracking-wider text-slate-400">Ścieżka B</p>
+            <h3 class="text-2xl font-bold">Zainwestuj w sieć RVM</h3>
+          </div>
+        </div>
+        <p class="text-sm text-slate-300">Otrzymasz audyt lokalizacji i model finansowy w trzech scenariuszach po podpisaniu NDA.</p>
+
+        <div>
+          <label class="block text-sm font-semibold mb-2" for="inv-firma">Nazwa firmy *</label>
+          <input id="inv-firma" type="text" required class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:border-n4z-green focus:outline-none">
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-semibold mb-2" for="inv-nip">NIP *</label>
+            <input id="inv-nip" type="text" required pattern="[0-9]{10}" placeholder="10 cyfr" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:border-n4z-green focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-2" for="inv-maszyny">Planowana liczba maszyn *</label>
+            <select id="inv-maszyny" required class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:border-n4z-green focus:outline-none">
+              <option value="">— wybierz —</option>
+              <option>10 (Pakiet Operator)</option>
+              <option>25</option>
+              <option>50</option>
+              <option>100+</option>
+              <option>Nie wiem — chcę porozmawiać</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold mb-2" for="inv-miasta">Miasta zainteresowania *</label>
+          <input id="inv-miasta" type="text" required placeholder="np. Warszawa, Wrocław, Poznań" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:border-n4z-green focus:outline-none">
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold mb-2" for="inv-fin">Forma finansowania *</label>
+          <select id="inv-fin" required class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:border-n4z-green focus:outline-none">
+            <option value="">— wybierz —</option>
+            <option>Leasing</option>
+            <option>Gotówka</option>
+            <option>Mieszane</option>
+            <option>Nie zdecydowałem</option>
+          </select>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-semibold mb-2" for="inv-tel">Telefon *</label>
+            <input id="inv-tel" type="tel" required placeholder="+48 ..." class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:border-n4z-green focus:outline-none">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold mb-2" for="inv-email">E-mail służbowy *</label>
+            <input id="inv-email" type="email" required class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:border-n4z-green focus:outline-none">
+          </div>
+        </div>
+
+        <label class="flex items-start gap-3 text-xs text-slate-400">
+          <input type="checkbox" required class="mt-1">
+          <span>Wyrażam zgodę na przetwarzanie danych przez NET4ZERO Sp. z o.o. zgodnie z <a href="klauzula-rodo.html" class="gradient-text underline">klauzulą informacyjną RODO</a>. *</span>
+        </label>
+
+        <button type="submit" class="w-full gradient-n4z hover:opacity-90 text-white font-semibold py-4 rounded-lg shadow-lg">Zamów audyt i model finansowy →</button>
+      </form>
+    </div>
+
+    <!-- DANE FIRMOWE / SIEDZIBA -->
+    <div class="mt-16 bg-white rounded-3xl p-8 sm:p-10">
+      <h3 class="text-2xl font-bold mb-8 text-center">Siedziba</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <p class="text-sm text-slate-500 mb-2">Adres</p>
+          <p class="font-bold">NET4ZERO Sp. z o.o.</p>
+          <p class="text-slate-700">Aleje Jerozolimskie 109/70</p>
+          <p class="text-slate-700">02-011 Warszawa</p>
+        </div>
+        <div>
+          <p class="text-sm text-slate-500 mb-2">Kontakt</p>
+          <p class="font-bold">+48 575 161 266</p>
+          <p class="text-slate-700"><a href="mailto:biuro@net4zero.pl" class="hover:text-n4z-green">biuro@net4zero.pl</a></p>
+          <p class="text-sm text-slate-500 mt-2">Odpowiadamy w 24h roboczych</p>
+        </div>
+        <div>
+          <p class="text-sm text-slate-500 mb-2">Dane rejestrowe</p>
+          <p class="text-sm text-slate-700">KRS: <strong>0001132236</strong></p>
+          <p class="text-sm text-slate-700">NIP: <strong>7011226958</strong></p>
+          <p class="text-sm text-slate-700">REGON: <strong>529901015</strong></p>
+          <p class="text-xs text-slate-500 mt-2">Sąd Rejonowy dla m.st. Warszawy, XII Wydział Gospodarczy KRS · Kapitał zakładowy: 5 000 zł</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-slate-900 text-white py-16 px-6">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-10">
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <img src="logoPNG.png" alt="NET4ZERO — logo" class="w-10 h-10" width="40" height="40">
+        <span class="font-bold text-xl">NET<span class="gradient-text">4</span>ZERO</span>
+      </div>
+      <p class="text-slate-400 text-sm leading-relaxed mb-4">Pierwsza w Polsce osiedlowa sieć recyklomatów w systemie kaucyjnym.</p>
+      <div class="text-xs text-slate-400 space-y-1">
+        <p class="font-semibold text-slate-300">NET4ZERO Sp. z o.o.</p>
+        <p>Aleje Jerozolimskie 109/70</p>
+        <p>02-011 Warszawa</p>
+        <p class="mt-2">KRS: 0001132236</p>
+        <p>NIP: 7011226958</p>
+        <p>REGON: 529901015</p>
+      </div>
+    </div>
+    <div>
+      <p class="font-semibold mb-4">Strona</p>
+      <ul class="space-y-2 text-sm text-slate-400">
+        <li><a href="#ipz" class="hover:text-white">Czym jest IPZ</a></li>
+        <li><a href="#lokalizacja" class="hover:text-white">Mam lokalizację</a></li>
+        <li><a href="#inwestor" class="hover:text-white">Chcę zainwestować</a></li>
+        <li><a href="#wdrozenie" class="hover:text-white">Wdrożenie</a></li>
+        <li><a href="#faq" class="hover:text-white">FAQ</a></li>
+        <li><a href="#kontakt" class="hover:text-white">Kontakt</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-semibold mb-4">Prawne</p>
+      <ul class="space-y-2 text-sm text-slate-400">
+        <li><a href="polityka-prywatnosci.html" class="hover:text-white">Polityka prywatności</a></li>
+        <li><a href="polityka-cookies.html" class="hover:text-white">Polityka cookies</a></li>
+        <li><a href="klauzula-rodo.html" class="hover:text-white">Klauzula informacyjna RODO</a></li>
+        <li><a href="#" data-cc="c-settings" class="hover:text-white">Ustawienia cookies</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-semibold mb-4">Kontakt</p>
+      <ul class="space-y-2 text-sm text-slate-400">
+        <li><a href="mailto:biuro@net4zero.pl" class="hover:text-white">biuro@net4zero.pl</a></li>
+        <li>+48 575 161 266</li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-6xl mx-auto mt-12 pt-8 border-t border-slate-800 text-sm text-slate-500 flex flex-wrap justify-between gap-4">
+    <p>© 2026 NET4ZERO Sp. z o.o. Wszystkie prawa zastrzeżone.</p>
+    <p>Strona używa plików cookies. <a href="javascript:Cookiebot.renew()" class="underline hover:text-white">Zmień ustawienia cookies</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>
