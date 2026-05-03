@@ -11,10 +11,11 @@
   <link rel="icon" type="image/png" href="logoPNG.png">
   <link rel="apple-touch-icon" href="logoPNG.png">
 
-  <!-- Google Search Console verification -->
+  <!-- ANALYTICS WYŁĄCZONE — odkomentować po założeniu kont i wpisaniu ID
+       (Cookiebot z fake CBID crashował i blokował Tailwind CDN)
+
   <meta name="google-site-verification" content="PLACEHOLDER_GSC_VERIFICATION_TOKEN">
 
-  <!-- Google Consent Mode v2 — defaults (denied until user accepts via Cookiebot) -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -32,23 +33,32 @@
     gtag('set', 'url_passthrough', false);
   </script>
 
-  <!-- Cookiebot CMP — auto-blocks all tracking until consent -->
   <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="PLACEHOLDER_COOKIEBOT_CBID" data-blockingmode="auto" type="text/javascript"></script>
 
-  <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-PLACEHOLDER');</script>
 
-  <!-- Microsoft Clarity (blocked by Cookiebot until consent) -->
   <script type="text/plain" data-cookieconsent="statistics">
     (function(c,l,a,r,i,t,y){
       c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "PLACEHOLDER_CLARITY_ID");
+  </script>
+  -->
+
+  <!-- TYMCZASOWY uproszczony Consent Mode (samodzielny, działa bez Cookiebot) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+      'security_storage': 'granted'
+    });
   </script>
 
   <!-- Open Graph -->
@@ -105,9 +115,10 @@
 </head>
 <body class="bg-white text-slate-900 antialiased">
 
-<!-- Google Tag Manager (noscript) -->
+<!-- GTM noscript wyłączone — odkomentować po wpisaniu prawdziwego GTM ID
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLACEHOLDER"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+-->
 
 <!-- HEADER -->
 <header class="border-b border-slate-100 sticky top-0 bg-white/95 backdrop-blur z-40">
