@@ -520,7 +520,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="grid lg:grid-cols-2 gap-8">
       <!-- FORMULARZ A: LOKALIZACJA -->
-      <form id="formularz-lokalizacja" class="bg-white rounded-3xl p-8 sm:p-10 shadow-xl space-y-5" novalidate>
+      <form id="formularz-lokalizacja" action="https://formspree.io/f/xbdwglyn" method="POST" class="bg-white rounded-3xl p-8 sm:p-10 shadow-xl space-y-5">
+        <input type="hidden" name="_subject" value="NET4ZERO: Nowe zgłoszenie - Wydzierżaw nam teren (Lokalizacja)">
         <div class="flex items-center gap-3 mb-2">
           <div class="w-12 h-12 rounded-xl gradient-n4z flex items-center justify-center text-white text-xl font-black">A</div>
           <div>
@@ -532,7 +533,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div>
           <label class="block text-sm font-semibold mb-2" for="loc-typ">Typ podmiotu *</label>
-          <select id="loc-typ" required class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white focus:border-n4z-green focus:outline-none">
+          <select id="loc-typ" name="typ_podmiotu" required class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white focus:border-n4z-green focus:outline-none">
             <option value="">— wybierz —</option>
             <option>Spółdzielnia mieszkaniowa</option>
             <option>Wspólnota mieszkaniowa</option>
@@ -546,38 +547,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div>
           <label class="block text-sm font-semibold mb-2" for="loc-org">Nazwa organizacji *</label>
-          <input id="loc-org" type="text" required placeholder="np. SM Wrocław Południe" class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white focus:border-n4z-green focus:outline-none">
+          <input id="loc-org" name="nazwa_organizacji" type="text" required placeholder="np. SM Wrocław Południe" class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white focus:border-n4z-green focus:outline-none">
         </div>
 
         <div class="grid sm:grid-cols-2 gap-4">
           <div>
             <label class="block text-sm font-semibold mb-2" for="loc-miasto">Miasto *</label>
-            <input id="loc-miasto" type="text" required placeholder="np. Wrocław" class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white focus:border-n4z-green focus:outline-none">
+            <input id="loc-miasto" name="miasto" type="text" required placeholder="np. Wrocław" class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white focus:border-n4z-green focus:outline-none">
           </div>
           <div>
             <label class="block text-sm font-semibold mb-2" for="loc-osoby">Mieszkańcy w zasięgu 5–10 min pieszo *</label>
-            <input id="loc-osoby" type="number" required placeholder="np. 2500" class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white focus:border-n4z-green focus:outline-none">
+            <input id="loc-osoby" name="mieszkancy_w_zasiegu" type="number" required placeholder="np. 2500" class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white focus:border-n4z-green focus:outline-none">
           </div>
         </div>
 
         <div>
           <label class="block text-sm font-semibold mb-2" for="loc-pow">Dostępna powierzchnia (m²) *</label>
-          <input id="loc-pow" type="number" required placeholder="min. 30 m²" class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white focus:border-n4z-green focus:outline-none">
+          <input id="loc-pow" name="powierzchnia_m2" type="number" required placeholder="min. 30 m²" class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white focus:border-n4z-green focus:outline-none">
         </div>
 
         <div class="grid sm:grid-cols-2 gap-4">
           <div>
             <label class="block text-sm font-semibold mb-2" for="loc-tel">Telefon *</label>
-            <input id="loc-tel" type="tel" required placeholder="+48 ..." class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white focus:border-n4z-green focus:outline-none">
+            <input id="loc-tel" name="telefon" type="tel" required placeholder="+48 ..." class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white focus:border-n4z-green focus:outline-none">
           </div>
           <div>
             <label class="block text-sm font-semibold mb-2" for="loc-email">E-mail *</label>
-            <input id="loc-email" type="email" required class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white focus:border-n4z-green focus:outline-none">
+            <input id="loc-email" name="email" type="email" required class="w-full px-4 py-3 rounded-lg border border-slate-200 bg-white focus:border-n4z-green focus:outline-none">
           </div>
         </div>
 
         <label class="flex items-start gap-3 text-xs text-slate-600">
-          <input type="checkbox" required class="mt-1">
+          <input type="checkbox" name="zgoda_rodo" value="zaakceptowano" required class="mt-1">
           <span>Wyrażam zgodę na przetwarzanie danych przez NET4ZERO Sp. z o.o. zgodnie z <a href="klauzula-rodo.html" class="text-n4z-green underline">klauzulą informacyjną RODO</a>. *</span>
         </label>
 
@@ -585,7 +586,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </form>
 
       <!-- FORMULARZ B: INWESTOR -->
-      <form id="formularz-inwestor" class="bg-slate-900 text-white rounded-3xl p-8 sm:p-10 shadow-xl space-y-5" novalidate>
+      <form id="formularz-inwestor" action="https://formspree.io/f/mdabekdk" method="POST" class="bg-slate-900 text-white rounded-3xl p-8 sm:p-10 shadow-xl space-y-5">
+        <input type="hidden" name="_subject" value="NET4ZERO: Nowe zgłoszenie - Inwestor / Pakiet Operator">
         <div class="flex items-center gap-3 mb-2">
           <div class="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center text-white text-xl font-black">B</div>
           <div>
@@ -597,17 +599,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div>
           <label class="block text-sm font-semibold mb-2" for="inv-firma">Nazwa firmy *</label>
-          <input id="inv-firma" type="text" required class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:border-n4z-green focus:outline-none">
+          <input id="inv-firma" name="nazwa_firmy" type="text" required class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:border-n4z-green focus:outline-none">
         </div>
 
         <div class="grid sm:grid-cols-2 gap-4">
           <div>
             <label class="block text-sm font-semibold mb-2" for="inv-nip">NIP *</label>
-            <input id="inv-nip" type="text" required pattern="[0-9]{10}" placeholder="10 cyfr" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:border-n4z-green focus:outline-none">
+            <input id="inv-nip" name="nip" type="text" required pattern="[0-9]{10}" placeholder="10 cyfr" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:border-n4z-green focus:outline-none">
           </div>
           <div>
             <label class="block text-sm font-semibold mb-2" for="inv-maszyny">Planowana liczba maszyn *</label>
-            <select id="inv-maszyny" required class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:border-n4z-green focus:outline-none">
+            <select id="inv-maszyny" name="liczba_maszyn" required class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:border-n4z-green focus:outline-none">
               <option value="">— wybierz —</option>
               <option>10 (Pakiet Operator)</option>
               <option>25</option>
@@ -620,12 +622,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <div>
           <label class="block text-sm font-semibold mb-2" for="inv-miasta">Miasta zainteresowania *</label>
-          <input id="inv-miasta" type="text" required placeholder="np. Warszawa, Wrocław, Poznań" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:border-n4z-green focus:outline-none">
+          <input id="inv-miasta" name="miasta_zainteresowania" type="text" required placeholder="np. Warszawa, Wrocław, Poznań" class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:border-n4z-green focus:outline-none">
         </div>
 
         <div>
           <label class="block text-sm font-semibold mb-2" for="inv-fin">Forma finansowania *</label>
-          <select id="inv-fin" required class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:border-n4z-green focus:outline-none">
+          <select id="inv-fin" name="forma_finansowania" required class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:border-n4z-green focus:outline-none">
             <option value="">— wybierz —</option>
             <option>Leasing</option>
             <option>Gotówka</option>
@@ -637,16 +639,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="grid sm:grid-cols-2 gap-4">
           <div>
             <label class="block text-sm font-semibold mb-2" for="inv-tel">Telefon *</label>
-            <input id="inv-tel" type="tel" required placeholder="+48 ..." class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:border-n4z-green focus:outline-none">
+            <input id="inv-tel" name="telefon" type="tel" required placeholder="+48 ..." class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:border-n4z-green focus:outline-none">
           </div>
           <div>
             <label class="block text-sm font-semibold mb-2" for="inv-email">E-mail służbowy *</label>
-            <input id="inv-email" type="email" required class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:border-n4z-green focus:outline-none">
+            <input id="inv-email" name="email" type="email" required class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:border-n4z-green focus:outline-none">
           </div>
         </div>
 
         <label class="flex items-start gap-3 text-xs text-slate-400">
-          <input type="checkbox" required class="mt-1">
+          <input type="checkbox" name="zgoda_rodo" value="zaakceptowano" required class="mt-1">
           <span>Wyrażam zgodę na przetwarzanie danych przez NET4ZERO Sp. z o.o. zgodnie z <a href="klauzula-rodo.html" class="gradient-text underline">klauzulą informacyjną RODO</a>. *</span>
         </label>
 
