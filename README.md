@@ -133,7 +133,7 @@ Po założeniu kont wymienię w kodzie 4 placeholdery:
 **Pozycjonowanie:** Pierwsza w Polsce sieć osiedlowych recyklomatów. Mentalny anchor: sieć osiedlowa typu InPost, NIE sklep.
 
 **Dwie ścieżki:**
-- **A** — SM/gminy/ZGL/szkoły dzierżawią NET4ZERO 30 m², pobierają czynsz od 300 zł brutto/mc, zostają IPZ (Innym Punktem Zbierającym)
+- **A** — SM/gminy/ZGL/szkoły dzierżawią NET4ZERO od 5 do 30 m² (zależnie od modelu RVM), pobierają czynsz od 300 zł brutto/mc, zostają IPZ (Innym Punktem Zbierającym)
 - **B** — Inwestorzy kupują maszyny (Pakiet Operator: 10 maszyn). Zarabiają na: handling fee od operatora, powierzchni reklamowej, programach marek napojów. **Kaucja jest neutralna finansowo.**
 
 **Dane firmy:** NET4ZERO Sp. z o.o., Aleje Jerozolimskie 109/70, 02-011 Warszawa · KRS 0001132236 · NIP 7011226958 · REGON 529901015.
