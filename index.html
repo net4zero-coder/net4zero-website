@@ -180,6 +180,148 @@
     details[open] .chev { transform: rotate(180deg); }
     .chev { transition: transform 0.2s; }
     html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+
+    /* ===== HERO MESH GRADIENT (subtle, professional) ===== */
+    .hero-mesh { position: relative; overflow: hidden; isolation: isolate; }
+    .hero-mesh::before, .hero-mesh::after {
+      content: ""; position: absolute; border-radius: 50%; filter: blur(80px);
+      opacity: 0.55; z-index: -1; pointer-events: none;
+      will-change: transform;
+    }
+    .hero-mesh::before {
+      width: 520px; height: 520px; background: radial-gradient(circle, #4CAF50 0%, transparent 70%);
+      top: -180px; left: -120px; animation: meshDrift1 18s ease-in-out infinite alternate;
+    }
+    .hero-mesh::after {
+      width: 480px; height: 480px; background: radial-gradient(circle, #03A9F4 0%, transparent 70%);
+      bottom: -160px; right: -100px; animation: meshDrift2 22s ease-in-out infinite alternate;
+    }
+    @keyframes meshDrift1 {
+      0% { transform: translate(0,0) scale(1); }
+      100% { transform: translate(80px, 60px) scale(1.15); }
+    }
+    @keyframes meshDrift2 {
+      0% { transform: translate(0,0) scale(1); }
+      100% { transform: translate(-60px, -40px) scale(1.1); }
+    }
+
+    /* ===== GLOSSY 3D ORBS (replaces flat number badges) ===== */
+    .orb { position: relative; display: inline-flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 900;
+      background: linear-gradient(135deg, #4CAF50 0%, #03A9F4 100%);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.45),
+        inset 0 -2px 6px rgba(0,0,0,0.18),
+        0 6px 18px -4px rgba(3,169,244,0.5),
+        0 2px 6px -1px rgba(76,175,80,0.35);
+      transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease;
+    }
+    .orb::before {
+      content: ""; position: absolute; inset: 2px; border-radius: inherit;
+      background: linear-gradient(160deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 45%);
+      pointer-events: none;
+    }
+    .orb::after {
+      content: ""; position: absolute; inset: 0; border-radius: inherit;
+      background: radial-gradient(120% 60% at 50% 0%, rgba(255,255,255,0.25), transparent 60%);
+      pointer-events: none;
+    }
+    .orb > * { position: relative; z-index: 1; }
+    .group:hover .orb, .orb-hover:hover .orb { transform: translateY(-2px) scale(1.05);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.5),
+        inset 0 -2px 6px rgba(0,0,0,0.18),
+        0 12px 30px -6px rgba(3,169,244,0.7),
+        0 4px 10px -2px rgba(76,175,80,0.4);
+    }
+    .orb-dark { background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.18),
+        inset 0 -2px 6px rgba(0,0,0,0.4),
+        0 6px 18px -4px rgba(0,0,0,0.5);
+    }
+
+    /* ===== HOVER LIFT FOR CARDS ===== */
+    .lift { transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, border-color .35s ease; }
+    .lift:hover { transform: translateY(-4px); box-shadow: 0 24px 50px -20px rgba(15,23,42,0.18), 0 8px 16px -8px rgba(3,169,244,0.18); }
+
+    /* ===== ANIMATED CTA GLOW ===== */
+    .cta-glow { position: relative; }
+    .cta-glow::after {
+      content: ""; position: absolute; inset: -4px; border-radius: inherit;
+      background: linear-gradient(135deg, #4CAF50, #03A9F4);
+      filter: blur(14px); opacity: 0; transition: opacity .35s ease; z-index: -1;
+    }
+    .cta-glow:hover::after { opacity: .55; }
+
+    /* ===== NAV UNDERLINE ===== */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px;
+      background: linear-gradient(90deg, #4CAF50, #03A9F4);
+      transform: scaleX(0); transform-origin: left; transition: transform .25s ease;
+      border-radius: 2px;
+    }
+    .nav-link:hover::after { transform: scaleX(1); }
+
+    /* ===== SCROLL REVEAL ===== */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== MARQUEE (partner ecosystem) ===== */
+    .marquee { overflow: hidden; position: relative; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%);
+      mask-image: linear-gradient(90deg, transparent 0, #000 8%, #000 92%, transparent 100%); }
+    .marquee-track { display: flex; gap: 1.25rem; width: max-content; animation: marquee 40s linear infinite; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .eco-badge {
+      display: flex; align-items: center; gap: 0.85rem; padding: 0.9rem 1.25rem;
+      background: #fff; border: 1px solid rgba(15,23,42,0.08); border-radius: 14px;
+      box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 8px 24px -16px rgba(3,169,244,0.18);
+      min-width: 240px; flex-shrink: 0; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+    .eco-badge:hover { transform: translateY(-2px); border-color: rgba(76,175,80,0.4);
+      box-shadow: 0 6px 14px rgba(15,23,42,0.06), 0 20px 38px -18px rgba(3,169,244,0.35); }
+    .eco-icon {
+      width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, rgba(76,175,80,0.12), rgba(3,169,244,0.12));
+      color: #03A9F4;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+    }
+    .eco-icon svg { width: 22px; height: 22px; }
+
+    /* ===== STATS COUNT-UP CARD (brand promise) ===== */
+    .stat-card {
+      position: relative; padding: 2rem 1.75rem; border-radius: 1.5rem; background: #fff;
+      border: 1px solid rgba(15,23,42,0.06);
+      box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 12px 30px -16px rgba(3,169,244,0.2);
+      overflow: hidden;
+    }
+    .stat-card::before {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, #4CAF50, #03A9F4);
+    }
+    .stat-num { font-size: clamp(2.5rem, 5vw, 3.75rem); font-weight: 900; line-height: 1;
+      background: linear-gradient(135deg, #4CAF50 0%, #03A9F4 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      letter-spacing: -0.02em; }
+
+    /* ===== LOGO SHEEN ON HOVER ===== */
+    .logo-wrap { position: relative; display: inline-flex; }
+    .logo-wrap img { transition: filter .35s ease, transform .35s ease; }
+    .logo-wrap:hover img { filter: drop-shadow(0 0 14px rgba(3,169,244,0.5)); transform: scale(1.05); }
+
+    /* ===== RESPECT REDUCED MOTION ===== */
+    @media (prefers-reduced-motion: reduce) {
+      .hero-mesh::before, .hero-mesh::after { animation: none; }
+      .marquee-track { animation: none; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .lift, .orb, .eco-badge, .cta-glow::after, .nav-link::after, .logo-wrap img { transition: none !important; }
+      *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; }
+    }
   </style>
 </head>
 <body class="bg-white text-slate-900 antialiased">
@@ -192,44 +334,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- HEADER -->
 <header class="border-b border-slate-100 sticky top-0 bg-white/95 backdrop-blur z-40">
   <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-    <a href="#hero" class="flex items-center gap-3" aria-label="NET4ZERO — strona główna">
+    <a href="#hero" class="logo-wrap flex items-center gap-3" aria-label="NET4ZERO — strona główna">
       <picture><source srcset="logo-160.webp 2x, logo-80.webp 1x" type="image/webp"><img src="logo-80.webp" alt="NET4ZERO — logo" class="w-10 h-10" width="40" height="40" loading="eager" decoding="async"></picture>
       <span class="font-bold text-xl">NET<span class="gradient-text">4</span>ZERO</span>
     </a>
     <nav class="hidden md:flex gap-7 text-sm font-medium text-slate-700" aria-label="Główna nawigacja">
-      <a href="#ipz" class="hover:text-n4z-green">Czym jest IPZ</a>
-      <a href="#lokalizacja" class="hover:text-n4z-green">Mam lokalizację</a>
-      <a href="#inwestor" class="hover:text-n4z-green">Chcę zainwestować</a>
-      <a href="#wdrozenie" class="hover:text-n4z-green">Wdrożenie</a>
-      <a href="#faq" class="hover:text-n4z-green">FAQ</a>
-      <a href="#wiedza" class="hover:text-n4z-green">Wiedza</a>
-      <a href="#kontakt" class="hover:text-n4z-green">Kontakt</a>
+      <a href="#ipz" class="nav-link hover:text-n4z-green">Czym jest IPZ</a>
+      <a href="#lokalizacja" class="nav-link hover:text-n4z-green">Mam lokalizację</a>
+      <a href="#inwestor" class="nav-link hover:text-n4z-green">Chcę zainwestować</a>
+      <a href="#wdrozenie" class="nav-link hover:text-n4z-green">Wdrożenie</a>
+      <a href="#faq" class="nav-link hover:text-n4z-green">FAQ</a>
+      <a href="#wiedza" class="nav-link hover:text-n4z-green">Wiedza</a>
+      <a href="#kontakt" class="nav-link hover:text-n4z-green">Kontakt</a>
     </nav>
-    <a href="#kontakt" class="gradient-n4z text-white font-semibold px-5 py-2 rounded-lg text-sm hidden sm:inline-block">Kontakt</a>
+    <a href="#kontakt" class="cta-glow gradient-n4z text-white font-semibold px-5 py-2 rounded-lg text-sm hidden sm:inline-block">Kontakt</a>
   </div>
 </header>
 
 <!-- 1. HERO -->
-<section id="hero" class="bg-n4z-cream py-20 px-6">
-  <div class="max-w-6xl mx-auto">
-    <p class="text-n4z-green font-semibold text-sm uppercase tracking-widest text-center">System kaucyjny od 1 października 2025</p>
-    <h1 class="text-5xl sm:text-7xl font-black mt-6 leading-[1.05] text-center max-w-5xl mx-auto">Recyklomat na osiedlu.<br><span class="gradient-text">System kaucyjny tam, gdzie mieszkają ludzie.</span></h1>
-    <p class="text-xl text-slate-700 mt-8 leading-relaxed max-w-3xl mx-auto text-center">Pierwsza w Polsce sieć osiedlowych punktów zwrotu butelek i puszek. Wdrażamy, integrujemy, obsługujemy. Bez Twojego CAPEX-u — albo z Twoim, jeśli inwestujesz.</p>
+<section id="hero" class="hero-mesh bg-n4z-cream py-20 px-6">
+  <div class="max-w-6xl mx-auto relative">
+    <p class="text-n4z-green font-semibold text-sm uppercase tracking-widest text-center reveal">System kaucyjny od 1 października 2025</p>
+    <h1 class="text-5xl sm:text-7xl font-black mt-6 leading-[1.05] text-center max-w-5xl mx-auto reveal">Recyklomat na osiedlu.<br><span class="gradient-text">System kaucyjny tam, gdzie mieszkają ludzie.</span></h1>
+    <p class="text-xl text-slate-700 mt-8 leading-relaxed max-w-3xl mx-auto text-center reveal">Pierwsza w Polsce sieć osiedlowych punktów zwrotu butelek i puszek. Wdrażamy, integrujemy, obsługujemy. Bez Twojego CAPEX-u — albo z Twoim, jeśli inwestujesz.</p>
 
     <div class="mt-14 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-      <a href="#lokalizacja" class="group bg-white rounded-3xl p-8 hover:shadow-2xl transition border-2 border-transparent hover:border-n4z-green">
-        <div class="w-12 h-12 rounded-xl gradient-n4z flex items-center justify-center text-white text-xl font-black mb-4">A</div>
+      <a href="#lokalizacja" class="group lift bg-white rounded-3xl p-8 border-2 border-transparent hover:border-n4z-green reveal">
+        <div class="orb w-12 h-12 rounded-xl text-xl mb-4"><span>A</span></div>
         <p class="text-xs font-mono uppercase tracking-wider text-slate-500 mb-2">Ścieżka A · Spółdzielnia, gmina, ZGL, szkoła, urząd</p>
         <h2 class="text-2xl font-bold mb-3">Mam lokalizację.</h2>
         <p class="text-slate-700 mb-6">Wydzierżawiają nam Państwo od 5 do 30 m². Pobierają czynsz. Zostają Innym Punktem Zbierającym (IPZ). Bez maszyny, bez BDO, bez ryzyka operacyjnego.</p>
-        <span class="inline-flex items-center gap-2 gradient-n4z text-white font-semibold px-6 py-3 rounded-lg shadow-md">Wydzierżaw nam teren →</span>
+        <span class="cta-glow inline-flex items-center gap-2 gradient-n4z text-white font-semibold px-6 py-3 rounded-lg shadow-md">Wydzierżaw nam teren →</span>
       </a>
-      <a href="#inwestor" class="group bg-slate-900 text-white rounded-3xl p-8 hover:shadow-2xl transition">
-        <div class="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center text-white text-xl font-black mb-4">B</div>
+      <a href="#inwestor" class="group lift bg-slate-900 text-white rounded-3xl p-8 reveal">
+        <div class="orb orb-dark w-12 h-12 rounded-xl text-xl mb-4"><span>B</span></div>
         <p class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Ścieżka B · Inwestor, partner operacyjny, fundusz</p>
         <h2 class="text-2xl font-bold mb-3">Chcę zainwestować.</h2>
         <p class="text-slate-300 mb-6">Kupujesz maszyny (gotówka lub leasing). Zostajesz właścicielem infrastruktury. My obsługujemy 8 obszarów wdrożenia pod klucz.</p>
-        <span class="inline-flex items-center gap-2 bg-white text-slate-900 font-semibold px-6 py-3 rounded-lg shadow-md">Zainwestuj w sieć RVM →</span>
+        <span class="cta-glow inline-flex items-center gap-2 bg-white text-slate-900 font-semibold px-6 py-3 rounded-lg shadow-md">Zainwestuj w sieć RVM →</span>
       </a>
     </div>
   </div>
@@ -240,6 +382,123 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="max-w-5xl mx-auto text-center">
     <p class="text-lg sm:text-xl">Jedyna firma w Polsce integrująca <strong class="gradient-text">8 obszarów wdrożenia recyklomatu</strong> pod klucz — od doboru urządzenia po serwis.</p>
   </div>
+</section>
+
+<!-- BRAND PROMISE — animowane statystyki -->
+<section id="promise" class="py-20 px-6 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-10 reveal">
+      <p class="text-n4z-green font-semibold text-sm uppercase tracking-widest mb-3">Standard NET4ZERO</p>
+      <h2 class="text-4xl sm:text-5xl font-bold">Trzy mierzalne obietnice.</h2>
+      <p class="text-lg text-slate-600 mt-4 max-w-3xl mx-auto">Każda kontrolowalna operacyjnie. Każda zapisana w umowie SLA.</p>
+    </div>
+    <div class="grid sm:grid-cols-3 gap-6">
+      <div class="stat-card lift reveal text-center">
+        <div class="orb w-14 h-14 rounded-2xl mx-auto mb-5">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </div>
+        <p class="stat-num"><span data-count="60">0</span><span class="text-3xl ml-1">dni</span></p>
+        <p class="font-bold mt-3">Wdrożenie pod klucz</p>
+        <p class="text-sm text-slate-600 mt-1">od podpisania umowy do uruchomienia</p>
+      </div>
+      <div class="stat-card lift reveal text-center">
+        <div class="orb w-14 h-14 rounded-2xl mx-auto mb-5">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0-18 0"/><path d="M9 12l2 2l4-4"/></svg>
+        </div>
+        <p class="stat-num"><span data-count="98">0</span><span class="text-3xl">%</span></p>
+        <p class="font-bold mt-3">Dostępność urządzenia</p>
+        <p class="text-sm text-slate-600 mt-1">SLA roczna · raportowanie miesięczne</p>
+      </div>
+      <div class="stat-card lift reveal text-center">
+        <div class="orb w-14 h-14 rounded-2xl mx-auto mb-5">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+        </div>
+        <p class="stat-num"><span data-count="24">0</span><span class="text-3xl">h</span></p>
+        <p class="font-bold mt-3">Wypłata kaucji</p>
+        <p class="text-sm text-slate-600 mt-1">od zwrotu opakowania do mieszkańca</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EKOSYSTEM PARTNERÓW — animowany marquee -->
+<section id="ekosystem" class="py-16 px-0 bg-n4z-cream border-y border-slate-200/60">
+  <div class="max-w-6xl mx-auto px-6 text-center mb-10 reveal">
+    <p class="text-n4z-green font-semibold text-sm uppercase tracking-widest mb-3">Ekosystem wdrożenia</p>
+    <h2 class="text-3xl sm:text-4xl font-bold">Łańcuch wartości pod jedną umową.</h2>
+    <p class="text-base text-slate-600 mt-3 max-w-3xl mx-auto">Renomowani producenci RVM, polski lider leasingu, operator systemu kaucyjnego, globalny dostawca płatności bezgotówkowych — integrujemy ich w jednym kontrakcie z partnerem miejskim.</p>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track">
+      <!-- ZESTAW 1 -->
+      <div class="eco-badge">
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span>
+        <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Hardware</p><p class="font-bold text-sm leading-tight">Producent RVM</p></div>
+      </div>
+      <div class="eco-badge">
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 11h20M6 16h4"/></svg></span>
+        <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Finansowanie</p><p class="font-bold text-sm leading-tight">Partner Leasingowy</p></div>
+      </div>
+      <div class="eco-badge">
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
+        <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Kaucja</p><p class="font-bold text-sm leading-tight">Operator Systemu</p></div>
+      </div>
+      <div class="eco-badge">
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M16 14h2M3 10h18"/></svg></span>
+        <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Płatności</p><p class="font-bold text-sm leading-tight">BLIK · Karta · Przelew</p></div>
+      </div>
+      <div class="eco-badge">
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h13l5 5v5h-2"/><path d="M3 7v10h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></span>
+        <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Logistyka</p><p class="font-bold text-sm leading-tight">Odbiór i transport</p></div>
+      </div>
+      <div class="eco-badge">
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2v6h6"/><path d="M4 4v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6a2 2 0 0 0-2 2z"/><path d="M8 13h8M8 17h5"/></svg></span>
+        <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Rozliczenia</p><p class="font-bold text-sm leading-tight">Konto techniczne · BO</p></div>
+      </div>
+      <div class="eco-badge">
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 9-8 10c-4.5-1-8-5-8-10V6l8-4z"/><path d="M9 12l2 2l4-4"/></svg></span>
+        <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">SLA</p><p class="font-bold text-sm leading-tight">Serwis · Ubezpieczenie</p></div>
+      </div>
+      <div class="eco-badge">
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+        <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Ekspozycja</p><p class="font-bold text-sm leading-tight">Branding · Reklama LCD</p></div>
+      </div>
+      <!-- ZESTAW 2 (duplikat dla nieskończonej pętli) -->
+      <div class="eco-badge">
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span>
+        <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Hardware</p><p class="font-bold text-sm leading-tight">Producent RVM</p></div>
+      </div>
+      <div class="eco-badge">
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 11h20M6 16h4"/></svg></span>
+        <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Finansowanie</p><p class="font-bold text-sm leading-tight">Partner Leasingowy</p></div>
+      </div>
+      <div class="eco-badge">
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
+        <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Kaucja</p><p class="font-bold text-sm leading-tight">Operator Systemu</p></div>
+      </div>
+      <div class="eco-badge">
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M16 14h2M3 10h18"/></svg></span>
+        <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Płatności</p><p class="font-bold text-sm leading-tight">BLIK · Karta · Przelew</p></div>
+      </div>
+      <div class="eco-badge">
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h13l5 5v5h-2"/><path d="M3 7v10h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></span>
+        <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Logistyka</p><p class="font-bold text-sm leading-tight">Odbiór i transport</p></div>
+      </div>
+      <div class="eco-badge">
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2v6h6"/><path d="M4 4v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6a2 2 0 0 0-2 2z"/><path d="M8 13h8M8 17h5"/></svg></span>
+        <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Rozliczenia</p><p class="font-bold text-sm leading-tight">Konto techniczne · BO</p></div>
+      </div>
+      <div class="eco-badge">
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 9-8 10c-4.5-1-8-5-8-10V6l8-4z"/><path d="M9 12l2 2l4-4"/></svg></span>
+        <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">SLA</p><p class="font-bold text-sm leading-tight">Serwis · Ubezpieczenie</p></div>
+      </div>
+      <div class="eco-badge">
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+        <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Ekspozycja</p><p class="font-bold text-sm leading-tight">Branding · Reklama LCD</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="text-center text-xs text-slate-500 mt-6 px-6">Konkretni dostawcy ujawniani po podpisaniu NDA. Pełen wykaz w briefie wdrożeniowym.</p>
 </section>
 
 <!-- 2. CO TO JEST IPZ -->
@@ -296,7 +555,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="grid md:grid-cols-2 gap-6">
-      <div class="bg-white rounded-2xl p-8">
+      <div class="lift reveal bg-white rounded-2xl p-8">
         <p class="text-sm font-semibold text-n4z-green uppercase tracking-wider mb-3">Co wnosi lokalizacja</p>
         <h3 class="text-2xl font-bold mb-4">5–30 m² utwardzonej powierzchni</h3>
         <ul class="space-y-2 text-slate-700 text-sm">
@@ -305,7 +564,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li>• Dostęp do prądu (przyłącze ~1 kW)</li>
         </ul>
       </div>
-      <div class="bg-white rounded-2xl p-8">
+      <div class="lift reveal bg-white rounded-2xl p-8">
         <p class="text-sm font-semibold text-n4z-green uppercase tracking-wider mb-3">Co dostaje lokalizacja</p>
         <h3 class="text-2xl font-bold mb-4">Stały czynsz + status IPZ</h3>
         <ul class="space-y-2 text-slate-700 text-sm">
@@ -316,7 +575,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li>• Pomoc w realizacji unijnych poziomów recyklingu (gminy)</li>
         </ul>
       </div>
-      <div class="bg-white rounded-2xl p-8">
+      <div class="lift reveal bg-white rounded-2xl p-8">
         <p class="text-sm font-semibold text-red-600 uppercase tracking-wider mb-3">Czego NIE musi lokalizacja</p>
         <h3 class="text-2xl font-bold mb-4">Zero CAPEX, zero obowiązków</h3>
         <ul class="space-y-2 text-slate-700 text-sm">
@@ -328,7 +587,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li>• Podpisywać umowy z operatorem systemu</li>
         </ul>
       </div>
-      <div class="bg-white rounded-2xl p-8">
+      <div class="lift reveal bg-white rounded-2xl p-8">
         <p class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">Czas i forma umowy</p>
         <h3 class="text-2xl font-bold mb-4">~8 tygodni od podpisu</h3>
         <ul class="space-y-2 text-slate-700 text-sm">
@@ -359,43 +618,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="bg-n4z-cream rounded-3xl p-8 sm:p-12">
       <h3 class="text-2xl font-bold mb-8 text-center">8 obszarów wdrożenia, które obsługujemy</h3>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div class="bg-white rounded-xl p-5">
-          <div class="w-10 h-10 rounded-lg gradient-n4z flex items-center justify-center text-white font-black mb-3">1</div>
+        <div class="orb-hover lift bg-white rounded-xl p-5">
+          <div class="orb w-10 h-10 rounded-lg mb-3"><span>1</span></div>
           <p class="font-bold text-sm">Dobór i zakup urządzenia</p>
           <p class="text-xs text-slate-600 mt-1">Renomowani producenci RVM, ceny partnerskie</p>
         </div>
-        <div class="bg-white rounded-xl p-5">
-          <div class="w-10 h-10 rounded-lg gradient-n4z flex items-center justify-center text-white font-black mb-3">2</div>
+        <div class="orb-hover lift bg-white rounded-xl p-5">
+          <div class="orb w-10 h-10 rounded-lg mb-3"><span>2</span></div>
           <p class="font-bold text-sm">Koordynacja leasingu</p>
           <p class="text-xs text-slate-600 mt-1">Polski lider rynku leasingowego</p>
         </div>
-        <div class="bg-white rounded-xl p-5">
-          <div class="w-10 h-10 rounded-lg gradient-n4z flex items-center justify-center text-white font-black mb-3">3</div>
+        <div class="orb-hover lift bg-white rounded-xl p-5">
+          <div class="orb w-10 h-10 rounded-lg mb-3"><span>3</span></div>
           <p class="font-bold text-sm">Integracja z operatorem kaucji</p>
           <p class="text-xs text-slate-600 mt-1">Operator systemu kaucyjnego</p>
         </div>
-        <div class="bg-white rounded-xl p-5">
-          <div class="w-10 h-10 rounded-lg gradient-n4z flex items-center justify-center text-white font-black mb-3">4</div>
+        <div class="orb-hover lift bg-white rounded-xl p-5">
+          <div class="orb w-10 h-10 rounded-lg mb-3"><span>4</span></div>
           <p class="font-bold text-sm">Wypłaty bezgotówkowe kaucji</p>
           <p class="text-xs text-slate-600 mt-1">BLIK, karta, przelew — globalny dostawca</p>
         </div>
-        <div class="bg-white rounded-xl p-5">
-          <div class="w-10 h-10 rounded-lg gradient-n4z flex items-center justify-center text-white font-black mb-3">5</div>
+        <div class="orb-hover lift bg-white rounded-xl p-5">
+          <div class="orb w-10 h-10 rounded-lg mb-3"><span>5</span></div>
           <p class="font-bold text-sm">Konto techniczne i rozliczenia</p>
           <p class="text-xs text-slate-600 mt-1">Kompensaty, raportowanie, księgowość</p>
         </div>
-        <div class="bg-white rounded-xl p-5">
-          <div class="w-10 h-10 rounded-lg gradient-n4z flex items-center justify-center text-white font-black mb-3">6</div>
+        <div class="orb-hover lift bg-white rounded-xl p-5">
+          <div class="orb w-10 h-10 rounded-lg mb-3"><span>6</span></div>
           <p class="font-bold text-sm">Serwis, ubezpieczenie, logistyka</p>
           <p class="text-xs text-slate-600 mt-1">Stała opłata miesięczna, SLA</p>
         </div>
-        <div class="bg-white rounded-xl p-5">
-          <div class="w-10 h-10 rounded-lg gradient-n4z flex items-center justify-center text-white font-black mb-3">7</div>
+        <div class="orb-hover lift bg-white rounded-xl p-5">
+          <div class="orb w-10 h-10 rounded-lg mb-3"><span>7</span></div>
           <p class="font-bold text-sm">Branding + powierzchnia reklamowa</p>
           <p class="text-xs text-slate-600 mt-1">Kolorystyka klienta, monetyzacja ekranów</p>
         </div>
-        <div class="bg-white rounded-xl p-5">
-          <div class="w-10 h-10 rounded-lg gradient-n4z flex items-center justify-center text-white font-black mb-3">8</div>
+        <div class="orb-hover lift bg-white rounded-xl p-5">
+          <div class="orb w-10 h-10 rounded-lg mb-3"><span>8</span></div>
           <p class="font-bold text-sm">Pozyskanie lokalizacji</p>
           <p class="text-xs text-slate-600 mt-1">Umowy dzierżawy z SM / gminami</p>
         </div>
@@ -443,18 +702,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-n4z-cream rounded-2xl p-8">
-          <div class="w-12 h-12 rounded-xl gradient-n4z flex items-center justify-center text-white font-black mb-4">1</div>
+        <div class="lift reveal bg-n4z-cream rounded-2xl p-8">
+          <div class="orb w-12 h-12 rounded-xl mb-4"><span>1</span></div>
           <h4 class="font-bold text-lg mb-3">Handling fee od operatora systemu kaucyjnego</h4>
           <p class="text-sm text-slate-700 leading-relaxed">Stała opłata za każde przyjęte opakowanie, ustawowo finansowana przez operatora. Stawka <em>negocjowana indywidualnie</em> w zależności od wolumenu, lokalizacji i modelu urządzenia. <strong>Główny i przewidywalny strumień przychodu.</strong></p>
         </div>
-        <div class="bg-n4z-cream rounded-2xl p-8">
-          <div class="w-12 h-12 rounded-xl gradient-n4z flex items-center justify-center text-white font-black mb-4">2</div>
+        <div class="lift reveal bg-n4z-cream rounded-2xl p-8">
+          <div class="orb w-12 h-12 rounded-xl mb-4"><span>2</span></div>
           <h4 class="font-bold text-lg mb-3">Powierzchnia reklamowa</h4>
           <p class="text-sm text-slate-700 leading-relaxed">Ekran LCD nad miejscem podawczym oraz branding bryły urządzenia. Sprzedawany lokalnie (sieci osiedlowe, marki) lub poprzez NET4ZERO w pakiecie z innymi maszynami w sieci.</p>
         </div>
-        <div class="bg-n4z-cream rounded-2xl p-8">
-          <div class="w-12 h-12 rounded-xl gradient-n4z flex items-center justify-center text-white font-black mb-4">3</div>
+        <div class="lift reveal bg-n4z-cream rounded-2xl p-8">
+          <div class="orb w-12 h-12 rounded-xl mb-4"><span>3</span></div>
           <h4 class="font-bold text-lg mb-3">Programy promocyjne marek napojów</h4>
           <p class="text-sm text-slate-700 leading-relaxed">Bonusy za zwrot konkretnych opakowań, kampanie loyaltowe, aktywacje produktowe. Strumień opcjonalny, zależny od kontraktów z brandami — rośnie wraz z gęstością sieci.</p>
         </div>
@@ -481,32 +740,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h2 class="text-4xl sm:text-5xl font-bold">8 tygodni. Powtarzalny proces.</h2>
     </div>
     <div class="grid md:grid-cols-5 gap-6">
-      <div class="bg-white rounded-2xl p-6">
-        <div class="w-12 h-12 rounded-lg gradient-n4z flex items-center justify-center text-white font-black text-xl mb-4">1</div>
+      <div class="lift reveal bg-white rounded-2xl p-6">
+        <div class="orb w-12 h-12 rounded-lg text-xl mb-4"><span>1</span></div>
         <p class="font-bold mb-2">Konsultacja i audyt lokalizacji</p>
         <p class="text-sm text-slate-600">Analiza demografii, weryfikacja powierzchni, dobór modelu RVM.</p>
         <p class="text-xs text-slate-400 mt-3 font-mono">Tydzień 1</p>
       </div>
-      <div class="bg-white rounded-2xl p-6">
-        <div class="w-12 h-12 rounded-lg gradient-n4z flex items-center justify-center text-white font-black text-xl mb-4">2</div>
+      <div class="lift reveal bg-white rounded-2xl p-6">
+        <div class="orb w-12 h-12 rounded-lg text-xl mb-4"><span>2</span></div>
         <p class="font-bold mb-2">Umowa ramowa i wybór pakietu</p>
         <p class="text-sm text-slate-600">Finalizacja modelu finansowego, podpisanie umów.</p>
         <p class="text-xs text-slate-400 mt-3 font-mono">Tydzień 2-3</p>
       </div>
-      <div class="bg-white rounded-2xl p-6">
-        <div class="w-12 h-12 rounded-lg gradient-n4z flex items-center justify-center text-white font-black text-xl mb-4">3</div>
+      <div class="lift reveal bg-white rounded-2xl p-6">
+        <div class="orb w-12 h-12 rounded-lg text-xl mb-4"><span>3</span></div>
         <p class="font-bold mb-2">Finansowanie i zamówienie</p>
         <p class="text-sm text-slate-600">Proces leasingowy, produkcja maszyny u producenta.</p>
         <p class="text-xs text-slate-400 mt-3 font-mono">Tydzień 3-6</p>
       </div>
-      <div class="bg-white rounded-2xl p-6">
-        <div class="w-12 h-12 rounded-lg gradient-n4z flex items-center justify-center text-white font-black text-xl mb-4">4</div>
+      <div class="lift reveal bg-white rounded-2xl p-6">
+        <div class="orb w-12 h-12 rounded-lg text-xl mb-4"><span>4</span></div>
         <p class="font-bold mb-2">Montaż, integracja, testy</p>
         <p class="text-sm text-slate-600">Transport, instalacja, integracja z operatorem, testy funkcjonalne.</p>
         <p class="text-xs text-slate-400 mt-3 font-mono">Tydzień 6-8</p>
       </div>
-      <div class="bg-white rounded-2xl p-6">
-        <div class="w-12 h-12 rounded-lg gradient-n4z flex items-center justify-center text-white font-black text-xl mb-4">5</div>
+      <div class="lift reveal bg-white rounded-2xl p-6">
+        <div class="orb w-12 h-12 rounded-lg text-xl mb-4"><span>5</span></div>
         <p class="font-bold mb-2">Uruchomienie i start serwisu</p>
         <p class="text-sm text-slate-600">Odbiór techniczny, szkolenie, kampania informacyjna dla mieszkańców.</p>
         <p class="text-xs text-slate-400 mt-3 font-mono">Tydzień 8</p>
@@ -524,7 +783,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="mb-12">
-      <h3 class="text-2xl font-bold mb-6 flex items-center gap-3"><span class="w-10 h-10 rounded-lg gradient-n4z flex items-center justify-center text-white font-black text-lg">A</span> Dla lokalizacji (SM / gmina / ZGL)</h3>
+      <h3 class="text-2xl font-bold mb-6 flex items-center gap-3"><span class="orb w-10 h-10 rounded-lg text-lg"><span>A</span></span> Dla lokalizacji (SM / gmina / ZGL)</h3>
       <div class="space-y-3">
         <details class="bg-n4z-cream rounded-2xl p-6">
           <summary class="flex justify-between items-center font-semibold">Czy musimy mieć własny grunt? <span class="chev text-n4z-green">▼</span></summary>
@@ -554,7 +813,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div>
-      <h3 class="text-2xl font-bold mb-6 flex items-center gap-3"><span class="w-10 h-10 rounded-lg gradient-n4z flex items-center justify-center text-white font-black text-lg">B</span> Dla inwestora</h3>
+      <h3 class="text-2xl font-bold mb-6 flex items-center gap-3"><span class="orb w-10 h-10 rounded-lg text-lg"><span>B</span></span> Dla inwestora</h3>
       <div class="space-y-3">
         <details class="bg-n4z-cream rounded-2xl p-6">
           <summary class="flex justify-between items-center font-semibold">Czy zarabiam na zwracanych kaucjach? <span class="chev text-n4z-green">▼</span></summary>
@@ -602,77 +861,77 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      <a href="ustawa-kaucyjna-2025.html" class="group bg-n4z-cream rounded-2xl p-6 hover:shadow-xl transition border-2 border-transparent hover:border-n4z-green">
+      <a href="ustawa-kaucyjna-2025.html" class="group lift reveal bg-n4z-cream rounded-2xl p-6 border-2 border-transparent hover:border-n4z-green">
         <p class="text-xs font-mono uppercase tracking-wider text-slate-500 mb-2">Prawo · 7 min</p>
         <h3 class="text-lg font-bold mb-2 group-hover:gradient-text">System kaucyjny 2025 — fakty dla gminy</h3>
         <p class="text-slate-700 text-sm mb-3">Cytaty z Dz.U. 2025 poz. 870 i raportu KIGPR.</p>
         <p class="font-semibold text-n4z-green text-sm">Czytaj →</p>
       </a>
 
-      <a href="fraudy-w-systemie-kaucyjnym.html" class="group bg-n4z-cream rounded-2xl p-6 hover:shadow-xl transition border-2 border-transparent hover:border-n4z-green">
+      <a href="fraudy-w-systemie-kaucyjnym.html" class="group lift reveal bg-n4z-cream rounded-2xl p-6 border-2 border-transparent hover:border-n4z-green">
         <p class="text-xs font-mono uppercase tracking-wider text-slate-500 mb-2">Bezpieczeństwo · 6 min</p>
         <h3 class="text-lg font-bold mb-2 group-hover:gradient-text">12 typów fraudów w systemie kaucyjnym</h3>
         <p class="text-slate-700 text-sm mb-3">Pełna lista z raportu KIGPR + klasyfikacja prawna (KK).</p>
         <p class="font-semibold text-n4z-green text-sm">Czytaj →</p>
       </a>
 
-      <a href="11-dobrych-praktyk-antyfraudowych.html" class="group bg-n4z-cream rounded-2xl p-6 hover:shadow-xl transition border-2 border-transparent hover:border-n4z-green">
+      <a href="11-dobrych-praktyk-antyfraudowych.html" class="group lift reveal bg-n4z-cream rounded-2xl p-6 border-2 border-transparent hover:border-n4z-green">
         <p class="text-xs font-mono uppercase tracking-wider text-slate-500 mb-2">Bezpieczeństwo · 7 min</p>
         <h3 class="text-lg font-bold mb-2 group-hover:gradient-text">11 dobrych praktyk antyfraudowych</h3>
         <p class="text-slate-700 text-sm mb-3">Rekomendacje KIGPR dla wprowadzających i operatorów.</p>
         <p class="font-semibold text-n4z-green text-sm">Czytaj →</p>
       </a>
 
-      <a href="cbdok-centralna-baza-danych-opakowan.html" class="group bg-n4z-cream rounded-2xl p-6 hover:shadow-xl transition border-2 border-transparent hover:border-n4z-green">
+      <a href="cbdok-centralna-baza-danych-opakowan.html" class="group lift reveal bg-n4z-cream rounded-2xl p-6 border-2 border-transparent hover:border-n4z-green">
         <p class="text-xs font-mono uppercase tracking-wider text-slate-500 mb-2">Infrastruktura · 5 min</p>
         <h3 class="text-lg font-bold mb-2 group-hover:gradient-text">CBDOK — Centralna Baza Danych</h3>
         <p class="text-slate-700 text-sm mb-3">Co to, jak działa, kierunki rozwoju według KIGPR.</p>
         <p class="font-semibold text-n4z-green text-sm">Czytaj →</p>
       </a>
 
-      <a href="maszyny-rvm-minimalne-standardy.html" class="group bg-n4z-cream rounded-2xl p-6 hover:shadow-xl transition border-2 border-transparent hover:border-n4z-green">
+      <a href="maszyny-rvm-minimalne-standardy.html" class="group lift reveal bg-n4z-cream rounded-2xl p-6 border-2 border-transparent hover:border-n4z-green">
         <p class="text-xs font-mono uppercase tracking-wider text-slate-500 mb-2">Infrastruktura · 5 min</p>
         <h3 class="text-lg font-bold mb-2 group-hover:gradient-text">Maszyny RVM — minimalne standardy</h3>
         <p class="text-slate-700 text-sm mb-3">Co to RVM, standardy z 2025, rejestr ID od 1.01.2027.</p>
         <p class="font-semibold text-n4z-green text-sm">Czytaj →</p>
       </a>
 
-      <a href="bon-kaucyjny.html" class="group bg-n4z-cream rounded-2xl p-6 hover:shadow-xl transition border-2 border-transparent hover:border-n4z-green">
+      <a href="bon-kaucyjny.html" class="group lift reveal bg-n4z-cream rounded-2xl p-6 border-2 border-transparent hover:border-n4z-green">
         <p class="text-xs font-mono uppercase tracking-wider text-slate-500 mb-2">Pojęcia · 4 min</p>
         <h3 class="text-lg font-bold mb-2 group-hover:gradient-text">Bon Kaucyjny — co to i jak działa</h3>
         <p class="text-slate-700 text-sm mb-3">Definicja, zabezpieczenia, mechanizm „spalania".</p>
         <p class="font-semibold text-n4z-green text-sm">Czytaj →</p>
       </a>
 
-      <a href="operatorzy-systemu-kaucyjnego.html" class="group bg-n4z-cream rounded-2xl p-6 hover:shadow-xl transition border-2 border-transparent hover:border-n4z-green">
+      <a href="operatorzy-systemu-kaucyjnego.html" class="group lift reveal bg-n4z-cream rounded-2xl p-6 border-2 border-transparent hover:border-n4z-green">
         <p class="text-xs font-mono uppercase tracking-wider text-slate-500 mb-2">Rynek · 5 min</p>
         <h3 class="text-lg font-bold mb-2 group-hover:gradient-text">Operatorzy systemu kaucyjnego</h3>
         <p class="text-slate-700 text-sm mb-3">Kim są, co robią, brak koordynatora rynku.</p>
         <p class="font-semibold text-n4z-green text-sm">Czytaj →</p>
       </a>
 
-      <a href="rok-2026-pierwszy-pelny-rok-systemu.html" class="group bg-n4z-cream rounded-2xl p-6 hover:shadow-xl transition border-2 border-transparent hover:border-n4z-green">
+      <a href="rok-2026-pierwszy-pelny-rok-systemu.html" class="group lift reveal bg-n4z-cream rounded-2xl p-6 border-2 border-transparent hover:border-n4z-green">
         <p class="text-xs font-mono uppercase tracking-wider text-slate-500 mb-2">Strategia · 5 min</p>
         <h3 class="text-lg font-bold mb-2 group-hover:gradient-text">2026 — pierwszy pełny rok systemu</h3>
         <p class="text-slate-700 text-sm mb-3">Cztery okna decyzyjne. Co zmieni się w tym roku.</p>
         <p class="font-semibold text-n4z-green text-sm">Czytaj →</p>
       </a>
 
-      <a href="recyklomat-osiedlowy-vs-sklep.html" class="group bg-n4z-cream rounded-2xl p-6 hover:shadow-xl transition border-2 border-transparent hover:border-n4z-green">
+      <a href="recyklomat-osiedlowy-vs-sklep.html" class="group lift reveal bg-n4z-cream rounded-2xl p-6 border-2 border-transparent hover:border-n4z-green">
         <p class="text-xs font-mono uppercase tracking-wider text-slate-500 mb-2">Analiza rynku · 6 min</p>
         <h3 class="text-lg font-bold mb-2 group-hover:gradient-text">Recyklomat osiedlowy vs sklep</h3>
         <p class="text-slate-700 text-sm mb-3">Pięć grup mieszkańców. Analogia paczkomatu.</p>
         <p class="font-semibold text-n4z-green text-sm">Czytaj →</p>
       </a>
 
-      <a href="anatomia-wdrozenia-recyklomatu.html" class="group bg-n4z-cream rounded-2xl p-6 hover:shadow-xl transition border-2 border-transparent hover:border-n4z-green">
+      <a href="anatomia-wdrozenia-recyklomatu.html" class="group lift reveal bg-n4z-cream rounded-2xl p-6 border-2 border-transparent hover:border-n4z-green">
         <p class="text-xs font-mono uppercase tracking-wider text-slate-500 mb-2">Proces · 7 min</p>
         <h3 class="text-lg font-bold mb-2 group-hover:gradient-text">Anatomia wdrożenia w 8 tygodni</h3>
         <p class="text-slate-700 text-sm mb-3">Tydzień po tygodniu standardowy proces NET4ZERO.</p>
         <p class="font-semibold text-n4z-green text-sm">Czytaj →</p>
       </a>
 
-      <a href="pakiet-miasto.jpg" target="_blank" rel="noopener" class="group bg-slate-900 text-white rounded-2xl p-6 hover:shadow-xl transition">
+      <a href="pakiet-miasto.jpg" target="_blank" rel="noopener" class="group lift reveal bg-slate-900 text-white rounded-2xl p-6">
         <p class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">One-pager A4 · PDF</p>
         <h3 class="text-lg font-bold mb-2">Pakiet Miasto — one-pager</h3>
         <p class="text-slate-300 text-sm mb-3">8 obszarów wdrożenia, skąd inwestor zarabia.</p>
@@ -701,7 +960,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <input type="hidden" name="_subject" value="NET4ZERO: Nowe zgłoszenie - Wydzierżaw nam teren (Lokalizacja)">
         <input type="hidden" name="_next" value="https://www.net4zero.pl/dziekujemy.html?form=lokalizacja">
         <div class="flex items-center gap-3 mb-2">
-          <div class="w-12 h-12 rounded-xl gradient-n4z flex items-center justify-center text-white text-xl font-black">A</div>
+          <div class="orb w-12 h-12 rounded-xl text-xl"><span>A</span></div>
           <div>
             <p class="text-xs font-mono uppercase tracking-wider text-slate-500">Ścieżka A</p>
             <h3 class="text-2xl font-bold">Wydzierżaw nam teren</h3>
@@ -768,7 +1027,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <input type="hidden" name="_subject" value="NET4ZERO: Nowe zgłoszenie - Inwestor / Pakiet Operator">
         <input type="hidden" name="_next" value="https://www.net4zero.pl/dziekujemy.html?form=inwestor">
         <div class="flex items-center gap-3 mb-2">
-          <div class="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center text-white text-xl font-black">B</div>
+          <div class="orb orb-dark w-12 h-12 rounded-xl text-xl"><span>B</span></div>
           <div>
             <p class="text-xs font-mono uppercase tracking-wider text-slate-400">Ścieżka B</p>
             <h3 class="text-2xl font-bold">Zainwestuj w sieć RVM</h3>
@@ -914,6 +1173,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p>Strona używa plików cookies. <a href="javascript:Cookiebot.renew()" class="underline hover:text-white">Zmień ustawienia cookies</a>.</p>
   </div>
 </footer>
+
+<!-- Scroll reveal + count-up (vanilla, ~1KB, respektuje prefers-reduced-motion) -->
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('visible'); });
+    document.querySelectorAll('[data-count]').forEach(function(el){ el.textContent = el.getAttribute('data-count'); });
+    return;
+  }
+  if (!('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('visible'); });
+    document.querySelectorAll('[data-count]').forEach(function(el){ el.textContent = el.getAttribute('data-count'); });
+    return;
+  }
+  // Reveal
+  var revealObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el){ revealObs.observe(el); });
+
+  // Count-up
+  function animateCount(el){
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    if (isNaN(target)) return;
+    var duration = 1400, start = performance.now();
+    function step(now){
+      var p = Math.min(1, (now - start) / duration);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased);
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var countObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        animateCount(entry.target);
+        countObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('[data-count]').forEach(function(el){ countObs.observe(el); });
+})();
+</script>
 
 </body>
 </html>
