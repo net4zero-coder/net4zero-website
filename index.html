@@ -205,86 +205,94 @@
       100% { transform: translate(-60px, -40px) scale(1.1); }
     }
 
-    /* ===== METALLIC COIN ORBS ===== */
+    /* ===== LOGO-STYLE METALLIC COIN ORBS ===== */
     .orb {
       position: relative; display: inline-flex; align-items: center; justify-content: center;
       color: #fff; font-weight: 900; overflow: hidden;
-      background: linear-gradient(
-        145deg,
-        #1b5e20 0%, #2e7d32 8%, #43a047 16%,
-        #a5d6a7 26%, #f1f8e9 32%,
-        #4CAF50 40%,
-        #03A9F4 54%,
-        #b3e5fc 63%, #e1f5fe 68%,
-        #0288d1 76%, #01579b 86%,
-        #388e3c 93%, #1b5e20 100%
-      );
+      border-radius: 50% !important;
+      /* Brushed metallic disc: zielony (lewy-górny) → niebieski (prawy-dolny) jak logo */
+      background:
+        repeating-linear-gradient(180deg,
+          rgba(255,255,255,0.028) 0px, rgba(255,255,255,0.028) 1px,
+          transparent 1px, transparent 3px),
+        radial-gradient(ellipse at 34% 28%,
+          #81C784 0%, #66BB6A 10%,
+          #4CAF50 24%, #26C6DA 46%,
+          #1565C0 68%, #0D47A1 90%);
+      /* Chromowa otoczka: jasna wewnętrzna krawędź + srebrny pierścień */
       box-shadow:
-        inset 0 2px 3px rgba(255,255,255,0.7),
-        inset 0 -3px 8px rgba(0,0,0,0.3),
-        inset -1px 0 4px rgba(0,0,0,0.12),
-        0 8px 24px -4px rgba(3,169,244,0.55),
-        0 3px 8px -1px rgba(76,175,80,0.4),
-        0 0 0 1px rgba(255,255,255,0.15);
+        inset 0 2px 4px rgba(255,255,255,0.55),
+        inset 0 -3px 8px rgba(0,0,0,0.35),
+        0 0 0 2.5px rgba(255,255,255,0.92),
+        0 0 0 5.5px #78909C,
+        0 0 0 7px rgba(176,213,224,0.4),
+        0 10px 28px -4px rgba(3,169,244,0.55),
+        0 4px 10px -2px rgba(76,175,80,0.38);
+      /* 3D tekst jak litera Z w logo */
+      text-shadow:
+        0 1px 0 rgba(0,0,0,0.55),
+        1px 2px 5px rgba(0,0,0,0.4),
+        0 -1px 1px rgba(255,255,255,0.3);
       transition: box-shadow .35s ease;
     }
-    /* Static highlight rim */
+    /* Połysk w lewym-górnym rogu jak w logo */
     .orb::before {
-      content: ""; position: absolute; inset: 0; border-radius: inherit; z-index: 2;
-      background: linear-gradient(
-        152deg,
-        rgba(255,255,255,0.72) 0%,
-        rgba(255,255,255,0.38) 14%,
-        rgba(255,255,255,0.06) 38%,
-        transparent 60%
-      );
+      content: ""; position: absolute; inset: 0; border-radius: 50%; z-index: 2;
+      background: radial-gradient(ellipse at 32% 22%,
+        rgba(255,255,255,0.58) 0%,
+        rgba(255,255,255,0.28) 22%,
+        transparent 55%);
       pointer-events: none;
     }
-    /* Animated sheen sweep */
+    /* Animowany przebłysk */
     .orb::after {
       content: ""; position: absolute;
       top: -50%; left: -80%; width: 55%; height: 200%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.52), transparent);
       transform: skewX(-18deg);
-      animation: orb-sheen 3.8s ease-in-out infinite;
+      animation: orb-sheen 4.2s ease-in-out infinite;
       pointer-events: none; z-index: 3;
     }
     @keyframes orb-sheen {
-      0%, 55%, 100% { left: -80%; opacity: 0; }
-      12% { opacity: 1; }
-      48% { left: 140%; opacity: 0.85; }
+      0%, 58%, 100% { left: -80%; opacity: 0; }
+      14% { opacity: 1; }
+      50% { left: 140%; opacity: 0.78; }
     }
     .orb > * { position: relative; z-index: 4; }
-    /* Coin flip on hover */
+    /* Coin-flip na hover */
     @keyframes coin-flip {
-      0%   { transform: perspective(320px) rotateY(0deg)   scaleX(1); }
-      22%  { transform: perspective(320px) rotateY(90deg)  scaleX(0.04); }
-      50%  { transform: perspective(320px) rotateY(180deg) scaleX(1); }
-      72%  { transform: perspective(320px) rotateY(270deg) scaleX(0.04); }
-      100% { transform: perspective(320px) rotateY(360deg) scaleX(1); }
+      0%   { transform: perspective(300px) rotateY(0deg)   scaleX(1); }
+      22%  { transform: perspective(300px) rotateY(90deg)  scaleX(0.04); }
+      50%  { transform: perspective(300px) rotateY(180deg) scaleX(1); }
+      72%  { transform: perspective(300px) rotateY(270deg) scaleX(0.04); }
+      100% { transform: perspective(300px) rotateY(360deg) scaleX(1); }
     }
     .group:hover .orb, .orb-hover:hover .orb, .lift:hover .orb {
-      animation: coin-flip 0.78s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      animation: coin-flip 0.76s cubic-bezier(0.4, 0, 0.2, 1) forwards;
       box-shadow:
-        inset 0 2px 3px rgba(255,255,255,0.8),
-        inset 0 -3px 8px rgba(0,0,0,0.3),
-        0 16px 40px -6px rgba(3,169,244,0.75),
+        inset 0 2px 4px rgba(255,255,255,0.6),
+        inset 0 -3px 8px rgba(0,0,0,0.35),
+        0 0 0 2.5px rgba(255,255,255,0.98),
+        0 0 0 5.5px #90A4AE,
+        0 0 0 8px rgba(176,213,224,0.55),
+        0 18px 44px -6px rgba(3,169,244,0.8),
         0 6px 14px -2px rgba(76,175,80,0.55),
-        0 0 28px rgba(179,229,252,0.3);
+        0 0 32px rgba(129,212,250,0.28);
     }
     .orb-dark {
-      background: linear-gradient(
-        145deg,
-        #0d1117 0%, #1e293b 12%, #334155 26%,
-        #94a3b8 44%, #cbd5e1 50%,
-        #64748b 58%, #334155 72%,
-        #1e293b 86%, #0f172a 100%
-      );
+      background:
+        repeating-linear-gradient(180deg,
+          rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px,
+          transparent 1px, transparent 3px),
+        radial-gradient(ellipse at 35% 28%,
+          #546E7A 0%, #37474F 28%, #263238 62%, #1C2833 92%);
       box-shadow:
-        inset 0 2px 3px rgba(255,255,255,0.32),
+        inset 0 2px 4px rgba(255,255,255,0.28),
         inset 0 -3px 8px rgba(0,0,0,0.55),
-        0 8px 22px -4px rgba(0,0,0,0.65),
-        0 0 0 1px rgba(255,255,255,0.08);
+        0 0 0 2.5px rgba(255,255,255,0.65),
+        0 0 0 5.5px #4a6572,
+        0 0 0 7px rgba(120,160,170,0.25),
+        0 8px 22px -4px rgba(0,0,0,0.65);
     }
 
     /* ===== HOVER LIFT FOR CARDS ===== */
@@ -439,12 +447,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hidden sm:block w-px h-4 bg-slate-200"></div>
     <div class="flex items-center gap-2">
       <span class="w-2 h-2 rounded-full bg-n4z-blue inline-block shrink-0"></span>
-      <span><strong class="text-slate-900">320 lokalizacji</strong> w procesie kwalifikacji</span>
-    </div>
-    <div class="hidden sm:block w-px h-4 bg-slate-200"></div>
-    <div class="flex items-center gap-2">
-      <span class="w-2 h-2 rounded-full bg-slate-400 inline-block shrink-0"></span>
-      <span>Wdrożenia: <strong class="text-slate-900">Wrocław i okolice, 2026</strong></span>
+      <span><strong class="text-slate-900">ponad 300 lokalizacji</strong> w procesie kontraktowania</span>
     </div>
   </div>
 </section>
