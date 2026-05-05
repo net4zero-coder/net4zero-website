@@ -843,7 +843,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="text-slate-700 leading-relaxed mb-6">Każda lokalizacja jest kalkulowana indywidualnie w trzech scenariuszach (P10 / P50 / P90), z uwzględnieniem gęstości zaludnienia, wynegocjowanej stawki handling fee i potencjału reklamowego. <strong>Pełny model z IRR 60 miesięcy</strong> przekazujemy po podpisaniu NDA i audycie lokalizacji.</p>
       <div class="flex flex-wrap gap-4">
         <a href="#formularz-inwestor" class="inline-block gradient-n4z hover:opacity-90 text-white font-semibold px-8 py-4 rounded-lg shadow-lg">Zamów audyt i model finansowy →</a>
-        <a href="pakiet-miasto.jpg" target="_blank" rel="noopener" class="inline-block bg-white border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-semibold px-8 py-4 rounded-lg transition">Pobierz Pakiet Miasto (one-pager)</a>
+        <button onclick="openLeadModal()" class="inline-block bg-white border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-semibold px-8 py-4 rounded-lg transition cursor-pointer">Pobierz Pakiet Miasto (one-pager)</button>
       </div>
     </div>
   </div>
@@ -1055,12 +1055,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="font-semibold text-n4z-green text-sm">Czytaj →</p>
       </a>
 
-      <a href="pakiet-miasto.jpg" target="_blank" rel="noopener" class="group lift reveal bg-slate-900 text-white rounded-2xl p-6">
+      <button onclick="openLeadModal()" class="group lift reveal bg-slate-900 text-white rounded-2xl p-6 text-left w-full cursor-pointer border-0">
         <p class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">One-pager A4 · PDF</p>
         <h3 class="text-lg font-bold mb-2">Pakiet Miasto — one-pager</h3>
         <p class="text-slate-300 text-sm mb-3">8 obszarów wdrożenia, skąd inwestor zarabia.</p>
         <p class="font-semibold gradient-text text-sm">Pobierz →</p>
-      </a>
+      </button>
     </div>
 
     <div class="text-center mt-12 text-sm text-slate-500">
@@ -1346,6 +1346,176 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }, { threshold: 0.4 });
   document.querySelectorAll('[data-count]').forEach(function(el){ countObs.observe(el); });
 })();
+</script>
+
+<!-- ============================================================
+     LEAD GATE MODAL — Pakiet Miasto
+     ============================================================ -->
+<div id="lead-modal" role="dialog" aria-modal="true" aria-labelledby="lead-modal-title"
+     style="display:none; position:fixed; inset:0; z-index:9999; overflow-y:auto; background:rgba(15,23,42,0.75); backdrop-filter:blur(4px);">
+  <div style="min-height:100%; display:flex; align-items:center; justify-content:center; padding:24px;">
+    <div style="background:#fff; border-radius:20px; max-width:480px; width:100%; padding:40px 36px; position:relative; box-shadow:0 24px 60px rgba(0,0,0,0.18);">
+
+      <!-- Close -->
+      <button onclick="closeLeadModal()" aria-label="Zamknij"
+              style="position:absolute; top:16px; right:16px; background:none; border:none; cursor:pointer; color:#94a3b8; font-size:22px; line-height:1; padding:4px 8px;">✕</button>
+
+      <!-- Header -->
+      <div style="margin-bottom:28px;">
+        <p style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#4CAF50; margin-bottom:8px;">Pakiet Miasto · one-pager PDF</p>
+        <h2 id="lead-modal-title" style="font-size:22px; font-weight:900; color:#0f172a; margin:0 0 8px;">Zostaw dane — pobierz dokument</h2>
+        <p style="font-size:14px; color:#64748b; margin:0;">Dokument jest poufny. Prześlemy go na podany adres e-mail.</p>
+      </div>
+
+      <!-- Form — stan: formularz -->
+      <form id="lead-form" onsubmit="submitLeadForm(event)" novalidate>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px;">
+          <div>
+            <label style="display:block; font-size:13px; font-weight:600; margin-bottom:5px; color:#0f172a;" for="lg-name">Imię *</label>
+            <input id="lg-name" name="name" type="text" required autocomplete="given-name"
+                   style="width:100%; padding:10px 12px; border:1.5px solid #e2e8f0; border-radius:8px; font-size:14px; outline:none; box-sizing:border-box; transition:border-color 0.15s;"
+                   onfocus="this.style.borderColor='#4CAF50'" onblur="this.style.borderColor='#e2e8f0'">
+          </div>
+          <div>
+            <label style="display:block; font-size:13px; font-weight:600; margin-bottom:5px; color:#0f172a;" for="lg-last">Nazwisko *</label>
+            <input id="lg-last" name="last_name" type="text" required autocomplete="family-name"
+                   style="width:100%; padding:10px 12px; border:1.5px solid #e2e8f0; border-radius:8px; font-size:14px; outline:none; box-sizing:border-box; transition:border-color 0.15s;"
+                   onfocus="this.style.borderColor='#4CAF50'" onblur="this.style.borderColor='#e2e8f0'">
+          </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <label style="display:block; font-size:13px; font-weight:600; margin-bottom:5px; color:#0f172a;" for="lg-email">E-mail służbowy *</label>
+          <input id="lg-email" name="email" type="email" required autocomplete="email"
+                 style="width:100%; padding:10px 12px; border:1.5px solid #e2e8f0; border-radius:8px; font-size:14px; outline:none; box-sizing:border-box; transition:border-color 0.15s;"
+                 onfocus="this.style.borderColor='#4CAF50'" onblur="this.style.borderColor='#e2e8f0'">
+        </div>
+
+        <div style="margin-bottom:14px;">
+          <label style="display:block; font-size:13px; font-weight:600; margin-bottom:5px; color:#0f172a;" for="lg-phone">Telefon *</label>
+          <input id="lg-phone" name="phone" type="tel" required autocomplete="tel" placeholder="+48 ..."
+                 style="width:100%; padding:10px 12px; border:1.5px solid #e2e8f0; border-radius:8px; font-size:14px; outline:none; box-sizing:border-box; transition:border-color 0.15s;"
+                 onfocus="this.style.borderColor='#4CAF50'" onblur="this.style.borderColor='#e2e8f0'">
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px;">
+          <div>
+            <label style="display:block; font-size:13px; font-weight:600; margin-bottom:5px; color:#0f172a;" for="lg-company">Firma</label>
+            <input id="lg-company" name="company" type="text" autocomplete="organization"
+                   style="width:100%; padding:10px 12px; border:1.5px solid #e2e8f0; border-radius:8px; font-size:14px; outline:none; box-sizing:border-box; transition:border-color 0.15s;"
+                   onfocus="this.style.borderColor='#4CAF50'" onblur="this.style.borderColor='#e2e8f0'">
+          </div>
+          <div>
+            <label style="display:block; font-size:13px; font-weight:600; margin-bottom:5px; color:#0f172a;" for="lg-stanowisko">Stanowisko</label>
+            <input id="lg-stanowisko" name="stanowisko" type="text"
+                   style="width:100%; padding:10px 12px; border:1.5px solid #e2e8f0; border-radius:8px; font-size:14px; outline:none; box-sizing:border-box; transition:border-color 0.15s;"
+                   onfocus="this.style.borderColor='#4CAF50'" onblur="this.style.borderColor='#e2e8f0'">
+          </div>
+        </div>
+
+        <p style="font-size:11px; color:#94a3b8; margin-bottom:20px;">
+          Wysyłając formularz akceptujesz
+          <a href="/polityka-prywatnosci" style="color:#4CAF50;" target="_blank">Politykę prywatności</a>
+          NET4ZERO Sp. z o.o. Twoje dane są przetwarzane wyłącznie w celu przekazania materiału i ewentualnego kontaktu handlowego.
+        </p>
+
+        <div id="lead-error" style="display:none; background:#fef2f2; border:1px solid #fca5a5; color:#dc2626; padding:10px 14px; border-radius:8px; font-size:13px; margin-bottom:16px;"></div>
+
+        <button type="submit" id="lead-submit"
+                style="width:100%; padding:14px; background:linear-gradient(135deg,#4CAF50,#03A9F4); color:#fff; font-weight:700; font-size:15px; border:none; border-radius:10px; cursor:pointer; transition:opacity 0.15s;">
+          Pobierz Pakiet Miasto →
+        </button>
+      </form>
+
+      <!-- Stan: sukces / link do pobrania -->
+      <div id="lead-success" style="display:none; text-align:center; padding:8px 0;">
+        <div style="width:56px; height:56px; background:linear-gradient(135deg,rgba(76,175,80,0.12),rgba(3,169,244,0.12)); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 16px;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3 style="font-size:18px; font-weight:800; color:#0f172a; margin:0 0 8px;">Dane zapisane — dziękujemy!</h3>
+        <p style="font-size:14px; color:#64748b; margin:0 0 24px;">Dokument otworzy się w nowej karcie. Sprawdź też skrzynkę e-mail.</p>
+        <a id="lead-download-link" href="#" target="_blank" rel="noopener"
+           style="display:inline-block; padding:14px 28px; background:linear-gradient(135deg,#4CAF50,#03A9F4); color:#fff; font-weight:700; font-size:15px; border-radius:10px; text-decoration:none;">
+          Otwórz Pakiet Miasto →
+        </a>
+        <p style="font-size:12px; color:#94a3b8; margin-top:16px;">Wyślemy Ci również link na podany adres e-mail.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+// ---- Lead Gate Modal ----
+function openLeadModal() {
+  var m = document.getElementById('lead-modal');
+  m.style.display = 'block';
+  document.body.style.overflow = 'hidden';
+  setTimeout(function(){ document.getElementById('lg-name').focus(); }, 50);
+}
+
+function closeLeadModal() {
+  document.getElementById('lead-modal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+// Zamknij klikając tło
+document.getElementById('lead-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeLeadModal();
+});
+
+// Zamknij Escapem
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLeadModal();
+});
+
+async function submitLeadForm(e) {
+  e.preventDefault();
+  var btn   = document.getElementById('lead-submit');
+  var errEl = document.getElementById('lead-error');
+
+  errEl.style.display = 'none';
+  btn.disabled = true;
+  btn.textContent = 'Wysyłam...';
+
+  var form = e.target;
+  var data = {
+    name:        form.name.value.trim(),
+    last_name:   form.last_name.value.trim(),
+    email:       form.email.value.trim(),
+    phone:       form.phone.value.trim(),
+    company:     form.company.value.trim(),
+    stanowisko:  form.stanowisko.value.trim()
+  };
+
+  try {
+    var res = await fetch('/api/lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    var json = await res.json();
+
+    if (json.success) {
+      document.getElementById('lead-form').style.display    = 'none';
+      document.getElementById('lead-success').style.display = 'block';
+      var dl = document.getElementById('lead-download-link');
+      dl.href = json.download_url;
+      // auto-open w nowej karcie
+      window.open(json.download_url, '_blank', 'noopener');
+    } else {
+      errEl.textContent    = json.error || 'Coś poszło nie tak. Spróbuj ponownie.';
+      errEl.style.display  = 'block';
+      btn.disabled         = false;
+      btn.textContent      = 'Pobierz Pakiet Miasto →';
+    }
+  } catch(err) {
+    errEl.textContent   = 'Błąd połączenia. Sprawdź internet i spróbuj ponownie.';
+    errEl.style.display = 'block';
+    btn.disabled        = false;
+    btn.textContent     = 'Pobierz Pakiet Miasto →';
+  }
+}
 </script>
 
 </body>
