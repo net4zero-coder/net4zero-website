@@ -205,40 +205,86 @@
       100% { transform: translate(-60px, -40px) scale(1.1); }
     }
 
-    /* ===== GLOSSY 3D ORBS (replaces flat number badges) ===== */
-    .orb { position: relative; display: inline-flex; align-items: center; justify-content: center;
-      color: #fff; font-weight: 900;
-      background: linear-gradient(135deg, #4CAF50 0%, #03A9F4 100%);
+    /* ===== METALLIC COIN ORBS ===== */
+    .orb {
+      position: relative; display: inline-flex; align-items: center; justify-content: center;
+      color: #fff; font-weight: 900; overflow: hidden;
+      background: linear-gradient(
+        145deg,
+        #1b5e20 0%, #2e7d32 8%, #43a047 16%,
+        #a5d6a7 26%, #f1f8e9 32%,
+        #4CAF50 40%,
+        #03A9F4 54%,
+        #b3e5fc 63%, #e1f5fe 68%,
+        #0288d1 76%, #01579b 86%,
+        #388e3c 93%, #1b5e20 100%
+      );
       box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.45),
-        inset 0 -2px 6px rgba(0,0,0,0.18),
-        0 6px 18px -4px rgba(3,169,244,0.5),
-        0 2px 6px -1px rgba(76,175,80,0.35);
-      transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease;
+        inset 0 2px 3px rgba(255,255,255,0.7),
+        inset 0 -3px 8px rgba(0,0,0,0.3),
+        inset -1px 0 4px rgba(0,0,0,0.12),
+        0 8px 24px -4px rgba(3,169,244,0.55),
+        0 3px 8px -1px rgba(76,175,80,0.4),
+        0 0 0 1px rgba(255,255,255,0.15);
+      transition: box-shadow .35s ease;
     }
+    /* Static highlight rim */
     .orb::before {
-      content: ""; position: absolute; inset: 2px; border-radius: inherit;
-      background: linear-gradient(160deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0) 45%);
+      content: ""; position: absolute; inset: 0; border-radius: inherit; z-index: 2;
+      background: linear-gradient(
+        152deg,
+        rgba(255,255,255,0.72) 0%,
+        rgba(255,255,255,0.38) 14%,
+        rgba(255,255,255,0.06) 38%,
+        transparent 60%
+      );
       pointer-events: none;
     }
+    /* Animated sheen sweep */
     .orb::after {
-      content: ""; position: absolute; inset: 0; border-radius: inherit;
-      background: radial-gradient(120% 60% at 50% 0%, rgba(255,255,255,0.25), transparent 60%);
-      pointer-events: none;
+      content: ""; position: absolute;
+      top: -50%; left: -80%; width: 55%; height: 200%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+      transform: skewX(-18deg);
+      animation: orb-sheen 3.8s ease-in-out infinite;
+      pointer-events: none; z-index: 3;
     }
-    .orb > * { position: relative; z-index: 1; }
-    .group:hover .orb, .orb-hover:hover .orb { transform: translateY(-2px) scale(1.05);
-      box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.5),
-        inset 0 -2px 6px rgba(0,0,0,0.18),
-        0 12px 30px -6px rgba(3,169,244,0.7),
-        0 4px 10px -2px rgba(76,175,80,0.4);
+    @keyframes orb-sheen {
+      0%, 55%, 100% { left: -80%; opacity: 0; }
+      12% { opacity: 1; }
+      48% { left: 140%; opacity: 0.85; }
     }
-    .orb-dark { background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    .orb > * { position: relative; z-index: 4; }
+    /* Coin flip on hover */
+    @keyframes coin-flip {
+      0%   { transform: perspective(320px) rotateY(0deg)   scaleX(1); }
+      22%  { transform: perspective(320px) rotateY(90deg)  scaleX(0.04); }
+      50%  { transform: perspective(320px) rotateY(180deg) scaleX(1); }
+      72%  { transform: perspective(320px) rotateY(270deg) scaleX(0.04); }
+      100% { transform: perspective(320px) rotateY(360deg) scaleX(1); }
+    }
+    .group:hover .orb, .orb-hover:hover .orb, .lift:hover .orb {
+      animation: coin-flip 0.78s cubic-bezier(0.4, 0, 0.2, 1) forwards;
       box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.18),
-        inset 0 -2px 6px rgba(0,0,0,0.4),
-        0 6px 18px -4px rgba(0,0,0,0.5);
+        inset 0 2px 3px rgba(255,255,255,0.8),
+        inset 0 -3px 8px rgba(0,0,0,0.3),
+        0 16px 40px -6px rgba(3,169,244,0.75),
+        0 6px 14px -2px rgba(76,175,80,0.55),
+        0 0 28px rgba(179,229,252,0.3);
+    }
+    .orb-dark {
+      background: linear-gradient(
+        145deg,
+        #0d1117 0%, #1e293b 12%, #334155 26%,
+        #94a3b8 44%, #cbd5e1 50%,
+        #64748b 58%, #334155 72%,
+        #1e293b 86%, #0f172a 100%
+      );
+      box-shadow:
+        inset 0 2px 3px rgba(255,255,255,0.32),
+        inset 0 -3px 8px rgba(0,0,0,0.55),
+        0 8px 22px -4px rgba(0,0,0,0.65),
+        0 0 0 1px rgba(255,255,255,0.08);
     }
 
     /* ===== HOVER LIFT FOR CARDS ===== */
