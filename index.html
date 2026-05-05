@@ -271,6 +271,31 @@
         0 6px 14px -2px rgba(76,175,80,0.55),
         0 0 32px rgba(129,212,250,0.28);
     }
+    /* ===== PATH BADGE — czysty gradient-border badge dla kart A/B ===== */
+    .path-badge {
+      width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+      display: inline-flex; align-items: center; justify-content: center;
+      position: relative; overflow: visible;
+    }
+    .path-badge::before {
+      content: ''; position: absolute; inset: 0; border-radius: 50%;
+      background: linear-gradient(135deg, #4CAF50 0%, #03A9F4 100%);
+    }
+    .path-badge::after {
+      content: ''; position: absolute; inset: 2.5px; border-radius: 50%;
+      background: white;
+    }
+    .path-badge > span {
+      position: relative; z-index: 2; font-weight: 900; font-size: 1.1rem; line-height: 1;
+      background: linear-gradient(135deg, #4CAF50 0%, #03A9F4 100%);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .path-badge-dark::after { background: #0F172A; }
+    .path-badge-dark > span {
+      background: linear-gradient(135deg, #81C784 0%, #4FC3F7 100%);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
     .orb-dark {
       background:
         repeating-linear-gradient(180deg,
@@ -417,19 +442,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section id="hero" class="hero-mesh bg-n4z-cream py-20 px-6">
   <div class="max-w-6xl mx-auto relative">
     <p class="text-n4z-green font-semibold text-sm uppercase tracking-widest text-center reveal">System kaucyjny od 1 października 2025</p>
-    <h1 class="text-5xl sm:text-7xl font-black mt-6 leading-[1.05] text-center max-w-5xl mx-auto reveal">Recyklomat na osiedlu.<br><span class="gradient-text">System kaucyjny tam, gdzie mieszkają ludzie.</span></h1>
+    <h1 class="text-5xl sm:text-7xl font-black mt-6 leading-[1.05] text-center max-w-5xl mx-auto reveal"><span class="gradient-text">Kaucja pod blokiem.</span><br><span class="text-slate-800">Recyklomat na osiedlu.</span></h1>
     <p class="text-xl text-slate-700 mt-8 leading-relaxed max-w-3xl mx-auto text-center reveal">Pierwsza w Polsce sieć osiedlowych punktów zwrotu butelek i puszek. Wdrażamy, integrujemy, obsługujemy. Bez Twojego CAPEX-u — albo z Twoim, jeśli inwestujesz.</p>
 
     <div class="mt-14 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-      <a href="#lokalizacja" class="group lift bg-white rounded-3xl p-8 border-2 border-transparent hover:border-n4z-green reveal">
-        <div class="orb w-12 h-12 rounded-xl text-xl mb-4"><span>A</span></div>
+      <a href="#lokalizacja" class="group lift bg-white rounded-2xl p-8 border-2 border-transparent hover:border-n4z-green reveal">
+        <div class="path-badge mb-4"><span>A</span></div>
         <p class="text-xs font-mono uppercase tracking-wider text-slate-500 mb-2">Ścieżka A · Spółdzielnia, gmina, ZGL, szkoła, urząd</p>
         <h2 class="text-2xl font-bold mb-3">Mam lokalizację.</h2>
         <p class="text-slate-700 mb-6">Wydzierżawiają nam Państwo od 5 do 30 m². Pobierają czynsz. Zostają Innym Punktem Zbierającym (IPZ). Bez maszyny, bez BDO, bez ryzyka operacyjnego.</p>
         <span class="cta-glow inline-flex items-center gap-2 gradient-n4z text-white font-semibold px-6 py-3 rounded-lg shadow-md">Wydzierżaw nam teren →</span>
       </a>
-      <a href="#inwestor" class="group lift bg-slate-900 text-white rounded-3xl p-8 reveal">
-        <div class="orb orb-dark w-12 h-12 rounded-xl text-xl mb-4"><span>B</span></div>
+      <a href="#inwestor" class="group lift bg-slate-900 text-white rounded-2xl p-8 reveal">
+        <div class="path-badge path-badge-dark mb-4"><span>B</span></div>
         <p class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">Ścieżka B · Inwestor, partner operacyjny, fundusz</p>
         <h2 class="text-2xl font-bold mb-3">Chcę zainwestować.</h2>
         <p class="text-slate-300 mb-6">Kupujesz maszyny (gotówka lub leasing). Zostajesz właścicielem infrastruktury. My obsługujemy 8 obszarów wdrożenia pod klucz.</p>
