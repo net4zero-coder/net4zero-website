@@ -250,7 +250,7 @@
       top: -50%; left: -80%; width: 55%; height: 200%;
       background: linear-gradient(90deg, transparent, rgba(255,255,255,0.52), transparent);
       transform: skewX(-18deg);
-      animation: orb-sheen 4.2s ease-in-out infinite;
+      animation: orb-sheen 10s ease-in-out infinite;
       pointer-events: none; z-index: 3;
     }
     @keyframes orb-sheen {
@@ -332,11 +332,23 @@
     .eco-badge:hover { transform: translateY(-2px); border-color: rgba(76,175,80,0.4);
       box-shadow: 0 6px 14px rgba(15,23,42,0.06), 0 20px 38px -18px rgba(3,169,244,0.35); }
     .eco-icon {
-      width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+      width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
       display: inline-flex; align-items: center; justify-content: center;
-      overflow: hidden; padding: 0; background: none; box-shadow: none;
+      background: linear-gradient(135deg, rgba(76,175,80,0.12), rgba(3,169,244,0.12));
+      color: #03A9F4;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
     }
-    .eco-icon img { width: 40px; height: 40px; display: block; object-fit: contain; }
+    .eco-icon svg { width: 22px; height: 22px; }
+
+    /* ===== STAT ICON — czyste kółko dla kart statystyk (bez metalicznego efektu) ===== */
+    .stat-icon {
+      width: 56px; height: 56px; border-radius: 50%; flex-shrink: 0;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, rgba(76,175,80,0.14) 0%, rgba(3,169,244,0.14) 100%);
+      color: #03A9F4;
+      border: 1.5px solid rgba(3,169,244,0.18);
+    }
+    .stat-icon svg { width: 26px; height: 26px; }
 
     /* ===== STATS COUNT-UP CARD (brand promise) ===== */
     .stat-card {
@@ -431,8 +443,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="py-5 px-6 bg-white border-b border-slate-100">
   <div class="max-w-4xl mx-auto flex flex-wrap justify-center items-center gap-x-10 gap-y-3 text-sm text-slate-600">
     <div class="flex items-center gap-2">
-      <span class="w-2 h-2 rounded-full bg-n4z-blue inline-block shrink-0"></span>
+      <span class="w-2 h-2 rounded-full bg-n4z-green inline-block shrink-0"></span>
       <span><strong class="text-slate-900">ponad 300 lokalizacji</strong> w procesie kontraktowania</span>
+    </div>
+    <div class="hidden sm:block w-px h-4 bg-slate-200"></div>
+    <div class="flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-n4z-blue inline-block shrink-0"></span>
+      <span>Wdrożenie pod klucz <strong class="text-slate-900">w 60 dni</strong></span>
+    </div>
+    <div class="hidden sm:block w-px h-4 bg-slate-200"></div>
+    <div class="flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-slate-400 inline-block shrink-0"></span>
+      <span>Serwis <strong class="text-slate-900">24h · dostępność 98%</strong></span>
     </div>
   </div>
 </section>
@@ -454,24 +476,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="grid sm:grid-cols-3 gap-6">
       <div class="stat-card lift reveal text-center">
-        <div class="orb w-14 h-14 rounded-2xl mx-auto mb-5">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div class="stat-icon mx-auto mb-5">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
         </div>
         <p class="stat-num"><span data-count="8">0</span><span class="text-3xl ml-1">tyg.</span></p>
         <p class="font-bold mt-3">Wdrożenie pod klucz</p>
         <p class="text-sm text-slate-600 mt-1">od podpisania umowy do uruchomienia</p>
       </div>
       <div class="stat-card lift reveal text-center">
-        <div class="orb w-14 h-14 rounded-2xl mx-auto mb-5">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><path d="M21 12c0 5-3.5 9-9 10c-5.5-1-9-5-9-10V6l9-4l9 4z"/><path d="M9 12h6M12 9v6"/></svg>
+        <div class="stat-icon mx-auto mb-5">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12c0 5-3.5 9-9 10c-5.5-1-9-5-9-10V6l9-4l9 4z"/><path d="M9 12h6M12 9v6"/></svg>
         </div>
         <p class="stat-num">0<span class="text-3xl ml-1">zł</span></p>
         <p class="font-bold mt-3">CAPEX dla lokalizacji</p>
         <p class="text-sm text-slate-600 mt-1">bez maszyny, bez leasingu, bez serwisu</p>
       </div>
       <div class="stat-card lift reveal text-center">
-        <div class="orb w-14 h-14 rounded-2xl mx-auto mb-5">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="w-7 h-7"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        <div class="stat-icon mx-auto mb-5">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
         </div>
         <p class="stat-num"><span data-count="8">0</span></p>
         <p class="font-bold mt-3">Obszarów pod jedną umową</p>
@@ -492,76 +514,76 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="marquee-track">
       <!-- ZESTAW 1 -->
       <div class="eco-badge">
-        <span class="eco-icon"><img src="logo-512.webp" width="40" height="40" alt="" loading="lazy" aria-hidden="true"></span>
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span>
         <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Hardware</p><p class="font-bold text-sm leading-tight">Producenci RVM</p></div>
       </div>
       <div class="eco-badge">
-        <span class="eco-icon"><img src="logo-512.webp" width="40" height="40" alt="" loading="lazy" aria-hidden="true"></span>
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 11h20M6 16h4"/></svg></span>
         <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Finansowanie</p><p class="font-bold text-sm leading-tight">Partnerzy finansujący</p></div>
       </div>
       <div class="eco-badge">
-        <span class="eco-icon"><img src="logo-512.webp" width="40" height="40" alt="" loading="lazy" aria-hidden="true"></span>
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
         <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Kaucja</p><p class="font-bold text-sm leading-tight">Operatorzy kaucyjni</p></div>
       </div>
       <div class="eco-badge">
-        <span class="eco-icon"><img src="logo-512.webp" width="40" height="40" alt="" loading="lazy" aria-hidden="true"></span>
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M16 14h2M3 10h18"/></svg></span>
         <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Płatności</p><p class="font-bold text-sm leading-tight">Dostawcy płatności bezgotówkowych</p></div>
       </div>
       <div class="eco-badge">
-        <span class="eco-icon"><img src="logo-512.webp" width="40" height="40" alt="" loading="lazy" aria-hidden="true"></span>
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h13l5 5v5h-2"/><path d="M3 7v10h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></span>
         <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Logistyka</p><p class="font-bold text-sm leading-tight">Operatorzy logistyczni</p></div>
       </div>
       <div class="eco-badge">
-        <span class="eco-icon"><img src="logo-512.webp" width="40" height="40" alt="" loading="lazy" aria-hidden="true"></span>
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2v6h6"/><path d="M4 4v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6a2 2 0 0 0-2 2z"/><path d="M8 13h8M8 17h5"/></svg></span>
         <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Rozliczenia</p><p class="font-bold text-sm leading-tight">Księgowość i back-office</p></div>
       </div>
       <div class="eco-badge">
-        <span class="eco-icon"><img src="logo-512.webp" width="40" height="40" alt="" loading="lazy" aria-hidden="true"></span>
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 9-8 10c-4.5-1-8-5-8-10V6l8-4z"/><path d="M9 12l2 2l4-4"/></svg></span>
         <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">SLA</p><p class="font-bold text-sm leading-tight">Niezawodny serwis · all-risk</p></div>
       </div>
       <div class="eco-badge">
-        <span class="eco-icon"><img src="logo-512.webp" width="40" height="40" alt="" loading="lazy" aria-hidden="true"></span>
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
         <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Ekspozycja</p><p class="font-bold text-sm leading-tight">Branding · sieci reklamowe</p></div>
       </div>
       <div class="eco-badge">
-        <span class="eco-icon"><img src="logo-512.webp" width="40" height="40" alt="" loading="lazy" aria-hidden="true"></span>
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2l4-4"/><path d="M14 2v6h6"/><path d="M4 4v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6a2 2 0 0 0-2 2z"/></svg></span>
         <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Relacje</p><p class="font-bold text-sm leading-tight">Negocjacje i zgody</p></div>
       </div>
       <!-- ZESTAW 2 (duplikat dla nieskończonej pętli) -->
       <div class="eco-badge">
-        <span class="eco-icon"><img src="logo-512.webp" width="40" height="40" alt="" loading="lazy" aria-hidden="true"></span>
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span>
         <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Hardware</p><p class="font-bold text-sm leading-tight">Producenci RVM</p></div>
       </div>
       <div class="eco-badge">
-        <span class="eco-icon"><img src="logo-512.webp" width="40" height="40" alt="" loading="lazy" aria-hidden="true"></span>
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 11h20M6 16h4"/></svg></span>
         <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Finansowanie</p><p class="font-bold text-sm leading-tight">Partnerzy finansujący</p></div>
       </div>
       <div class="eco-badge">
-        <span class="eco-icon"><img src="logo-512.webp" width="40" height="40" alt="" loading="lazy" aria-hidden="true"></span>
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
         <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Kaucja</p><p class="font-bold text-sm leading-tight">Operatorzy kaucyjni</p></div>
       </div>
       <div class="eco-badge">
-        <span class="eco-icon"><img src="logo-512.webp" width="40" height="40" alt="" loading="lazy" aria-hidden="true"></span>
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M16 14h2M3 10h18"/></svg></span>
         <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Płatności</p><p class="font-bold text-sm leading-tight">Dostawcy płatności bezgotówkowych</p></div>
       </div>
       <div class="eco-badge">
-        <span class="eco-icon"><img src="logo-512.webp" width="40" height="40" alt="" loading="lazy" aria-hidden="true"></span>
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h13l5 5v5h-2"/><path d="M3 7v10h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></span>
         <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Logistyka</p><p class="font-bold text-sm leading-tight">Operatorzy logistyczni</p></div>
       </div>
       <div class="eco-badge">
-        <span class="eco-icon"><img src="logo-512.webp" width="40" height="40" alt="" loading="lazy" aria-hidden="true"></span>
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2v6h6"/><path d="M4 4v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6a2 2 0 0 0-2 2z"/><path d="M8 13h8M8 17h5"/></svg></span>
         <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Rozliczenia</p><p class="font-bold text-sm leading-tight">Księgowość i back-office</p></div>
       </div>
       <div class="eco-badge">
-        <span class="eco-icon"><img src="logo-512.webp" width="40" height="40" alt="" loading="lazy" aria-hidden="true"></span>
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 9-8 10c-4.5-1-8-5-8-10V6l8-4z"/><path d="M9 12l2 2l4-4"/></svg></span>
         <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">SLA</p><p class="font-bold text-sm leading-tight">Niezawodny serwis · all-risk</p></div>
       </div>
       <div class="eco-badge">
-        <span class="eco-icon"><img src="logo-512.webp" width="40" height="40" alt="" loading="lazy" aria-hidden="true"></span>
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
         <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Ekspozycja</p><p class="font-bold text-sm leading-tight">Branding · sieci reklamowe</p></div>
       </div>
       <div class="eco-badge">
-        <span class="eco-icon"><img src="logo-512.webp" width="40" height="40" alt="" loading="lazy" aria-hidden="true"></span>
+        <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2l4-4"/><path d="M14 2v6h6"/><path d="M4 4v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6a2 2 0 0 0-2 2z"/></svg></span>
         <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Relacje</p><p class="font-bold text-sm leading-tight">Negocjacje i zgody</p></div>
       </div>
     </div>
