@@ -18,8 +18,13 @@
 | `robots.txt` | Reguły dla crawlerów |
 | `vercel.json` | Konfiguracja hostingu (security headers, redirecty, cache) |
 | `.gitignore` | Pliki wykluczone z git |
-| `logoPNG.png` | Logo NET4ZERO (do optymalizacji w Etapie 4) |
-| `seo-keywords.md` | Lista słów kluczowych SEO |
+| `logo-{80,160,512}.webp` | Logo NET4ZERO w formatach WebP (responsive) |
+| `apple-touch-icon.png`, `favicon-32.png` | Ikony |
+| `og-image.png` | Open Graph image |
+| `pakiet-miasto.jpg` | One-pager Pakiet Miasto (gated lead magnet) |
+| `lead-magnets/` | PDF/DOCX do pobrania (lead magnety publiczne) |
+| `api/lead.js` | Vercel function — gated lead capture (Brevo) |
+| `seo-keywords.md` | Lista słów kluczowych SEO (v0.1) |
 
 ---
 
