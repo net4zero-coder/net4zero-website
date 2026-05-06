@@ -15,11 +15,15 @@ package.json
 .vercel
 
 # Pliki robocze SEO — NIE publikować w repo PUBLIC
+seo-keywords.md
 seo-strategia-90dni.md
 seo-keywords-mieszkaniec.md
 seo-missing-pages.md
 MASTER_PROMPT_SEO_CLAUDE_IN_CHROME.md
 seo-reindex/
+
+# Backup DNS / infra — nie publikować
+dns_backup_*.md
 
 # Generator i źródła lead magnetów (pozostają lokalnie)
 lead-magnets/*.py
