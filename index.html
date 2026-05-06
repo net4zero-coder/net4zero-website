@@ -839,7 +839,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="text-slate-700 leading-relaxed mb-6">Każda lokalizacja jest kalkulowana indywidualnie w trzech scenariuszach (P10 / P50 / P90), z uwzględnieniem gęstości zaludnienia, wynegocjowanej stawki handling fee i potencjału reklamowego. <strong>Pełny model z IRR 60 miesięcy</strong> przekazujemy po podpisaniu NDA i audycie lokalizacji.</p>
       <div class="flex flex-wrap gap-4">
         <a href="#formularz-inwestor" class="inline-block gradient-n4z hover:opacity-90 text-white font-semibold px-8 py-4 rounded-lg shadow-lg">Zamów audyt i model finansowy →</a>
-        <button onclick="openLeadModal()" class="inline-block bg-white border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-semibold px-8 py-4 rounded-lg transition cursor-pointer">Pobierz Pakiet Miasto (one-pager)</button>
+        <button onclick="openLeadModal()" class="inline-block bg-white border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-semibold px-8 py-4 rounded-lg transition cursor-pointer">Pobierz Pakiet Operator (one-pager)</button>
       </div>
     </div>
   </div>
@@ -1104,7 +1104,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <button onclick="openLeadModal()" class="group lift reveal bg-slate-900 text-white rounded-2xl p-6 text-left w-full cursor-pointer border-0">
         <p class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-2">One-pager A4 · PDF</p>
-        <h3 class="text-lg font-bold mb-2">Pakiet Miasto — one-pager</h3>
+        <h3 class="text-lg font-bold mb-2">Pakiet Operator — one-pager</h3>
         <p class="text-slate-300 text-sm mb-3">8 obszarów wdrożenia, skąd inwestor zarabia.</p>
         <p class="font-semibold gradient-text text-sm">Pobierz →</p>
       </button>
@@ -1397,7 +1397,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </script>
 
 <!-- ============================================================
-     LEAD GATE MODAL — Pakiet Miasto
+     LEAD GATE MODAL — Pakiet Operator
      ============================================================ -->
 <div id="lead-modal" role="dialog" aria-modal="true" aria-labelledby="lead-modal-title"
      style="display:none; position:fixed; inset:0; z-index:9999; overflow-y:auto; background:rgba(15,23,42,0.75); backdrop-filter:blur(4px);">
@@ -1410,7 +1410,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <!-- Header -->
       <div style="margin-bottom:28px;">
-        <p style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#4CAF50; margin-bottom:8px;">Pakiet Miasto · one-pager PDF</p>
+        <p style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#4CAF50; margin-bottom:8px;">Pakiet Operator · one-pager PDF</p>
         <h2 id="lead-modal-title" style="font-size:22px; font-weight:900; color:#0f172a; margin:0 0 8px;">Zostaw dane — pobierz dokument</h2>
         <p style="font-size:14px; color:#64748b; margin:0;">Dokument jest poufny. Prześlemy go na podany adres e-mail.</p>
       </div>
@@ -1471,7 +1471,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <button type="submit" id="lead-submit"
                 style="width:100%; padding:14px; background:linear-gradient(135deg,#4CAF50,#03A9F4); color:#fff; font-weight:700; font-size:15px; border:none; border-radius:10px; cursor:pointer; transition:opacity 0.15s;">
-          Pobierz Pakiet Miasto →
+          Pobierz Pakiet Operator →
         </button>
       </form>
 
@@ -1484,7 +1484,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p style="font-size:14px; color:#64748b; margin:0 0 24px;">Dokument otworzy się w nowej karcie. Sprawdź też skrzynkę e-mail.</p>
         <a id="lead-download-link" href="#" target="_blank" rel="noopener"
            style="display:inline-block; padding:14px 28px; background:linear-gradient(135deg,#4CAF50,#03A9F4); color:#fff; font-weight:700; font-size:15px; border-radius:10px; text-decoration:none;">
-          Otwórz Pakiet Miasto →
+          Otwórz Pakiet Operator →
         </a>
         <p style="font-size:12px; color:#94a3b8; margin-top:16px;">Wyślemy Ci również link na podany adres e-mail.</p>
       </div>
@@ -1555,13 +1555,13 @@ async function submitLeadForm(e) {
       errEl.textContent    = json.error || 'Coś poszło nie tak. Spróbuj ponownie.';
       errEl.style.display  = 'block';
       btn.disabled         = false;
-      btn.textContent      = 'Pobierz Pakiet Miasto →';
+      btn.textContent      = 'Pobierz Pakiet Operator →';
     }
   } catch(err) {
     errEl.textContent   = 'Błąd połączenia. Sprawdź internet i spróbuj ponownie.';
     errEl.style.display = 'block';
     btn.disabled        = false;
-    btn.textContent     = 'Pobierz Pakiet Miasto →';
+    btn.textContent     = 'Pobierz Pakiet Operator →';
   }
 }
 </script>

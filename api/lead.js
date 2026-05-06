@@ -27,7 +27,7 @@ export default async function handler(req, res) {
   }
 
   const apiKey    = process.env.BREVO_API_KEY;
-  const listId    = parseInt(process.env.BREVO_LIST_ID || '2', 10);
+  const listId    = parseInt(process.env.BREVO_LIST_ID || '5', 10);
 
   // Dodaj / zaktualizuj kontakt w Brevo → wyzwoli automatyzację na liście
   const contactRes = await fetch(BREVO_CONTACTS_URL, {
@@ -61,6 +61,6 @@ export default async function handler(req, res) {
 
   return res.status(200).json({
     success:      true,
-    download_url: '/pakiet-miasto.jpg'
+    download_url: '/lead-magnets/pakiet-miasto-net4zero.pdf'
   });
 }
