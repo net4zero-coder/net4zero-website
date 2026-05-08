@@ -1,9 +1,9 @@
-// Vercel Serverless Function — Lead Gate dla Pakietu Miasto
+// Vercel Serverless Function — Lead Gate dla Pakietu Operator (10 maszyn)
 // POST /api/lead
 //
 // Env (Vercel Dashboard → Settings → Environment Variables):
 //   BREVO_API_KEY   — klucz xkeysib-... z Brevo → Profile → API Keys
-//   BREVO_LIST_ID   — ID listy "Pakiet Miasto — Leady" z Brevo → Contacts → Lists
+//   BREVO_LIST_ID   — ID listy "Pakiet Operator — Leady" z Brevo → Contacts → Lists (domyślnie 5)
 
 const BREVO_CONTACTS_URL = 'https://api.brevo.com/v3/contacts';
 
@@ -61,6 +61,6 @@ export default async function handler(req, res) {
 
   return res.status(200).json({
     success:      true,
-    download_url: '/lead-magnets/pakiet-miasto-net4zero.pdf'
+    download_url: '/lead-magnets/pakiet-operator-net4zero.pdf'
   });
 }
