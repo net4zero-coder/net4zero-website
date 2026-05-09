@@ -91,4 +91,4 @@
     <priority>0.3</priority>
   </url>
 </urlset>
-<!-- /dziekujemy.html, /404.html i /rodo (duplikat /klauzula-rodo) celowo wykluczone z sitemap (noindex / canonical na duplikat) -->
+<!-- /dziekujemy.html i /404.html celowo wykluczone z sitemap (noindex). /rodo skonsolidowane do /klauzula-rodo z 301 redirect (vercel.json) — usunięte z repo 2026-05-09. -->
