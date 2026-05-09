@@ -44,6 +44,16 @@
       "source": "/index.html",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/rodo",
+      "destination": "/klauzula-rodo",
+      "permanent": true
+    },
+    {
+      "source": "/rodo.html",
+      "destination": "/klauzula-rodo",
+      "permanent": true
     }
   ]
 }
