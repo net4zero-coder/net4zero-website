@@ -71,8 +71,50 @@
     .week-card h3 { margin-top: 0 !important; }
     .week-tag { display: inline-block; background: linear-gradient(135deg, #4CAF50 0%, #03A9F4 100%); color: white; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.75rem; }
   </style>
+  <!-- Google Consent Mode v2 — defaults denied (Cookiebot zaktualizuje po zgodzie) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'functionality_storage': 'granted',
+      'personalization_storage': 'denied',
+      'security_storage': 'granted',
+      'wait_for_update': 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('set', 'url_passthrough', false);
+  </script>
+
+  <!-- Cookiebot CMP (NET4ZERO Production) — manual blocking mode (jawnie owijamy GTM/Clarity, Tailwind CDN nie jest blokowany) -->
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7d17a287-61b5-4e51-bdce-7c1308a665da" data-blockingmode="manual" type="text/javascript"></script>
+
+  <!-- Google Tag Manager (NET4ZERO container) -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NWN45P2K');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Microsoft Clarity (NET4ZERO Production - blokowane przez Cookiebot do zgody na statystyki) -->
+  <script type="text/plain" data-cookieconsent="statistics">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wljiauzpe7");
+  </script>
 </head>
 <body class="bg-white text-slate-900 antialiased">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NWN45P2K"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <header class="border-b border-slate-100 sticky top-0 bg-white/95 backdrop-blur z-40">
   <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
