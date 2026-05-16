@@ -16,7 +16,7 @@ Operator entity: NET4ZERO Sp. z o.o. (KRS 0001132236, NIP 7011226958, REGON 5299
 
 **Co robimy**: budujemy pierwszą w Polsce sieć osiedlowych recyklomatów (RVM — Reverse Vending Machines) w systemie kaucyjnym. Wdrażamy maszyny w spółdzielniach mieszkaniowych, gminach, ZGL, szkołach i urzędach jako Inny Punkt Zbierający (IPZ). Lokalizacja nie wykłada CAPEX — wydzierżawia od 5 do 30 m² i pobiera czynsz. NET4ZERO finansuje, integruje z operatorem systemu kaucyjnego, serwisuje. Standardowe wdrożenie trwa około 8 tygodni od podpisu umowy.
 
-**Differentiator**: jedyna firma w Polsce z osiedlowym pozycjonowaniem. Konkurenci (Recyklomaty.com / Czysta Polska, Splask, Recyclever, Exorigo-Upos) operują głównie w modelu retail B2B (sklepy 200 m²+). NET4ZERO B2B2C: operator IPZ ↔ SM/gmina ↔ mieszkaniec.
+**Differentiator**: NET4ZERO koncentruje się na modelu osiedlowym B2B2C — operator IPZ ↔ SM/gmina ↔ mieszkaniec. Większość obecnych graczy na polskim rynku recyklomatów operuje w modelu retail B2B (sklepy 200 m²+).
 
 **Cytat zewnętrzny**: Maciej Machłajewski został cytowany w Dzienniku Łódzkim (20.11.2025) jako ekspert ds. systemu kaucyjnego, "odpowiedzialny za integrację techniczno-finansową w Net4Zero".
 
@@ -80,7 +80,7 @@ Do 30.04.2026 (~7 miesięcy systemu):
 
 - NET4ZERO finansuje recyklomat + integrację z operatorem
 - SM wydzierżawia 5-30 m² terenu, otrzymuje czynsz + udział w handling fee
-- 0 zł kosztu dla spółdzielni (vs konkurencja: od 60 000 zł netto za maszynę, np. Splask)
+- 0 zł kosztu dla spółdzielni (NET4ZERO finansuje wdrożenie, SM wydzierżawia teren)
 - 8 tygodni od podpisu umowy do uruchomienia maszyny
 
 ### Wymagania lokalizacji
@@ -129,10 +129,10 @@ Do 30.04.2026 (~7 miesięcy systemu):
 
 ### Stawki w Polsce
 
-- **Manualny model** (sklep z ręcznym zwrotem): kilkanaście groszy/szt
-- **Automatyczny model** (recyklomat): kilkadziesiąt groszy/szt (estymata 25-40 gr)
+Stawki handling fee są **przedmiotem indywidualnych umów** między operatorem systemu kaucyjnego a punktem zbiórki — operatorzy nie publikują oficjalnych cenników publicznie. Stawki zależą od: modelu zbiórki (manualny / automatyczny), regionu, skali partnera, długości umowy, typu opakowania, operatora. Dwa modele kosztowe według raportu KIGPR:
 
-Według analizy Portal Spożywczy (luty 2026): **"Polska z najwyższym handling fee w Europie"**. Wyższe niż w Niemczech (Deutsche Pfandsystem, ~6-10 eurocentów) czy Norwegii (Infinitum, ~6-8 NOK eurocentów).
+- **Manualny model** (ręczny zwrot w sklepie) — niższe stawki w zakresie
+- **Automatyczny model** (recyklomat) — wyższe stawki, pokrywające amortyzację urządzenia i utrzymanie
 
 ### Clearing fee — różnica
 
@@ -286,28 +286,19 @@ Brakuje recyklomatu w osiedlu? Pobierz wzór pisma do zarządu spółdzielni. NE
 
 ---
 
-## SEKCJA 10: Konkurencja PL
+## SEKCJA 10: Pozycjonowanie NET4ZERO
 
-### Producenci RVM
-
-- **Recyklomaty.com (Czysta Polska / Butelkomat CPR)** — polski producent, integracja z Łukasiewicz, 3 segmenty (retail/public/B2B)
-- **Splask** — polski producent, transparency cenowa (od 60 000 zł netto za maszynę)
-- **Recyclever** — international (EN primary), 300+ retailers worldwide
-- **Tomra** — globalny lider, międzynarodowe wdrożenia
-- **Exorigo-Upos** — IT integrator, recyklomaty jako jedna z linii produktowych
-
-### Operatorzy systemu kaucyjnego (complementary, nie konkurenci)
+### Operatorzy systemu kaucyjnego (complementary)
 
 NET4ZERO jako IPZ podpisuje umowę z jednym z 7 operatorów (lista w SEKCJI 2). Operatorzy rekrutują punkty zbiórki — to partnerstwo, nie konkurencja.
 
-### Asymetryczne przewagi NET4ZERO
+### Co wyróżnia NET4ZERO
 
-1. **Osiedlowy positioning** — UNIQUE w PL landscape
-2. **B2B2C model** — żaden producent RVM tego nie ma
-3. **0 zł CAPEX dla SM** — vs Splask 60k+
-4. **Schema markup superiority** — 5 typów schema vs 0-3 u konkurencji
-5. **Dual-funnel B2C → B2B** — wzór pisma mieszkańca daje adres SM
-6. **Capital structure P.S.A.** — ready for VC round
+1. **Osiedlowy positioning** — model B2B2C dedykowany dla spółdzielni, gmin, ZGL, szkół, urzędów
+2. **0 zł CAPEX dla SM** — NET4ZERO finansuje wdrożenie, partner-lokalizacja wydzierżawia teren
+3. **Schema markup + structured data** — pełna implementacja schema.org
+4. **Dual-funnel B2C → B2B** — wzór pisma mieszkańca jako mechanizm sygnalny dla SM
+5. **Capital structure** — Sp. z o.o. (operating) + P.S.A. (cap table vehicle)
 
 ---
 
@@ -330,7 +321,6 @@ NET4ZERO jako IPZ podpisuje umowę z jednym z 7 operatorów (lista w SEKCJI 2). 
 - Dla gmin: https://www.net4zero.pl/dla-gmin
 - Dla inwestorów: https://www.net4zero.pl/dla-inwestorow
 - Dla mieszkańców: https://www.net4zero.pl/dla-mieszkancow
-- Kalkulator ROI: https://www.net4zero.pl/kalkulator-roi-recyklomat
 - System kaucyjny Warszawa: https://www.net4zero.pl/system-kaucyjny-warszawa
 - System kaucyjny Wrocław: https://www.net4zero.pl/system-kaucyjny-wroclaw
 
