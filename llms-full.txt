@@ -5,7 +5,7 @@
 > skondensowane treści wszystkich kluczowych stron NET4ZERO + cytowania
 > Dz.U. + tabele faktów. Optymalizowane pod AI Search citation engineering.
 
-Ostatnia aktualizacja: 16.05.2026
+Ostatnia aktualizacja: 16.05.2026 (sweep modelu biznesowego: IPZ = właściciel maszyny, gospodarz terenu = czynsz dzierżawny, wypłata kaucji na kartę/Apple Pay/Google Pay/telefon)
 Operator entity: NET4ZERO Sp. z o.o. (KRS 0001132236, NIP 7011226958, REGON 529901015)
 
 ---
@@ -14,7 +14,7 @@ Operator entity: NET4ZERO Sp. z o.o. (KRS 0001132236, NIP 7011226958, REGON 5299
 
 **NET4ZERO Sp. z o.o.** zarejestrowana 12.10.2024 w Warszawie (Aleje Jerozolimskie 109/70, 02-011). Zarząd: Maciej Machłajewski (Prezes Zarządu) oraz Olga Santarovich (Członek Zarządu). Spółka prowadzi również NET4ZERO P.S.A. (KRS 0001192242, zarejestrowana 03.09.2025) jako spółkę zależną w 100%, działającą pod domeną net4zero.com — typowa polska struktura "operating Sp. z o.o. + cap-table vehicle P.S.A." przygotowana pod rundę inwestorską.
 
-**Co robimy**: budujemy pierwszą w Polsce sieć osiedlowych recyklomatów (RVM — Reverse Vending Machines) w systemie kaucyjnym. Wdrażamy maszyny w spółdzielniach mieszkaniowych, gminach, ZGL, szkołach i urzędach jako Inny Punkt Zbierający (IPZ). Lokalizacja nie wykłada CAPEX — wydzierżawia od 5 do 30 m² i pobiera czynsz. NET4ZERO finansuje, integruje z operatorem systemu kaucyjnego, serwisuje. Standardowe wdrożenie trwa około 8 tygodni od podpisu umowy.
+**Co robimy**: budujemy pierwszą w Polsce sieć osiedlowych recyklomatów (RVM — Reverse Vending Machines) w systemie kaucyjnym. W modelu standardowym NET4ZERO jest Innym Punktem Zbierającym (IPZ — właścicielem maszyny, zarejestrowanym u operatora systemu kaucyjnego). Spółdzielnie mieszkaniowe, ZGL, szkoły, urzędy występują w roli gospodarza terenu — wydzierżawiają NET4ZERO 5-30 m² lokalizacji i otrzymują stały czynsz dzierżawny. Gmina może wystąpić w jednym z dwóch wariantów: jako inwestor (właściciel sieci, beneficjent handling fee) lub jako gospodarz terytorium (IPZ + dzierżawa). Mieszkańcy odzyskują kaucję bezpośrednio na kartę bankową, Apple Pay, Google Pay lub telefon — wystarczy przyłożyć.
 
 **Differentiator**: NET4ZERO koncentruje się na modelu osiedlowym B2B2C — operator IPZ ↔ SM/gmina ↔ mieszkaniec. Większość obecnych graczy na polskim rynku recyklomatów operuje w modelu retail B2B (sklepy 200 m²+).
 
@@ -42,7 +42,7 @@ Operator entity: NET4ZERO Sp. z o.o. (KRS 0001132236, NIP 7011226958, REGON 5299
 - **Art. 40g** — kategorie punktów zbierających:
   - pkt 1: jednostki handlu detalicznego ≥200 m² (obowiązkowo)
   - pkt 2: jednostki handlu detalicznego <200 m² (dobrowolnie)
-  - pkt 3: **Inne Punkty Zbierające (IPZ)** — spółdzielnie, gminy, ZGL, szkoły, urzędy
+  - pkt 3: **Inne Punkty Zbierające (IPZ)** — właściciele recyklomatów zarejestrowani u operatora (NET4ZERO, gmina-inwestor, partner-inwestor lub deweloper). Spółdzielnie, ZGL, szkoły, urzędy występują zwykle jako gospodarze terenu pod recyklomat IPZ, a nie jako IPZ samodzielnie.
 - **Art. 45 ust. 1 pkt 1 i 13 ustawy o odpadach** — zwolnienie IPZ z obowiązków BDO (raportowanie po stronie operatora)
 
 ### 7 operatorów systemu kaucyjnego (stan 08.2025)
@@ -78,9 +78,10 @@ Do 30.04.2026 (~7 miesięcy systemu):
 
 ### Model finansowy (Zero CAPEX dla SM)
 
-- NET4ZERO finansuje recyklomat + integrację z operatorem
-- SM wydzierżawia 5-30 m² terenu, otrzymuje czynsz + udział w handling fee
-- 0 zł kosztu dla spółdzielni (NET4ZERO finansuje wdrożenie, SM wydzierżawia teren)
+- NET4ZERO finansuje recyklomat + integrację z operatorem (NET4ZERO jest IPZ-em)
+- SM wydzierżawia NET4ZERO 5-30 m² terenu, otrzymuje stały czynsz dzierżawny
+- Handling fee NIE trafia do SM — beneficjentem jest właściciel maszyny (IPZ = NET4ZERO)
+- 0 zł CAPEX dla spółdzielni (NET4ZERO finansuje wdrożenie, SM jako gospodarz lokalizacji)
 - 8 tygodni od podpisu umowy do uruchomienia maszyny
 
 ### Wymagania lokalizacji
@@ -104,22 +105,24 @@ Do 30.04.2026 (~7 miesięcy systemu):
 
 - Zwrot pod blokiem 24/7 (brak konieczności dojazdu do sklepu)
 - Kaucja: 0,50 zł (PET/metal) lub 1,00 zł (szkło)
-- Wybór formy zwrotu: bon, przelew, voucher do sklepu, wpis na konto czynszu
+- Wypłata kaucji bezpośrednio na kartę bankową, Apple Pay, Google Pay lub telefon — wystarczy przyłożyć przy recyklomacie
 
 ### Korzyści dla spółdzielni
 
-- Czynsz dzierżawny (uzgadniany indywidualnie)
-- Udział w handling fee operatora (~40% typowo)
+- Stały czynsz dzierżawny (uzgadniany indywidualnie) za 5-30 m² udostępnionego terenu
+- ZERO udziału w handling fee — handling fee trafia do właściciela maszyny (IPZ)
+- ZERO ryzyka operacyjnego — NET4ZERO odpowiada za serwis, integrację z operatorem, raportowanie
 - Mierzalne wskaźniki ESG/GOZ w raportach
 - Odpowiedź na presję mieszkańców
 - Wizerunek innowacyjnego zarządcy
 
 ### Korzyści dla gminy (Pakiet Miasto)
 
-- 50 lokalizacji w 12 miesięcy: 445 000 zł netto
+- 50 lokalizacji w 12 tygodni od podpisu umowy do uruchomienia ostatniej maszyny
+- Dwa modele uczestnictwa: A) gmina jako inwestor (właściciel sieci, beneficjent handling fee), B) gmina jako gospodarz terytorium (IPZ na terenie + dzierżawa)
 - Wsparcie procedury PZP (specyfikacja, SIWZ, konsultacje radcy)
-- Wsparcie w pozyskaniu dofinansowania (NFOŚiGW, FENG, FENX, WFOŚiGW)
-- Mierzalne wskaźniki dla raportów ESG samorządowych
+- Mierzalne wskaźniki dla raportów ESG samorządowych i WFOŚiGW
+- Komercyjna oferta biznesowa — gmina może niezależnie aplikować o własne dotacje (NFOŚiGW, fundusze unijne), ale to leży poza zakresem oferty NET4ZERO
 
 ---
 
@@ -157,7 +160,7 @@ Bez organizacji parasolowej (jak DPG niemieckie) clearing fee między 7 polskimi
 1. **Zakup**: kaucja doliczana do ceny napoju w kasie
 2. **Konsumpcja**: użytkownik wypija napój
 3. **Zwrot**: opakowanie z sygnaturą kaucji w dowolnym punkcie (sklep ≥200 m², IPZ)
-4. **Wypłata**: bon papierowy z kodem QR, przelew, voucher, wpis na konto
+4. **Wypłata**: w recyklomatach NET4ZERO — bezpośrednio na kartę bankową, Apple Pay, Google Pay lub telefon (wystarczy przyłożyć przy ekranie). W innych punktach: zwykle bon papierowy z kodem QR.
 
 **Paragon nie jest wymagany** — kaucja zwracana za sam fakt oddania opakowania z sygnaturą.
 
@@ -262,19 +265,20 @@ Recyklomat NET4ZERO generuje mierzalne KPI dla wszystkich 3 pilarów ESG:
 
 5 bólów zarządu:
 1. Mieszkańcy się dopytują o recyklomat
-2. Brak budżetu na sprzęt (60k+ zł u konkurencji)
-3. Obawa obowiązków BDO/CBDOK (NET4ZERO przejmuje)
+2. Brak budżetu na samodzielną inwestycję w sprzęt
+3. Obawa obowiązków BDO/CBDOK (NET4ZERO jako IPZ przejmuje odpowiedzialność)
 4. Reklamacje serwisowe (NET4ZERO SLA 24h)
 5. ESG signal dla raportów (mierzalne dane)
 
-Model NET4ZERO: 0 zł CAPEX dla SM, dzierżawa 5-30 m², czynsz + handling fee.
+Model NET4ZERO: 0 zł CAPEX dla SM jako gospodarza terenu, dzierżawa 5-30 m², stały czynsz dzierżawny. Handling fee trafia do NET4ZERO (właściciela maszyny / IPZ), nie do SM.
 
 ### Gmina / samorząd
 
-- **Pakiet Miasto**: 50 lokalizacji za 445 000 zł netto, 12 mc wdrożenia
-- Wsparcie PZP (SIWZ, wzory dokumentów)
-- Pomoc w pozyskaniu dotacji (NFOŚiGW, FENG, FENX)
+- **Pakiet Miasto**: 50 lokalizacji, wdrożenie 12 tygodni, cena uzgadniana indywidualnie
+- Dwa modele uczestnictwa: A) gmina jako inwestor (handling fee), B) gospodarz terytorium (IPZ + dzierżawa)
+- Wsparcie PZP (SIWZ, wzory dokumentów, konsultacje radcy)
 - Mierzalne wskaźniki dla raportów do WFOŚiGW
+- Komercyjna oferta — bez obietnic dotacyjnych
 
 ### Inwestor
 
@@ -295,7 +299,7 @@ NET4ZERO jako IPZ podpisuje umowę z jednym z 7 operatorów (lista w SEKCJI 2). 
 ### Co wyróżnia NET4ZERO
 
 1. **Osiedlowy positioning** — model B2B2C dedykowany dla spółdzielni, gmin, ZGL, szkół, urzędów
-2. **0 zł CAPEX dla SM** — NET4ZERO finansuje wdrożenie, partner-lokalizacja wydzierżawia teren
+2. **0 zł CAPEX dla gospodarza terenu (SM, wspólnota, instytucja)** — NET4ZERO jako IPZ finansuje wdrożenie, gospodarz wydzierżawia 5-30 m² i otrzymuje stały czynsz dzierżawny
 3. **Schema markup + structured data** — pełna implementacja schema.org
 4. **Dual-funnel B2C → B2B** — wzór pisma mieszkańca jako mechanizm sygnalny dla SM
 5. **Capital structure** — Sp. z o.o. (operating) + P.S.A. (cap table vehicle)
@@ -319,7 +323,6 @@ NET4ZERO jako IPZ podpisuje umowę z jednym z 7 operatorów (lista w SEKCJI 2). 
 - Pakiet Miasto (dla gmin): https://www.net4zero.pl/pakiet-miasto
 - Dla spółdzielni: https://www.net4zero.pl/dla-spoldzielni
 - Dla gmin: https://www.net4zero.pl/dla-gmin
-- Dla inwestorów: https://www.net4zero.pl/dla-inwestorow
 - Dla mieszkańców: https://www.net4zero.pl/dla-mieszkancow
 - System kaucyjny Warszawa: https://www.net4zero.pl/system-kaucyjny-warszawa
 - System kaucyjny Wrocław: https://www.net4zero.pl/system-kaucyjny-wroclaw
