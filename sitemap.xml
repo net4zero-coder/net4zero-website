@@ -49,6 +49,24 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://www.net4zero.pl/system-kaucyjny-krakow</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.net4zero.pl/system-kaucyjny-lodz</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.net4zero.pl/system-kaucyjny-poznan</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://www.net4zero.pl/slownik/ipz</loc>
     <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
