@@ -1,0 +1,70 @@
+# NET4ZERO
+
+> NET4ZERO Sp. z o.o. (KRS 0001132236) buduje pierwszą w Polsce sieć osiedlowych
+> recyklomatów (RVM) w systemie kaucyjnym. Wdrażamy maszyny w spółdzielniach
+> mieszkaniowych, gminach, ZGL, szkołach i urzędach jako Inny Punkt Zbierający
+> (IPZ). Lokalizacja nie wykłada CAPEX — wydzierżawia od 5 do 30 m² i pobiera
+> czynsz. NET4ZERO finansuje, integruje z operatorem systemu kaucyjnego,
+> serwisuje. Standardowe wdrożenie trwa około 8 tygodni od podpisu umowy.
+
+## Kluczowe pojęcia
+
+- **IPZ (Inny Punkt Zbierający)** — punkt zwrotu butelek i puszek poza
+  handlem detalicznym, dopuszczony art. 40g ustawy o gospodarce opakowaniami
+  (Dz.U. 2025 poz. 870, tekst jednolity).
+- **System kaucyjny** — obowiązuje w Polsce od 01.10.2025 dla butelek PET
+  do 3 L i puszek metalowych do 1 L, oraz od 01.01.2026 dla butelek szklanych
+  wielorazowych do 1,5 L. Stawki: 0,50 zł (PET/metal), 1,00 zł (szkło)
+  zgodnie z Rozporządzeniem Ministra Klimatu i Środowiska z 08.07.2024
+  (Dz.U. 2024 poz. 1046).
+- **RVM (Reverse Vending Machine)** — recyklomat. NET4ZERO wdraża maszyny
+  zgodne z minimalnymi standardami określonymi przez operatorów systemu
+  kaucyjnego i KIGPR.
+- **Handling fee** — wynagrodzenie wypłacane IPZ przez operatora za sztukę
+  zwróconego opakowania. Stawki są przedmiotem oddzielnych umów z operatorami.
+- **BDO** — Baza Danych o Odpadach. IPZ ma zwolnienie ustawowe (art. 45 ust. 1
+  pkt 1 i 13 ustawy o odpadach) pod warunkiem umowy z operatorem.
+- **CBDOK** — Centralna Baza Danych Opakowań Kaucyjnych. Rejestracja
+  i raportowanie leży po stronie operatora systemu kaucyjnego, nie IPZ.
+- **Operatorzy systemu kaucyjnego w Polsce (stan 08.2025, 7 aktywnych)**:
+  Zwrotka, Polka (Polska Kaucja), OK Operator Kaucyjny, Eko-Operator,
+  Reselekt, Kaucja.pl (Krajowy System Kaucyjny), Polski System Kaucyjny.
+
+## Strony kluczowe
+
+### Filary i przewodniki
+
+- [Strona główna NET4ZERO](https://www.net4zero.pl/): model B2B2C, oferty dla lokalizacji i inwestorów.
+- [Ustawa kaucyjna 2025 — fakty dla decydenta](https://www.net4zero.pl/ustawa-kaucyjna-2025): cytaty Dz.U., poziomy zbiórki, terminy.
+- [Recyklomat na osiedlu — spółdzielnia jako IPZ](https://www.net4zero.pl/recyklomat-spoldzielnia-ipz): pełny model dla zarządu spółdzielni mieszkaniowej z cytatem art. 40g.
+- [Anatomia wdrożenia recyklomatu — 8 tygodni krok po kroku](https://www.net4zero.pl/anatomia-wdrozenia-recyklomatu): harmonogram od audytu lokalizacji do uruchomienia.
+- [Operatorzy systemu kaucyjnego — kim są, lista](https://www.net4zero.pl/operatorzy-systemu-kaucyjnego): kompetencje Ministra Klimatu i Środowiska, brak organizacji parasolowej.
+- [CBDOK — Centralna Baza Danych Opakowań Kaucyjnych](https://www.net4zero.pl/cbdok-centralna-baza-danych-opakowan).
+- [Minimalne standardy maszyn RVM](https://www.net4zero.pl/maszyny-rvm-minimalne-standardy).
+- [12 typów fraudów w systemie kaucyjnym](https://www.net4zero.pl/fraudy-w-systemie-kaucyjnym): raport KIGPR + klasyfikacja zagrożeń.
+- [11 dobrych praktyk antyfraudowych](https://www.net4zero.pl/11-dobrych-praktyk-antyfraudowych): procedury, niszczenie opakowań, kody EAN.
+- [Rok 2026 — pierwszy pełny rok systemu kaucyjnego](https://www.net4zero.pl/rok-2026-pierwszy-pelny-rok-systemu): czego oczekiwać, okna decyzyjne dla samorządu.
+- [Recyklomat osiedlowy vs recyklomat sklepowy](https://www.net4zero.pl/recyklomat-osiedlowy-vs-sklep): porównanie modeli zbiórki.
+- [Bon kaucyjny](https://www.net4zero.pl/bon-kaucyjny): forma zwrotu kaucji bez gotówki.
+
+## O firmie
+
+NET4ZERO Sp. z o.o. (KRS 0001132236, NIP 7011226958, REGON 529901015),
+z siedzibą w Warszawie, Aleje Jerozolimskie 109/70, 02-011. Założona 12.10.2024.
+Prezes Zarządu: Maciej Machłajewski. Członek Zarządu: Olga Santarovich.
+Spółka prowadzi również NET4ZERO P.S.A. (KRS 0001192242) jako spółkę zależną
+w 100%, działającą pod domeną net4zero.com.
+
+## Kontakt
+
+- E-mail: biuro@net4zero.pl
+- Tel.: +48 575 161 266
+- Adres: Aleje Jerozolimskie 109/70, 02-011 Warszawa, Polska
+- LinkedIn (company): https://www.linkedin.com/company/net4zero/
+- Instagram: https://www.instagram.com/net4zero/
+
+## Polityki
+
+- [Polityka prywatności](https://www.net4zero.pl/polityka-prywatnosci)
+- [Polityka cookies](https://www.net4zero.pl/polityka-cookies)
+- [Klauzula RODO](https://www.net4zero.pl/klauzula-rodo)
