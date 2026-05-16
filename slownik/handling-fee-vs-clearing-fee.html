@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Handling fee vs clearing fee — różnica w systemie kaucyjnym | NET4ZERO słownik</title>
+  <meta name="description" content="Handling fee vs clearing fee. Różnica między dwoma opłatami w systemie kaucyjnym, kto komu płaci, jak się rozliczają między operatorami.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="NET4ZERO Sp. z o.o.">
+  <link rel="canonical" href="https://www.net4zero.pl/slownik/handling-fee-vs-clearing-fee">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://www.net4zero.pl/slownik/handling-fee-vs-clearing-fee">
+  <meta property="og:title" content="Handling fee vs clearing fee — różnica">
+  <meta property="og:description" content="Dwie różne opłaty w systemie kaucyjnym — kto komu, za co.">
+  <meta property="og:image" content="https://www.net4zero.pl/og-image.png">
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"DefinedTerm","name":"Clearing fee","termCode":"clearing-fee","description":"Clearing fee — opłata rozliczeniowa między operatorami systemu kaucyjnego za opakowania zbierane na cudzy rachunek. Gdy klient zwraca butelkę producenta X (operatora A) w punkcie zbiórki operatora B, B raportuje to do A i otrzymuje clearing fee jako rozliczenie. To inna opłata niż handling fee (które otrzymuje punkt zbiórki).","inDefinedTermSet":{"@type":"DefinedTermSet","name":"Słownik NET4ZERO","url":"https://www.net4zero.pl/slownik"},"url":"https://www.net4zero.pl/slownik/handling-fee-vs-clearing-fee"}
+  </script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Strona główna","item":"https://www.net4zero.pl/"},
+    {"@type":"ListItem","position":2,"name":"Słownik","item":"https://www.net4zero.pl/slownik"},
+    {"@type":"ListItem","position":3,"name":"Handling fee vs clearing fee"}
+  ]}
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/output.css">
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .gradient-n4z { background: linear-gradient(135deg, #4CAF50 0%, #03A9F4 100%); }
+    .gradient-text { background: linear-gradient(135deg, #4CAF50 0%, #03A9F4 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .definition-box { background: linear-gradient(135deg, rgba(76,175,80,0.08), rgba(3,169,244,0.08)); border-left: 4px solid #4CAF50; padding: 1.5rem 2rem; border-radius: 0.5rem; margin: 2rem 0; }
+    .article-content h2 { font-size: 1.5rem; font-weight: 800; margin-top: 2.5rem; margin-bottom: 1rem; color: #0F172A; }
+    .article-content p { line-height: 1.75; margin-bottom: 1rem; color: #334155; }
+    .article-content ul { margin: 1rem 0 1rem 1.5rem; }
+    .article-content li { line-height: 1.75; margin-bottom: 0.5rem; color: #334155; list-style: disc; }
+    .article-content strong { color: #0F172A; }
+    .article-content a { color: #4CAF50; text-decoration: underline; }
+    .compare-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+    .compare-table th, .compare-table td { padding: 0.75rem 1rem; text-align: left; border: 1px solid #e2e8f0; vertical-align: top; }
+    .compare-table th { background: #f8fafc; font-weight: 700; }
+  </style>
+</head>
+<body class="bg-white text-slate-900 antialiased">
+
+<header class="border-b border-slate-100 sticky top-0 bg-white/95 backdrop-blur z-40">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="/" class="flex items-center gap-3">
+      <picture><source srcset="/logo-160.webp 2x, /logo-80.webp 1x" type="image/webp"><img src="/logo-80.webp" alt="NET4ZERO" class="w-10 h-10" width="40" height="40"></picture>
+      <span class="font-bold text-xl">NET<span class="gradient-text">4</span>ZERO</span>
+    </a>
+    <a href="/wiedza" class="text-sm font-medium text-slate-700 hover:text-n4z-green">← Wiedza</a>
+  </div>
+</header>
+
+<main class="py-12 px-6">
+  <div class="max-w-3xl mx-auto article-content">
+    <nav class="text-sm text-slate-600 mb-6" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-n4z-green">Strona główna</a> · <a href="/wiedza" class="hover:text-n4z-green">Słownik</a> · <span>Handling fee vs clearing fee</span>
+    </nav>
+
+    <p class="text-n4z-green font-semibold text-sm uppercase tracking-widest">Słownik pojęć</p>
+    <h1 class="text-4xl font-black mt-3 mb-6"><span class="gradient-text">Handling fee</span> vs <span class="gradient-text">clearing fee</span></h1>
+
+    <div class="definition-box">
+      <p class="text-lg leading-relaxed">W polskim systemie kaucyjnym funkcjonują <strong>dwie różne opłaty</strong>, które łatwo pomylić: <strong>handling fee</strong> (wynagrodzenie dla właściciela maszyny / IPZ-a za obsługę zwrotu) oraz <strong>clearing fee</strong> (opłata rozliczeniowa między operatorami za opakowania zbierane na cudzy rachunek). Zrozumienie różnicy jest kluczowe dla gminy-inwestora oraz partnera-inwestora rozważających inwestycję w sieć recyklomatów (gospodarz terenu — np. spółdzielnia — otrzymuje czynsz dzierżawny, nie handling fee).</p>
+    </div>
+
+    <h2>Porównanie</h2>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Handling fee</th>
+          <th>Clearing fee</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Kto płaci</strong></td>
+          <td>Operator systemu kaucyjnego</td>
+          <td>Operator A (właściciel opakowania)</td>
+        </tr>
+        <tr>
+          <td><strong>Kto otrzymuje</strong></td>
+          <td>Właściciel maszyny / punkt zbiórki: sklep ≥200 m², IPZ (NET4ZERO, gmina-inwestor, partner-inwestor)</td>
+          <td>Operator B (który przyjął opakowanie)</td>
+        </tr>
+        <tr>
+          <td><strong>Za co</strong></td>
+          <td>Obsługa fizycznego zwrotu</td>
+          <td>Rozliczenie między operatorami</td>
+        </tr>
+        <tr>
+          <td><strong>Stawka per sztuka</strong></td>
+          <td>Indywidualnie negocjowana</td>
+          <td>Indywidualnie negocjowana</td>
+        </tr>
+        <tr>
+          <td><strong>Częstotliwość</strong></td>
+          <td>Miesięcznie</td>
+          <td>Miesięcznie/kwartalnie</td>
+        </tr>
+        <tr>
+          <td><strong>Podstawa prawna</strong></td>
+          <td>Umowa operator ↔ punkt zbiórki</td>
+          <td>Umowa Międzyoperatorska (Master Inter-Operator Agreement)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Handling fee — szczegóły</h2>
+
+    <p>Handling fee to wynagrodzenie wypłacane przez operatora systemu kaucyjnego punktowi zbiórki (sklep ≥200 m² lub IPZ) za każdą sztukę zwróconego opakowania. Pokrywa koszty:</p>
+
+    <ul>
+      <li>Przyjęcia opakowania w recyklomacie lub ręcznie</li>
+      <li>Sortowania (PET / aluminium / szkło)</li>
+      <li>Magazynowania przed transportem</li>
+      <li>Energii recyklomatu</li>
+      <li>Raportowania do CBDOK</li>
+    </ul>
+
+    <p>Stawki są przedmiotem indywidualnych umów operator-IPZ, nie publikowane oficjalnie. Szczegóły: <a href="/slownik/handling-fee">Słownik — handling fee</a>.</p>
+
+    <h2>Clearing fee — szczegóły</h2>
+
+    <p>Clearing fee to opłata rozliczeniowa między operatorami systemu kaucyjnego. Funkcjonuje, ponieważ:</p>
+
+    <ul>
+      <li>W Polsce <strong>nie ma jednego operatora narodowego</strong> (jak DPG w Niemczech) — działa 7 operatorów równolegle</li>
+      <li>Producent X może podpisać umowę z operatorem A</li>
+      <li>Konsument może zwrócić butelkę tego producenta w punkcie zbiórki należącym do operatora B</li>
+      <li>Operator B przyjął opakowanie "na cudzy rachunek" (operatora A)</li>
+      <li>Rozliczenie tej transakcji = clearing fee (operator A płaci operatorowi B)</li>
+    </ul>
+
+    <p>Bez clearing fee system by się nie domknął finansowo. KIGPR podkreśla brak <strong>organizacji parasolowej</strong> (jak DPG niemieckie) — koordynacja clearing fee między 7 operatorami jest jednym z największych wyzwań operacyjnych polskiego systemu.</p>
+
+    <h2>Diagram przepływów</h2>
+
+    <p>Uproszczony przykład:</p>
+
+    <ul>
+      <li><strong>Klient</strong> kupuje butelkę Wody Producenta X (operator A) za 3,50 zł (3,00 + 0,50 kaucji)</li>
+      <li><strong>Klient</strong> oddaje butelkę w sklepie sieci B (operator B) — otrzymuje 0,50 zł kaucji</li>
+      <li><strong>Operator B</strong> wypłaca handling fee sklepowi B</li>
+      <li><strong>Operator A</strong> wypłaca clearing fee operatorowi B (bo to jego producent)</li>
+      <li><strong>Operator A</strong> otrzymuje od Producenta X opłatę za każde wprowadzone opakowanie (która pokrywa wszystkie powyższe)</li>
+      <li><strong>Operator B</strong> przekazuje opakowanie do recyklera</li>
+    </ul>
+
+    <h2>Konsekwencje dla IPZ</h2>
+
+    <p>Punkt zbiórki (IPZ NET4ZERO) NIE rozróżnia operatorów — przyjmuje wszystkie opakowania kaucyjne. Handling fee otrzymuje od <strong>swojego operatora-partnera</strong> (z którym podpisał umowę). Clearing fee leży <strong>całkowicie po stronie operatorów</strong> — nie wpływa na rozliczenia IPZ.</p>
+
+    <h2>Powiązane pojęcia</h2>
+
+    <ul>
+      <li><a href="/slownik/handling-fee">Handling fee — pełny opis</a></li>
+      <li><a href="/slownik/ipz">IPZ — kto otrzymuje handling fee</a></li>
+      <li><a href="/operatorzy-systemu-kaucyjnego">Operatorzy — Umowa Międzyoperatorska</a></li>
+    </ul>
+
+  </div>
+</main>
+
+<footer class="bg-slate-950 text-slate-400 py-8 px-6 mt-12">
+  <div class="max-w-5xl mx-auto text-center text-sm">
+    <p>© 2026 NET4ZERO Sp. z o.o. · KRS 0001132236 · Aleje Jerozolimskie 109/70, 02-011 Warszawa</p>
+    <p class="mt-2"><a href="/wiedza" class="hover:text-white">Wiedza</a> · <a href="/polityka-prywatnosci" class="hover:text-white">Polityka prywatności</a> · <a href="/polityka-cookies" class="hover:text-white">Polityka cookies</a> · <a href="/klauzula-rodo" class="hover:text-white">Klauzula RODO</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
