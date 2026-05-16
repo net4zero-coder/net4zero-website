@@ -44,6 +44,21 @@
       "source": "/index.html",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/hubfs/PP.pdf",
+      "destination": "/polityka-prywatnosci",
+      "permanent": true
+    },
+    {
+      "source": "/en-us/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ru/:path*",
+      "destination": "/",
+      "permanent": true
     }
   ]
 }

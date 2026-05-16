@@ -24,17 +24,37 @@
   <meta name="twitter:description" content="50 osiedlowych recyklomatów. Wdrożenie 12 tygodni. Wsparcie PZP.">
   <meta name="twitter:image" content="https://www.net4zero.pl/og-image.png">
 
-  <!-- Schema.org Product (oferta — cena indywidualna) -->
+  <!-- Schema.org Service (komercyjna oferta biznesowa — cena indywidualna) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": "Service",
     "name": "Pakiet Miasto NET4ZERO",
-    "description": "50 osiedlowych recyklomatów (RVM) dla gminy w modelu kompleksowego wdrożenia: instalacja, integracja z operatorem systemu kaucyjnego, serwis SLA 24h, wsparcie procedury PZP.",
+    "serviceType": "Municipal deposit return infrastructure deployment",
+    "description": "50 osiedlowych recyklomatów (RVM) dla gminy w modelu kompleksowego wdrożenia: instalacja, integracja z operatorem systemu kaucyjnego, serwis SLA 24h, wsparcie procedury PZP. Wdrożenie 12 tygodni od podpisu umowy.",
     "image": "https://www.net4zero.pl/og-image.png",
-    "brand": {"@type":"Brand","name":"NET4ZERO"},
-    "sku": "NET4ZERO-PM-50",
-    "audience": {"@type":"Audience","audienceType":"Gminy, samorządy terytorialne, ZGL"}
+    "provider": {
+      "@type": "Organization",
+      "name": "NET4ZERO Sp. z o.o.",
+      "url": "https://www.net4zero.pl",
+      "identifier": [
+        {"@type":"PropertyValue","propertyID":"KRS","value":"0001132236"}
+      ]
+    },
+    "areaServed": {"@type":"Country","name":"Polska"},
+    "audience": {"@type":"Audience","audienceType":"Gminy, samorządy terytorialne, ZGL"},
+    "offers": {
+      "@type": "Offer",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "PLN",
+        "price": "0",
+        "description": "Cena uzgadniana indywidualnie z gminą — zależy od skali, lokalizacji, operatora kaucyjnego i długości umowy serwisowej."
+      },
+      "availability": "https://schema.org/InStock",
+      "businessFunction": "https://schema.org/Sell",
+      "eligibleRegion": {"@type":"Country","name":"Polska"}
+    }
   }
   </script>
 
