@@ -1,3 +1,7 @@
+# robots.txt for net4zero.pl
+# Last updated: 2026-05-16
+
+# Default: allow all crawlers
 User-agent: *
 Allow: /
 Disallow: /admin/
@@ -5,4 +9,83 @@ Disallow: /api/
 Disallow: /.env
 Disallow: /vercel.json
 
+# Major search engines — explicit allow
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# AI assistants — explicit allow (decision: 2026-05-15, GEO strategy)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+# AI ecosystem knowledge base
+# /llms.txt is intended for LLM crawlers (Anthropic/OpenAI/Perplexity/Google)
+
+# Block aggressive scrapers without business value
+User-agent: SemrushBot-SA
+Disallow: /
+
+# Sitemap
 Sitemap: https://www.net4zero.pl/sitemap.xml
