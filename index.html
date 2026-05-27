@@ -310,6 +310,22 @@
         0 8px 22px -4px rgba(0,0,0,0.65);
     }
 
+    /* ===== FLAT AREA ICON (B2B, replaces .orb in "8 obszarów") ===== */
+    .area-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      display: inline-flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg, rgba(76,175,80,0.10) 0%, rgba(3,169,244,0.10) 100%);
+      border: 1px solid rgba(76,175,80,0.22);
+      color: #2E7D32;
+      transition: background .25s ease, border-color .25s ease, transform .25s ease;
+    }
+    .area-icon svg { width: 22px; height: 22px; stroke: url(#n4z-grad); }
+    .lift:hover .area-icon, .orb-hover:hover .area-icon {
+      background: linear-gradient(135deg, rgba(76,175,80,0.18) 0%, rgba(3,169,244,0.18) 100%);
+      border-color: rgba(3,169,244,0.42);
+      transform: translateY(-1px);
+    }
+
     /* ===== HOVER LIFT FOR CARDS ===== */
     .lift { transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, border-color .35s ease; }
     .lift:hover { transform: translateY(-4px); box-shadow: 0 24px 50px -20px rgba(15,23,42,0.18), 0 8px 16px -8px rgba(3,169,244,0.18); }
@@ -393,6 +409,11 @@
     .logo-wrap img { transition: filter .35s ease, transform .35s ease; }
     .logo-wrap:hover img { filter: drop-shadow(0 0 14px rgba(3,169,244,0.5)); transform: scale(1.05); }
 
+    /* ===== STICKY MOBILE CTA — odsuń body, żeby nie zasłaniał kontentu ===== */
+    @media (max-width: 767px) {
+      body { padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
+    }
+
     /* ===== RESPECT REDUCED MOTION ===== */
     @media (prefers-reduced-motion: reduce) {
       .hero-mesh::before, .hero-mesh::after { animation: none; }
@@ -412,12 +433,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- HEADER -->
 <header class="border-b border-slate-100 sticky top-0 bg-white/95 backdrop-blur z-40">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-    <a href="#hero" class="logo-wrap flex items-center gap-3" aria-label="NET4ZERO — strona główna">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center gap-4">
+    <a href="#hero" class="logo-wrap flex items-center gap-3 shrink-0" aria-label="NET4ZERO — strona główna">
       <picture><source srcset="logo-160.webp 2x, logo-80.webp 1x" type="image/webp"><img src="logo-80.webp" alt="NET4ZERO — logo" class="w-10 h-10" width="40" height="40" loading="eager" decoding="async"></picture>
       <span class="font-bold text-xl">NET<span class="gradient-text">4</span>ZERO</span>
     </a>
-    <nav class="hidden md:flex gap-7 text-sm font-medium text-slate-700" aria-label="Główna nawigacja">
+    <nav class="hidden lg:flex gap-7 text-sm font-medium text-slate-700" aria-label="Główna nawigacja">
       <a href="#ipz" class="nav-link hover:text-n4z-green">Czym jest IPZ</a>
       <a href="#lokalizacja" class="nav-link hover:text-n4z-green">Mam lokalizację</a>
       <a href="#inwestor" class="nav-link hover:text-n4z-green">Chcę zainwestować</a>
@@ -426,13 +447,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="/wiedza" class="nav-link hover:text-n4z-green">Wiedza</a>
       <a href="#kontakt" class="nav-link hover:text-n4z-green">Kontakt</a>
     </nav>
-    <div class="hidden sm:flex items-center gap-4">
-      <a href="tel:+48575161266" class="flex items-center gap-1.5 text-sm font-medium text-slate-700 hover:text-n4z-green transition-colors">
+    <div class="hidden md:flex items-center gap-4 shrink-0">
+      <a href="tel:+48575161266" class="flex items-center gap-1.5 text-sm font-medium text-slate-700 hover:text-n4z-green transition-colors whitespace-nowrap">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
         +48 575 161 266
       </a>
-      <a href="#kontakt" class="cta-glow gradient-n4z text-white font-semibold px-5 py-2 rounded-lg text-sm">Kontakt</a>
+      <a href="#kontakt" class="cta-glow gradient-n4z text-white font-semibold px-5 py-2 rounded-lg text-sm whitespace-nowrap">Kontakt</a>
     </div>
+    <button id="mobile-menu-btn" type="button" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobile-menu">
+      <svg id="mobile-menu-icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg id="mobile-menu-icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 hidden"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <!-- Mobile menu drawer -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-slate-100 bg-white">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-1 text-base font-medium text-slate-700" aria-label="Nawigacja mobilna">
+      <a href="#ipz" class="py-3 border-b border-slate-100 hover:text-n4z-green">Czym jest IPZ</a>
+      <a href="#lokalizacja" class="py-3 border-b border-slate-100 hover:text-n4z-green">Mam lokalizację</a>
+      <a href="#inwestor" class="py-3 border-b border-slate-100 hover:text-n4z-green">Chcę zainwestować</a>
+      <a href="#wdrozenie" class="py-3 border-b border-slate-100 hover:text-n4z-green">Wdrożenie</a>
+      <a href="#faq" class="py-3 border-b border-slate-100 hover:text-n4z-green">FAQ</a>
+      <a href="/wiedza" class="py-3 border-b border-slate-100 hover:text-n4z-green">Wiedza</a>
+      <a href="#kontakt" class="py-3 border-b border-slate-100 hover:text-n4z-green">Kontakt</a>
+      <a href="tel:+48575161266" class="py-3 flex items-center gap-2 text-slate-700 hover:text-n4z-green">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+        +48 575 161 266
+      </a>
+      <a href="#kontakt" class="mt-2 cta-glow gradient-n4z text-white font-semibold px-5 py-3 rounded-lg text-center">Kontakt</a>
+    </nav>
   </div>
 </header>
 
@@ -502,15 +544,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="stat-icon mx-auto mb-5">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
         </div>
-        <p class="stat-num"><span data-count="8">0</span><span class="text-3xl ml-1">tyg.</span></p>
+        <p class="stat-num"><span data-count="8">8</span><span class="text-3xl ml-1">tyg.</span></p>
         <p class="font-bold mt-3">Wdrożenie pod klucz</p>
         <p class="text-sm text-slate-600 mt-1">od podpisania umowy do uruchomienia</p>
       </div>
       <div class="stat-card lift reveal text-center">
         <div class="stat-icon mx-auto mb-5">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12c0 5-3.5 9-9 10c-5.5-1-9-5-9-10V6l9-4l9 4z"/><path d="M9 12h6M12 9v6"/></svg>
+          <!-- Lucide: wallet z przekreśleniem (CAPEX = 0) -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7a2 2 0 0 0-2-2H5a2 2 0 0 0 0 4h16v4"/><path d="M3 7v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-3"/><circle cx="17" cy="14" r="1.5"/><line x1="4" y1="4" x2="20" y2="20" stroke="#03A9F4" stroke-width="2.5"/></svg>
         </div>
-        <p class="stat-num">0<span class="text-3xl ml-1">zł</span></p>
+        <p class="stat-num"><span class="gradient-text">0</span><span class="text-3xl ml-1">zł</span></p>
         <p class="font-bold mt-3">CAPEX dla lokalizacji</p>
         <p class="text-sm text-slate-600 mt-1">bez maszyny, bez leasingu, bez serwisu</p>
       </div>
@@ -518,7 +561,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="stat-icon mx-auto mb-5">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
         </div>
-        <p class="stat-num"><span data-count="8">0</span></p>
+        <p class="stat-num"><span data-count="8">8</span></p>
         <p class="font-bold mt-3">Obszarów pod jedną umową</p>
         <p class="text-sm text-slate-600 mt-1">od doboru urządzenia po serwis</p>
       </div>
@@ -730,44 +773,77 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- 8 OBSZARÓW -->
     <div class="bg-n4z-cream rounded-3xl p-8 sm:p-12">
       <h3 class="text-2xl font-bold mb-8 text-center">8 obszarów wdrożenia, które obsługujemy</h3>
+      <!-- Wspólny gradient dla wszystkich ikon outline (Lucide), wstawiony raz -->
+      <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+        <defs>
+          <linearGradient id="n4z-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#4CAF50"/>
+            <stop offset="100%" stop-color="#03A9F4"/>
+          </linearGradient>
+        </defs>
+      </svg>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         <div class="orb-hover lift bg-white rounded-xl p-5">
-          <div class="orb w-10 h-10 rounded-lg mb-3"><span>1</span></div>
+          <div class="area-icon mb-3" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+          </div>
+          <p class="text-[10px] font-mono uppercase tracking-wider text-slate-400 mb-1">Obszar 1</p>
           <p class="font-bold text-sm">Dobór i zakup urządzenia</p>
           <p class="text-xs text-slate-600 mt-1">Renomowani producenci RVM, ceny partnerskie</p>
         </div>
         <div class="orb-hover lift bg-white rounded-xl p-5">
-          <div class="orb w-10 h-10 rounded-lg mb-3"><span>2</span></div>
+          <div class="area-icon mb-3" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+          </div>
+          <p class="text-[10px] font-mono uppercase tracking-wider text-slate-400 mb-1">Obszar 2</p>
           <p class="font-bold text-sm">Koordynacja leasingu</p>
           <p class="text-xs text-slate-600 mt-1">Polski lider rynku leasingowego</p>
         </div>
         <div class="orb-hover lift bg-white rounded-xl p-5">
-          <div class="orb w-10 h-10 rounded-lg mb-3"><span>3</span></div>
+          <div class="area-icon mb-3" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17H7A5 5 0 0 1 7 7h2"/><path d="M15 7h2a5 5 0 1 1 0 10h-2"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          </div>
+          <p class="text-[10px] font-mono uppercase tracking-wider text-slate-400 mb-1">Obszar 3</p>
           <p class="font-bold text-sm">Integracja z operatorem kaucji</p>
           <p class="text-xs text-slate-600 mt-1">Operator systemu kaucyjnego</p>
         </div>
         <div class="orb-hover lift bg-white rounded-xl p-5">
-          <div class="orb w-10 h-10 rounded-lg mb-3"><span>4</span></div>
+          <div class="area-icon mb-3" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></svg>
+          </div>
+          <p class="text-[10px] font-mono uppercase tracking-wider text-slate-400 mb-1">Obszar 4</p>
           <p class="font-bold text-sm">Wypłaty bezgotówkowe kaucji</p>
           <p class="text-xs text-slate-600 mt-1">BLIK, karta, przelew — globalny dostawca</p>
         </div>
         <div class="orb-hover lift bg-white rounded-xl p-5">
-          <div class="orb w-10 h-10 rounded-lg mb-3"><span>5</span></div>
+          <div class="area-icon mb-3" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><path d="M16 14v4"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
+          </div>
+          <p class="text-[10px] font-mono uppercase tracking-wider text-slate-400 mb-1">Obszar 5</p>
           <p class="font-bold text-sm">Konto techniczne i rozliczenia</p>
           <p class="text-xs text-slate-600 mt-1">Kompensaty, raportowanie, księgowość</p>
         </div>
         <div class="orb-hover lift bg-white rounded-xl p-5">
-          <div class="orb w-10 h-10 rounded-lg mb-3"><span>6</span></div>
+          <div class="area-icon mb-3" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <p class="text-[10px] font-mono uppercase tracking-wider text-slate-400 mb-1">Obszar 6</p>
           <p class="font-bold text-sm">Serwis, ubezpieczenie, logistyka</p>
           <p class="text-xs text-slate-600 mt-1">Stała opłata miesięczna, SLA</p>
         </div>
         <div class="orb-hover lift bg-white rounded-xl p-5">
-          <div class="orb w-10 h-10 rounded-lg mb-3"><span>7</span></div>
+          <div class="area-icon mb-3" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.93 0 1.65-.75 1.65-1.69 0-.44-.18-.83-.44-1.12-.29-.29-.44-.65-.44-1.12 0-.93.75-1.69 1.67-1.69H16c3.05 0 5.55-2.5 5.55-5.55C21.96 6.01 17.46 2 12 2Z"/></svg>
+          </div>
+          <p class="text-[10px] font-mono uppercase tracking-wider text-slate-400 mb-1">Obszar 7</p>
           <p class="font-bold text-sm">Branding + powierzchnia reklamowa</p>
           <p class="text-xs text-slate-600 mt-1">Kolorystyka klienta, monetyzacja ekranów</p>
         </div>
         <div class="orb-hover lift bg-white rounded-xl p-5">
-          <div class="orb w-10 h-10 rounded-lg mb-3"><span>8</span></div>
+          <div class="area-icon mb-3" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <p class="text-[10px] font-mono uppercase tracking-wider text-slate-400 mb-1">Obszar 8</p>
           <p class="font-bold text-sm">Pozyskanie lokalizacji</p>
           <p class="text-xs text-slate-600 mt-1">Umowy dzierżawy z SM / gminami</p>
         </div>
@@ -1371,7 +1447,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(function(el){ revealObs.observe(el); });
 
-  // Count-up
+  // Count-up (progressive enhancement: HTML zawiera finalną wartość;
+  // animujemy tylko jeśli licznik nie był widoczny przy pierwszym malowaniu)
   function animateCount(el){
     var target = parseInt(el.getAttribute('data-count'), 10);
     if (isNaN(target)) return;
@@ -1381,8 +1458,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       var eased = 1 - Math.pow(1 - p, 3);
       el.textContent = Math.round(target * eased);
       if (p < 1) requestAnimationFrame(step);
+      else el.textContent = target;
     }
     requestAnimationFrame(step);
+  }
+  function isInViewportNow(el){
+    var r = el.getBoundingClientRect();
+    var vh = window.innerHeight || document.documentElement.clientHeight;
+    return r.top < vh && r.bottom > 0;
   }
   var countObs = new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
@@ -1392,9 +1475,49 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
     });
   }, { threshold: 0.4 });
-  document.querySelectorAll('[data-count]').forEach(function(el){ countObs.observe(el); });
+  document.querySelectorAll('[data-count]').forEach(function(el){
+    // Jeśli licznik jest widoczny przy pierwszym renderze — zostaw finalną wartość, nie animuj.
+    if (isInViewportNow(el)) return;
+    countObs.observe(el);
+  });
 })();
 </script>
+
+<!-- Mobile menu toggle -->
+<script>
+(function(){
+  var btn = document.getElementById('mobile-menu-btn');
+  var menu = document.getElementById('mobile-menu');
+  var iconOpen = document.getElementById('mobile-menu-icon-open');
+  var iconClose = document.getElementById('mobile-menu-icon-close');
+  if (!btn || !menu) return;
+  function setOpen(open){
+    menu.classList.toggle('hidden', !open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Zamknij menu' : 'Otwórz menu');
+    if (iconOpen)  iconOpen.classList.toggle('hidden', open);
+    if (iconClose) iconClose.classList.toggle('hidden', !open);
+  }
+  btn.addEventListener('click', function(){
+    setOpen(menu.classList.contains('hidden'));
+  });
+  // Zamknij po kliknięciu w link nawigacyjny
+  menu.querySelectorAll('a[href^="#"], a[href^="tel:"]').forEach(function(a){
+    a.addEventListener('click', function(){ setOpen(false); });
+  });
+})();
+</script>
+
+<!-- ============================================================
+     STICKY MOBILE CTA — widoczny <768 px (tylko mobile / tablet small)
+     ============================================================ -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 z-30 bg-white/95 backdrop-blur border-t border-slate-200 px-3 py-2.5"
+     style="box-shadow: 0 -4px 16px rgba(15,23,42,0.08); padding-bottom: calc(0.625rem + env(safe-area-inset-bottom));">
+  <div class="flex gap-2 max-w-md mx-auto">
+    <a href="#lokalizacja" class="flex-1 text-center text-xs font-bold text-slate-900 bg-white border-2 border-n4z-green px-3 py-2.5 rounded-lg">A · Mam lokalizację</a>
+    <a href="#inwestor" class="flex-1 text-center text-xs font-bold text-white gradient-n4z px-3 py-2.5 rounded-lg">B · Chcę inwestować</a>
+  </div>
+</div>
 
 <!-- ============================================================
      LEAD GATE MODAL — Pakiet Operator
