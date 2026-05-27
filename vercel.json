@@ -51,12 +51,72 @@
       "permanent": true
     },
     {
+      "source": "/en-us",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/en-us/:path*",
       "destination": "/",
       "permanent": true
     },
     {
+      "source": "/en",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ru",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/ru/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/de",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/de/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/fr",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/fr/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/es",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/es/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/it",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/it/:path*",
       "destination": "/",
       "permanent": true
     }
