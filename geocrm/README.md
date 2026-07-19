@@ -131,4 +131,4 @@ NET4ZERO w katalogu głównym repo pozostaje niezależnym deploymentem.
 
 ---
 
-Dokumentacja architektury: [ARCHITECTURE.md](./ARCHITECTURE.md) · Plan rozwoju: [ROADMAP.md](./ROADMAP.md)
+Architektura: [ARCHITECTURE.md](./ARCHITECTURE.md) · Wdrożenie krok po kroku: [DEPLOY.md](./DEPLOY.md) · Plan rozwoju: [ROADMAP.md](./ROADMAP.md)
