@@ -49,6 +49,19 @@ export function timeAgo(date: Date | string): string {
   return 'przed chwilą';
 }
 
+/** Rozmiar pliku w czytelnej formie. */
+export function formatBytes(bytes?: number | null): string {
+  if (!bytes) return '—';
+  const units = ['B', 'KB', 'MB', 'GB'];
+  let value = bytes;
+  let i = 0;
+  while (value >= 1024 && i < units.length - 1) {
+    value /= 1024;
+    i++;
+  }
+  return `${value.toFixed(value < 10 && i > 0 ? 1 : 0)} ${units[i]}`;
+}
+
 /** Inicjały z imienia/nazwy do awatara. */
 export function initials(name?: string | null): string {
   if (!name) return '??';

@@ -1,19 +1,26 @@
-import { ModulePlaceholder } from '@/components/module-placeholder';
+import { PageHeader } from '@/components/page-header';
+import { ReportsView } from '@/components/reports/reports-view';
+import { getCurrentUser } from '@/lib/session';
+import { getLocations, getAgents, getInvestors, getRegions } from '@/lib/queries';
 
 export const dynamic = 'force-dynamic';
 
-export default function ReportsPage() {
+export default async function ReportsPage() {
+  const user = await getCurrentUser();
+  const orgId = user?.organizationId ?? null;
+  const [locations, agents, investors, regions] = await Promise.all([
+    getLocations(orgId),
+    getAgents(orgId),
+    getInvestors(orgId),
+    getRegions(orgId),
+  ]);
+
   return (
-    <ModulePlaceholder
-      title="Raporty"
-      stage="Etap 13"
-      description="Raporty regionów, sprzedaży, handlowców, lokalizacji, inwestorów i instalacji."
-      features={[
-        'Raporty: regiony, sprzedaż, handlowcy, lokalizacje, inwestorzy, operatorzy, instalacje',
-        'Filtry po okresie, regionie i statusie',
-        'Eksport do Excel (.xlsx) i PDF',
-        'Prognoza liczby opakowań na podstawie danych lokalizacji',
-      ]}
-    />
+    <div>
+      <PageHeader title="Raporty" description="Zestawienia sprzedaży, regionów, handlowców i inwestorów z eksportem do CSV." />
+      <div className="p-4 lg:p-8">
+        <ReportsView locations={locations} agents={agents} investors={investors} regions={regions} />
+      </div>
+    </div>
   );
 }

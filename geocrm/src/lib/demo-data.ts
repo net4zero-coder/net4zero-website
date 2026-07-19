@@ -1,11 +1,15 @@
 import type {
   ActivityItem,
+  AgentSummary,
   DashboardStats,
+  DocumentItem,
+  InvestorSummary,
   LocationDetail,
   LocationListItem,
   Option,
   RegionItem,
   SessionUser,
+  TaskItem,
 } from '@/types';
 import { pointInPolygon } from './geo';
 
@@ -137,6 +141,23 @@ export const DEMO_LOCATIONS: LocationListItem[] = [
   },
 ];
 
+export const DEMO_TASKS: TaskItem[] = [
+  { id: 'task-1', title: 'Przygotować aneks do umowy — Osiedle Reja 15', description: 'Aneks §11 klauzula efektywności.', status: 'IN_PROGRESS', priority: 'HIGH', dueDate: '2026-07-25T00:00:00Z', assignee: AGENTS[0], assigneeId: 'agent-1', locationName: 'Osiedle Reja 15', locationId: 'loc-1', createdAt: '2026-07-15T09:00:00Z' },
+  { id: 'task-2', title: 'Wizja lokalna z serwisem — SM Klecina', description: null, status: 'TODO', priority: 'MEDIUM', dueDate: '2026-07-28T00:00:00Z', assignee: 'Serwis NET4ZERO', assigneeId: 'agent-4', locationName: 'SM Wrocław Południe — Klecina', locationId: 'loc-2', createdAt: '2026-07-16T10:00:00Z' },
+  { id: 'task-3', title: 'Spotkanie z zarządem — Galeria Kazimierz', description: 'Prezentacja pakietu 50 IPZ.', status: 'TODO', priority: 'URGENT', dueDate: '2026-07-22T00:00:00Z', assignee: AGENTS[2], assigneeId: 'agent-3', locationName: 'Galeria Kazimierz', locationId: 'loc-3', createdAt: '2026-07-15T14:00:00Z' },
+  { id: 'task-4', title: 'Przygotować ofertę — CH Blue City', description: null, status: 'IN_PROGRESS', priority: 'HIGH', dueDate: '2026-07-24T00:00:00Z', assignee: AGENTS[1], assigneeId: 'agent-2', locationName: 'Centrum Handlowe Blue City', locationId: 'loc-6', createdAt: '2026-07-17T08:00:00Z' },
+  { id: 'task-5', title: 'Przegląd techniczny RVM-DS-014', description: 'Kwartalny przegląd.', status: 'DONE', priority: 'LOW', dueDate: '2026-07-14T00:00:00Z', assignee: 'Serwis NET4ZERO', assigneeId: 'agent-4', locationName: 'Osiedle Reja 15', locationId: 'loc-1', createdAt: '2026-07-10T08:00:00Z' },
+  { id: 'task-6', title: 'Follow-up mailowy — Stary Browar', description: null, status: 'TODO', priority: 'MEDIUM', dueDate: '2026-07-26T00:00:00Z', assignee: AGENTS[3], assigneeId: 'agent-1', locationName: 'Stary Browar', locationId: 'loc-11', createdAt: '2026-07-16T11:00:00Z' },
+];
+
+export const DEMO_DOCUMENTS: DocumentItem[] = [
+  { id: 'doc-1', name: 'Umowa dzierżawy v3 — Reja 15.pdf', category: 'PDF', url: '#', sizeBytes: 248000, locationName: 'Osiedle Reja 15', locationId: 'loc-1', uploadedBy: AGENTS[0], createdAt: '2026-07-14T18:00:00Z' },
+  { id: 'doc-2', name: 'Rzut techniczny — Klecina.pdf', category: 'PDF', url: '#', sizeBytes: 512000, locationName: 'SM Wrocław Południe — Klecina', locationId: 'loc-2', uploadedBy: AGENTS[0], createdAt: '2026-07-12T12:00:00Z' },
+  { id: 'doc-3', name: 'Prognoza ROI — Blue City.xlsx', category: 'EXCEL', url: '#', sizeBytes: 88000, locationName: 'Centrum Handlowe Blue City', locationId: 'loc-6', uploadedBy: AGENTS[1], createdAt: '2026-07-17T09:00:00Z' },
+  { id: 'doc-4', name: 'Pismo do spółdzielni.docx', category: 'WORD', url: '#', sizeBytes: 45000, locationName: 'Osiedle Gaj', locationId: 'loc-14', uploadedBy: AGENTS[0], createdAt: '2026-07-13T10:00:00Z' },
+  { id: 'doc-5', name: 'Zdjęcie lokalizacji — Kazimierz.jpg', category: 'IMAGE', url: '#', sizeBytes: 1240000, locationName: 'Galeria Kazimierz', locationId: 'loc-3', uploadedBy: AGENTS[2], createdAt: '2026-07-15T15:00:00Z' },
+];
+
 export const DEMO_ACTIVITIES: ActivityItem[] = [
   { id: 'a1', type: 'STATUS_CHANGED', message: 'Osiedle Grunwald → status: Instalacja', user: AGENTS[3], createdAt: '2026-07-17T15:10:00Z' },
   { id: 'a2', type: 'LOCATION_CREATED', message: 'Dodano lokalizację: CH Blue City', user: AGENTS[1], createdAt: '2026-07-17T07:30:00Z' },
@@ -196,6 +217,43 @@ export function demoRegions(): RegionItem[] {
       ? DEMO_LOCATIONS.filter((l) => pointInPolygon(l.latitude, l.longitude, r.geometry!)).length
       : DEMO_LOCATIONS.filter((l) => l.voivodeship === r.name).length,
   }));
+}
+
+/** Podsumowania handlowców (Etap 9) liczone z lokalizacji demo. */
+export function demoAgents(): AgentSummary[] {
+  return DEMO_AGENT_OPTIONS.map((a) => {
+    const locs = DEMO_LOCATIONS.filter((l) => l.agentName === a.name);
+    return {
+      id: a.id,
+      name: a.name,
+      email: `${a.name.split(' ')[0].toLowerCase()}@net4zero.pl`,
+      regionCount: DEMO_REGIONS.filter((r) => r.agentName === a.name).length,
+      locationCount: locs.length,
+      signedCount: locs.filter((l) => l.status === 'SIGNED').length,
+      openTasks: DEMO_TASKS.filter((t) => t.assignee === a.name && t.status !== 'DONE').length,
+      forecastPackages: locs.reduce((s, l) => s + (l.forecastPackages ?? 0), 0),
+    };
+  });
+}
+
+/** Podsumowania inwestorów (Etap 10) liczone z lokalizacji demo. */
+export function demoInvestors(): InvestorSummary[] {
+  return DEMO_INVESTOR_OPTIONS.map((inv) => {
+    const locs = DEMO_LOCATIONS.filter((l) => l.investorName === inv.name);
+    const rois = locs.map((l) => l.roi).filter((r): r is number => r != null);
+    return {
+      id: inv.id,
+      name: inv.name,
+      contactPerson: 'Jan Kowalski',
+      email: 'kontakt@inwestor.pl',
+      phone: '+48 600 100 200',
+      locationCount: locs.length,
+      deviceCount: locs.filter((l) => l.deviceNumber).length,
+      signedCount: locs.filter((l) => l.status === 'SIGNED').length,
+      avgRoi: rois.length ? Math.round((rois.reduce((s, r) => s + r, 0) / rois.length) * 10) / 10 : null,
+      forecastPackages: locs.reduce((s, l) => s + (l.forecastPackages ?? 0), 0),
+    };
+  });
 }
 
 function count(status: LocationListItem['status']) {

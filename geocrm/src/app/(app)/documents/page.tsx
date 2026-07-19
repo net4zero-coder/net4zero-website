@@ -1,19 +1,21 @@
-import { ModulePlaceholder } from '@/components/module-placeholder';
+import { PageHeader } from '@/components/page-header';
+import { DocumentsManager } from '@/components/documents/documents-manager';
+import { getCurrentUser } from '@/lib/session';
+import { getDocuments, getLocationOptions } from '@/lib/queries';
 
 export const dynamic = 'force-dynamic';
 
-export default function DocumentsPage() {
+export default async function DocumentsPage() {
+  const user = await getCurrentUser();
+  const orgId = user?.organizationId ?? null;
+  const [documents, locations] = await Promise.all([getDocuments(orgId), getLocationOptions(orgId)]);
+
   return (
-    <ModulePlaceholder
-      title="Dokumenty"
-      stage="Etap 11"
-      description="Repozytorium dokumentów przypisanych do lokalizacji i inwestorów."
-      features={[
-        'Upload PDF, Word, Excel oraz zdjęć',
-        'Storage: Supabase Storage lub AWS S3',
-        'Dokumenty przypisane do lokalizacji / inwestora',
-        'Podgląd, pobieranie i wersjonowanie',
-      ]}
-    />
+    <div>
+      <PageHeader title="Dokumenty" description="Repozytorium dokumentów przypisanych do lokalizacji (PDF, Word, Excel, zdjęcia)." />
+      <div className="p-4 lg:p-8">
+        <DocumentsManager documents={documents} locations={locations} />
+      </div>
+    </div>
   );
 }

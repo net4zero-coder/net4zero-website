@@ -4,8 +4,9 @@ SaaS klasy CRM do zarządzania **lokalizacjami recyklomatów** (automatów kaucy
 inwestorami, operatorami, handlowcami i regionami sprzedaży. **Mapa Google jest
 centrum całego systemu**; lista lokalizacji jest jej uzupełnieniem.
 
-> Status: **fundament (Etapy 1–4, 6–8 w rdzeniu)** — architektura, baza, autoryzacja,
-> dashboard, mapa, lista CRM i karta lokalizacji. Kolejne moduły w [ROADMAP.md](./ROADMAP.md).
+> Status: **Etapy 1–15 w rdzeniu** — architektura, baza, autoryzacja, dashboard, mapa,
+> regiony (rysowane), lista CRM, karta lokalizacji, geocoding, zadania (kanban), dokumenty,
+> handlowcy, inwestorzy, raporty (eksport CSV). Rozszerzenia i moduły kaucyjne — [ROADMAP.md](./ROADMAP.md).
 
 ---
 

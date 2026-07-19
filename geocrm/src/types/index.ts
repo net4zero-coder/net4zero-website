@@ -34,6 +34,56 @@ export interface Option {
   name: string;
 }
 
+export interface TaskItem {
+  id: string;
+  title: string;
+  description: string | null;
+  status: TaskStatus;
+  priority: TaskPriority;
+  dueDate: string | null;
+  assignee: string | null;
+  assigneeId: string | null;
+  locationName: string | null;
+  locationId: string | null;
+  createdAt: string;
+}
+
+export interface DocumentItem {
+  id: string;
+  name: string;
+  category: string;
+  url: string;
+  sizeBytes: number | null;
+  locationName: string | null;
+  locationId: string | null;
+  uploadedBy: string | null;
+  createdAt: string;
+}
+
+export interface AgentSummary {
+  id: string;
+  name: string;
+  email: string | null;
+  regionCount: number;
+  locationCount: number;
+  signedCount: number;
+  openTasks: number;
+  forecastPackages: number;
+}
+
+export interface InvestorSummary {
+  id: string;
+  name: string;
+  contactPerson: string | null;
+  email: string | null;
+  phone: string | null;
+  locationCount: number;
+  deviceCount: number;
+  signedCount: number;
+  avgRoi: number | null;
+  forecastPackages: number;
+}
+
 export interface SessionUser {
   id: string;
   name?: string | null;

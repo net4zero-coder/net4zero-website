@@ -14,6 +14,11 @@ Legenda: ✅ gotowe · 🟡 częściowo (scaffold + model danych) · ⬜ zaplano
 | 6 | Dodawanie lokalizacji — formularz + **auto-geocoding adresu i przeciąganie pinezki** | ✅ |
 | 7 | Lista CRM — szukanie, sortowanie, filtrowanie (region/status/handlowiec/…) | ✅ |
 | 8 | Karta lokalizacji — zakładki: przegląd/historia/notatki/zdjęcia/dokumenty/zadania/kontakty | ✅ |
+| 9 | **Handlowcy** — portfele, statystyki (lokalizacje/podpisane/regiony/zadania/prognoza) + ranking | ✅ |
+| 10 | **Inwestorzy** — portfele: lokalizacje, urządzenia, ROI, prognoza, kontakt | ✅ |
+| 11 | **Dokumenty** — lista/filtry, dodawanie (metadane + link), abstrakcja storage (Supabase/S3) | ✅ (bez fizycznego uploadu) |
+| 12 | **Zadania** — tablica kanban + lista, priorytety, terminy, osoba, lokalizacja, zmiana statusu | ✅ (bez powiadomień e-mail) |
+| 13 | **Raporty** — statusy/województwa/handlowcy/inwestorzy/regiony + **eksport CSV** | ✅ (PDF/XLSX w planie) |
 | 14 | Responsywność (desktop/tablet/telefon, mobilna nawigacja) | ✅ |
 | 15 | Wygląd: minimalistyczny, tryb jasny/ciemny, animacje, zaokrąglenia | ✅ |
 
@@ -23,11 +28,11 @@ Legenda: ✅ gotowe · 🟡 częściowo (scaffold + model danych) · ⬜ zaplano
 |---|---|---|
 | 5+ | **Regiony** (rozszerzenie) | import granic TERYT (woj./powiat/miasto) z oficjalnych GeoJSON, edycja wierzchołków istniejącego obszaru |
 | 6+ | **Lokalizacje** | zapis historii każdej zmiany pola, upload zdjęć, edycja istniejącej lokalizacji |
-| 9 | **Handlowcy** | region, lokalizacje, zadania, kalendarz, cele sprzedażowe, statystyki, ranking |
-| 10 | **Inwestorzy** | portfel lokalizacji, urządzenia, ROI, przychody, status inwestycji, umowy, dokumenty, konto podglądowe |
-| 11 | **Dokumenty** | upload (PDF/Word/Excel/zdjęcia), Supabase Storage / S3, powiązanie z lokalizacją/inwestorem |
-| 12 | **Zadania** | osoba, termin, status, priorytet, **powiadomienia e-mail**, widok kanban |
-| 13 | **Raporty** | regiony/sprzedaż/handlowcy/lokalizacje/inwestorzy/operatorzy/instalacje, **eksport Excel + PDF** |
+| 9+ | **Handlowcy** (rozszerzenie) | kalendarz spotkań (CalendarEvent), cele sprzedażowe (SalesGoal) i ich realizacja |
+| 10+ | **Inwestorzy** (rozszerzenie) | umowy, przychody, konto podglądowe (rola INVESTOR) |
+| 11+ | **Dokumenty** (rozszerzenie) | fizyczny upload plików do Supabase Storage / S3 (multipart) |
+| 12+ | **Zadania** (rozszerzenie) | powiadomienia e-mail o terminach, drag&drop na tablicy |
+| 13+ | **Raporty** (rozszerzenie) | eksport do PDF i XLSX, filtry po okresie |
 | 16 | **Jakość** | testy (Vitest/Playwright), CI, audyt wydajności, pełna dokumentacja |
 
 ## Moduły specyficzne dla systemu kaucyjnego (rozszerzenie)
@@ -42,9 +47,11 @@ Rekomendowane, by aplikacja była projektowana pod NET4ZERO, a nie jako ogólny 
 
 ## Rekomendowana kolejność
 
-1. Etap 5 (Regiony) + auto-geocoding — domykają rdzeń mapowy.
-2. Etap 12 (Zadania) + Etap 11 (Dokumenty) — praca operacyjna handlowców.
-3. Etap 9/10 (Handlowcy/Inwestorzy) — pełne widoki portfelowe.
-4. Etap 13 (Raporty z eksportem).
-5. Moduły kaucyjne (urządzenia, rozliczenia, prognozy).
-6. Etap 16 (testy, CI, audyt) — równolegle od początku każdego modułu.
+1. ~~Etap 5 (Regiony) + auto-geocoding~~ ✅
+2. ~~Etap 12 (Zadania) + Etap 11 (Dokumenty)~~ ✅
+3. ~~Etap 9/10 (Handlowcy/Inwestorzy)~~ ✅
+4. ~~Etap 13 (Raporty z eksportem CSV)~~ ✅
+5. **Konfiguracja produkcyjna** — PostgreSQL (Supabase/Neon) + domena + zmienne na Vercel.
+6. Moduły kaucyjne (urządzenia/monitoring, rozliczenia, prognozy opakowań).
+7. Rozszerzenia modułów (upload plików, powiadomienia, PDF/XLSX, kalendarz, cele).
+8. Etap 16 (testy, CI, audyt) — równolegle od początku każdego modułu.
