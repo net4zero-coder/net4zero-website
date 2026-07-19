@@ -39,7 +39,7 @@ Legenda: ✅ gotowe · 🟡 częściowo (scaffold + model danych) · ⬜ zaplano
 
 Rekomendowane, by aplikacja była projektowana pod NET4ZERO, a nie jako ogólny CRM:
 
-- **Urządzenia/monitoring** — rejestr recyklomatów, statusy, telemetria, alerty serwisowe.
+- **Urządzenia/monitoring** — ✅ rejestr recyklomatów (statusy, serwis, powiązania z lokalizacją/operatorem/inwestorem, KPI). Do dodania: telemetria i alerty serwisowe.
 - **Integracje z operatorami** — wymiana danych o odbiorach i rozliczeniach.
 - **Harmonogramy odbiorów** — planowanie i realizacja logistyki.
 - **Rozliczenia** — handling fee / clearing fee per lokalizacja i inwestor.

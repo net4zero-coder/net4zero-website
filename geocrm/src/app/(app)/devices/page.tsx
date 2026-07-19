@@ -1,19 +1,24 @@
-import { ModulePlaceholder } from '@/components/module-placeholder';
+import { PageHeader } from '@/components/page-header';
+import { DevicesManager } from '@/components/devices/devices-manager';
+import { getCurrentUser } from '@/lib/session';
+import { getDevices, getLocationOptions } from '@/lib/queries';
 
 export const dynamic = 'force-dynamic';
 
-export default function DevicesPage() {
+export default async function DevicesPage() {
+  const user = await getCurrentUser();
+  const orgId = user?.organizationId ?? null;
+  const [devices, locations] = await Promise.all([getDevices(orgId), getLocationOptions(orgId)]);
+
   return (
-    <ModulePlaceholder
-      title="Urządzenia"
-      stage="Etap 16+ (moduł kaucyjny)"
-      description="Rejestr recyklomatów: status, instalacje, serwis, monitoring."
-      features={[
-        'Rejestr urządzeń (numer seryjny, model, status)',
-        'Powiązanie z lokalizacją, operatorem i inwestorem',
-        'Historia instalacji i serwisów',
-        'Integracja z operatorami i monitoring stanu (roadmap)',
-      ]}
-    />
+    <div>
+      <PageHeader
+        title="Urządzenia"
+        description="Rejestr recyklomatów: status, instalacje i serwis. Powiązane z lokalizacjami i operatorami."
+      />
+      <div className="p-4 lg:p-8">
+        <DevicesManager devices={devices} locations={locations} />
+      </div>
+    </div>
   );
 }

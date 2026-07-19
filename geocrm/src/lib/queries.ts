@@ -7,6 +7,7 @@ import {
   DEMO_INVESTOR_OPTIONS,
   DEMO_TASKS,
   DEMO_DOCUMENTS,
+  DEMO_DEVICES,
   demoDashboardStats,
   demoLocationDetail,
   demoRegions,
@@ -17,6 +18,7 @@ import type {
   ActivityItem,
   AgentSummary,
   DashboardStats,
+  DeviceItem,
   DocumentItem,
   GeoJSONPolygon,
   InvestorSummary,
@@ -319,6 +321,32 @@ export async function getDocuments(orgId: string | null): Promise<DocumentItem[]
     }));
   } catch {
     return DEMO_DOCUMENTS;
+  }
+}
+
+export async function getDevices(orgId: string | null): Promise<DeviceItem[]> {
+  if (IS_DEMO || !orgId) return DEMO_DEVICES;
+  try {
+    const rows = await prisma.device.findMany({
+      where: { organizationId: orgId },
+      include: { location: true, operator: true, investor: true },
+      orderBy: { createdAt: 'desc' },
+      take: 1000,
+    });
+    return rows.map((d) => ({
+      id: d.id,
+      serialNumber: d.serialNumber,
+      model: d.model,
+      status: d.status,
+      installedAt: d.installedAt?.toISOString() ?? null,
+      lastServiceAt: d.lastServiceAt?.toISOString() ?? null,
+      locationName: d.location?.name ?? null,
+      locationId: d.locationId,
+      operatorName: d.operator?.name ?? null,
+      investorName: d.investor?.name ?? null,
+    }));
+  } catch {
+    return DEMO_DEVICES;
   }
 }
 

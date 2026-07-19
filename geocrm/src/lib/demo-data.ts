@@ -2,6 +2,7 @@ import type {
   ActivityItem,
   AgentSummary,
   DashboardStats,
+  DeviceItem,
   DocumentItem,
   InvestorSummary,
   LocationDetail,
@@ -157,6 +158,23 @@ export const DEMO_DOCUMENTS: DocumentItem[] = [
   { id: 'doc-4', name: 'Pismo do spółdzielni.docx', category: 'WORD', url: '#', sizeBytes: 45000, locationName: 'Osiedle Gaj', locationId: 'loc-14', uploadedBy: AGENTS[0], createdAt: '2026-07-13T10:00:00Z' },
   { id: 'doc-5', name: 'Zdjęcie lokalizacji — Kazimierz.jpg', category: 'IMAGE', url: '#', sizeBytes: 1240000, locationName: 'Galeria Kazimierz', locationId: 'loc-3', uploadedBy: AGENTS[2], createdAt: '2026-07-15T15:00:00Z' },
 ];
+
+/** Urządzenia demo — wyprowadzone z lokalizacji posiadających numer urządzenia. */
+export const DEMO_DEVICES: DeviceItem[] = DEMO_LOCATIONS.filter((l) => l.deviceNumber).map((l, i) => {
+  const status = l.status === 'SIGNED' ? 'ACTIVE' : l.status === 'INSTALLATION' ? 'INSTALLED' : 'PLANNED';
+  return {
+    id: `device-${i + 1}`,
+    serialNumber: l.deviceNumber!,
+    model: i % 2 === 0 ? 'TOMRA T9' : 'Sielaff RVM-1',
+    status: (i === 1 ? 'MAINTENANCE' : status) as DeviceItem['status'],
+    installedAt: l.status === 'SIGNED' ? '2026-06-15T00:00:00Z' : null,
+    lastServiceAt: l.status === 'SIGNED' ? '2026-07-14T00:00:00Z' : null,
+    locationName: l.name,
+    locationId: l.id,
+    operatorName: l.operatorName,
+    investorName: l.investorName,
+  };
+});
 
 export const DEMO_ACTIVITIES: ActivityItem[] = [
   { id: 'a1', type: 'STATUS_CHANGED', message: 'Osiedle Grunwald → status: Instalacja', user: AGENTS[3], createdAt: '2026-07-17T15:10:00Z' },

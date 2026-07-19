@@ -5,9 +5,10 @@ import type {
   TaskStatus,
   TaskPriority,
   RegionType,
+  DeviceStatus,
 } from '@prisma/client';
 
-export type { LocationStatus, LocationType, Role, TaskStatus, TaskPriority, RegionType };
+export type { LocationStatus, LocationType, Role, TaskStatus, TaskPriority, RegionType, DeviceStatus };
 
 /** GeoJSON Polygon: coordinates = [ring][point][lng, lat]. */
 export interface GeoJSONPolygon {
@@ -58,6 +59,19 @@ export interface DocumentItem {
   locationId: string | null;
   uploadedBy: string | null;
   createdAt: string;
+}
+
+export interface DeviceItem {
+  id: string;
+  serialNumber: string;
+  model: string | null;
+  status: DeviceStatus;
+  installedAt: string | null;
+  lastServiceAt: string | null;
+  locationName: string | null;
+  locationId: string | null;
+  operatorName: string | null;
+  investorName: string | null;
 }
 
 export interface AgentSummary {
