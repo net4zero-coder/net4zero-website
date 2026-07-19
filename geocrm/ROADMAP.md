@@ -29,7 +29,7 @@ Legenda: ✅ gotowe · 🟡 częściowo (scaffold + model danych) · ⬜ zaplano
 | Etap | Moduł | Kluczowe zadania |
 |---|---|---|
 | 5+ | **Regiony** (rozszerzenie) | import granic TERYT (woj./powiat/miasto) z oficjalnych GeoJSON, edycja wierzchołków istniejącego obszaru |
-| 6+ | **Lokalizacje** | zapis historii każdej zmiany pola, upload zdjęć, edycja istniejącej lokalizacji |
+| 6+ | **Lokalizacje** | ~~edycja + historia zmian pól~~ ✅ · ~~notatki i kontakty inline~~ ✅ · pozostaje: upload zdjęć |
 | 9+ | **Handlowcy** (rozszerzenie) | kalendarz spotkań (CalendarEvent), cele sprzedażowe (SalesGoal) i ich realizacja |
 | 10+ | **Inwestorzy** (rozszerzenie) | umowy, przychody, konto podglądowe (rola INVESTOR) |
 | 11+ | **Dokumenty** (rozszerzenie) | fizyczny upload plików do Supabase Storage / S3 (multipart) |

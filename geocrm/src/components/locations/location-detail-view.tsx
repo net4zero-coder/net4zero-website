@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useActionState, useEffect, useState, useTransition } from 'react';
+import { useRouter } from 'next/navigation';
 import {
   MapPin,
   Phone,
@@ -18,10 +19,21 @@ import {
   CheckSquare,
   Users,
   Info,
+  Plus,
+  Trash2,
 } from 'lucide-react';
 import { StatusBadge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 import { cn, formatDate, timeAgo } from '@/lib/utils';
 import { LOCATION_TYPE_LABELS, TASK_STATUS_LABELS, TASK_PRIORITY_META } from '@/lib/constants';
+import {
+  addNote,
+  deleteNote,
+  addContact,
+  deleteContact,
+  type DetailFormState,
+} from '@/app/actions/location-details';
 import type { LocationDetail } from '@/types';
 
 const TABS = [
@@ -148,20 +160,70 @@ function HistoryTab({ location }: { location: LocationDetail }) {
   );
 }
 
+function useRefreshingAction(action: (p: DetailFormState, fd: FormData) => Promise<DetailFormState>) {
+  const router = useRouter();
+  const [state, formAction] = useActionState<DetailFormState, FormData>(action, undefined);
+  useEffect(() => {
+    if (state?.success) router.refresh();
+  }, [state?.success, router]);
+  return { state, formAction };
+}
+
 function NotesTab({ location }: { location: LocationDetail }) {
-  if (location.notes.length === 0) return <Empty text="Brak notatek." />;
+  const { state, formAction } = useRefreshingAction(addNote);
+  const router = useRouter();
+  const [isPending, startTransition] = useTransition();
+
+  const remove = (id: string) =>
+    startTransition(async () => {
+      const res = await deleteNote(id, location.id);
+      if (res?.error) alert(res.error);
+      router.refresh();
+    });
+
   return (
-    <ul className="space-y-3">
-      {location.notes.map((n) => (
-        <li key={n.id} className="rounded-lg border bg-secondary/40 p-3">
-          <p className="text-sm">{n.body}</p>
-          <p className="mt-1 text-xs text-muted-foreground">
-            {n.author ? `${n.author} · ` : ''}
-            {timeAgo(n.createdAt)}
-          </p>
-        </li>
-      ))}
-    </ul>
+    <div className="space-y-4">
+      <form action={formAction} className="space-y-2" key={location.notes.length}>
+        <input type="hidden" name="locationId" value={location.id} />
+        <textarea
+          name="body"
+          rows={2}
+          required
+          placeholder="Dodaj notatkę…"
+          className="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        />
+        {state?.error && <p className="text-xs text-destructive">{state.error}</p>}
+        <Button type="submit" size="sm">
+          <Plus className="h-4 w-4" /> Dodaj notatkę
+        </Button>
+      </form>
+
+      {location.notes.length === 0 ? (
+        <Empty text="Brak notatek." />
+      ) : (
+        <ul className="space-y-3">
+          {location.notes.map((n) => (
+            <li key={n.id} className="group rounded-lg border bg-secondary/40 p-3">
+              <div className="flex items-start justify-between gap-2">
+                <p className="text-sm">{n.body}</p>
+                <button
+                  onClick={() => remove(n.id)}
+                  disabled={isPending}
+                  aria-label="Usuń notatkę"
+                  className="shrink-0 text-muted-foreground opacity-0 transition-opacity hover:text-destructive group-hover:opacity-100"
+                >
+                  <Trash2 className="h-3.5 w-3.5" />
+                </button>
+              </div>
+              <p className="mt-1 text-xs text-muted-foreground">
+                {n.author ? `${n.author} · ` : ''}
+                {timeAgo(n.createdAt)}
+              </p>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }
 
@@ -223,20 +285,62 @@ function TasksTab({ location }: { location: LocationDetail }) {
 }
 
 function ContactsTab({ location }: { location: LocationDetail }) {
-  if (location.contacts.length === 0) return <Empty text="Brak kontaktów." />;
+  const { state, formAction } = useRefreshingAction(addContact);
+  const router = useRouter();
+  const [isPending, startTransition] = useTransition();
+
+  const remove = (id: string) =>
+    startTransition(async () => {
+      const res = await deleteContact(id, location.id);
+      if (res?.error) alert(res.error);
+      router.refresh();
+    });
+
   return (
-    <ul className="space-y-2">
-      {location.contacts.map((c) => (
-        <li key={c.id} className="rounded-lg border p-3">
-          <p className="text-sm font-medium">{c.name}</p>
-          {c.role && <p className="text-xs text-muted-foreground">{c.role}</p>}
-          <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-xs">
-            {c.phone && <span className="flex items-center gap-1"><Phone className="h-3 w-3" />{c.phone}</span>}
-            {c.email && <span className="flex items-center gap-1"><Mail className="h-3 w-3" />{c.email}</span>}
-          </div>
-        </li>
-      ))}
-    </ul>
+    <div className="space-y-4">
+      <form action={formAction} className="space-y-2 rounded-lg border p-3" key={location.contacts.length}>
+        <input type="hidden" name="locationId" value={location.id} />
+        <div className="grid gap-2 sm:grid-cols-2">
+          <Input name="name" placeholder="Imię i nazwisko *" required />
+          <Input name="role" placeholder="Rola (np. Prezes)" />
+          <Input name="phone" placeholder="Telefon" />
+          <Input name="email" type="email" placeholder="E-mail" />
+        </div>
+        {state?.error && <p className="text-xs text-destructive">{state.error}</p>}
+        <Button type="submit" size="sm">
+          <Plus className="h-4 w-4" /> Dodaj kontakt
+        </Button>
+      </form>
+
+      {location.contacts.length === 0 ? (
+        <Empty text="Brak kontaktów." />
+      ) : (
+        <ul className="space-y-2">
+          {location.contacts.map((c) => (
+            <li key={c.id} className="group rounded-lg border p-3">
+              <div className="flex items-start justify-between gap-2">
+                <div>
+                  <p className="text-sm font-medium">{c.name}</p>
+                  {c.role && <p className="text-xs text-muted-foreground">{c.role}</p>}
+                </div>
+                <button
+                  onClick={() => remove(c.id)}
+                  disabled={isPending}
+                  aria-label="Usuń kontakt"
+                  className="shrink-0 text-muted-foreground opacity-0 transition-opacity hover:text-destructive group-hover:opacity-100"
+                >
+                  <Trash2 className="h-3.5 w-3.5" />
+                </button>
+              </div>
+              <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-xs">
+                {c.phone && <span className="flex items-center gap-1"><Phone className="h-3 w-3" />{c.phone}</span>}
+                {c.email && <span className="flex items-center gap-1"><Mail className="h-3 w-3" />{c.email}</span>}
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }
 
