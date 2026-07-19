@@ -98,11 +98,16 @@ Konta z seeda (hasło `demo1234`): `admin@net4zero.pl` (ADMIN), `manager@net4zer
 
 ---
 
-## 7. Domena
-1. Kup domenę (np. `geocrm.net4zero.pl` jako subdomena, albo osobną).
-2. Vercel → projekt → **Settings → Domains → Add** → wpisz domenę.
-3. Vercel pokaże rekord **CNAME** (lub A) — dodaj go u rejestratora/DNS.
-4. Po propagacji zaktualizuj `AUTH_URL` na finalny adres i zrób **Redeploy**.
+## 7. Domena `geocrm.pl` (GoDaddy → Vercel)
+1. Vercel → projekt → **Settings → Domains → Add** → dodaj `geocrm.pl` i `www.geocrm.pl`.
+   Vercel wyświetli dokładne rekordy DNS — użyj tych wartości (poniżej typowe).
+2. GoDaddy → **geocrm.pl → DNS → Manage DNS**:
+   - Wyłącz Domain Forwarding/Parking, jeśli aktywne.
+   - **A** `@` → `76.76.21.21` (apex; jeśli Vercel pokazuje inny — użyj z panelu), TTL 600.
+   - **CNAME** `www` → `cname.vercel-dns.com`, TTL 600.
+   - Usuń stare rekordy parkingu GoDaddy dla `@` i `www`.
+3. W Vercel ustaw `geocrm.pl` jako Primary (www → redirect do apex). SSL wystawi się automatycznie.
+4. Po propagacji ustaw `AUTH_URL=https://geocrm.pl` i zrób **Redeploy**.
 
 ---
 

@@ -131,4 +131,6 @@ NET4ZERO w katalogu głównym repo pozostaje niezależnym deploymentem.
 
 ---
 
+**Kontynuujesz w Claude Code na komputerze?** Zacznij od → [HANDOFF.md](./HANDOFF.md) (przejęcie projektu + wdrożenie na `geocrm.pl`).
+
 Architektura: [ARCHITECTURE.md](./ARCHITECTURE.md) · Wdrożenie krok po kroku: [DEPLOY.md](./DEPLOY.md) · Plan rozwoju: [ROADMAP.md](./ROADMAP.md)
