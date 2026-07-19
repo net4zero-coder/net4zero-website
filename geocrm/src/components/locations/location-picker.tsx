@@ -34,13 +34,19 @@ export function LocationPicker({
   defaultCity = '',
   defaultVoivodeship = '',
   defaultPostalCode = '',
+  defaultLat,
+  defaultLng,
 }: {
   defaultAddress?: string;
   defaultCity?: string;
   defaultVoivodeship?: string;
   defaultPostalCode?: string;
+  defaultLat?: number;
+  defaultLng?: number;
 }) {
-  const [position, setPosition] = useState<Position>(DEFAULT_MAP_CENTER);
+  const [position, setPosition] = useState<Position>(
+    defaultLat != null && defaultLng != null ? { lat: defaultLat, lng: defaultLng } : DEFAULT_MAP_CENTER,
+  );
   const [address, setAddress] = useState(defaultAddress);
   const [city, setCity] = useState(defaultCity);
   const [voivodeship, setVoivodeship] = useState(defaultVoivodeship);
@@ -122,8 +128,8 @@ export function LocationPicker({
         <div className="h-72 overflow-hidden rounded-lg border">
           <Map
             mapId={MAP_ID}
-            defaultCenter={DEFAULT_MAP_CENTER}
-            defaultZoom={6}
+            defaultCenter={position}
+            defaultZoom={defaultLat != null ? 14 : 6}
             gestureHandling="greedy"
             className="h-full w-full"
           >

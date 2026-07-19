@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, Map as MapIcon } from 'lucide-react';
+import { ArrowLeft, Map as MapIcon, Pencil } from 'lucide-react';
 import { LocationDetailView } from '@/components/locations/location-detail-view';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
@@ -21,9 +21,14 @@ export default async function LocationDetailPage({ params }: { params: Promise<{
         <Link href="/locations" className={cn(buttonVariants({ variant: 'ghost', size: 'sm' }))}>
           <ArrowLeft className="h-4 w-4" /> Lokalizacje
         </Link>
-        <Link href="/map" className={cn(buttonVariants({ variant: 'outline', size: 'sm' }))}>
-          <MapIcon className="h-4 w-4" /> Pokaż na mapie
-        </Link>
+        <div className="flex gap-2">
+          <Link href={`/locations/${id}/edit`} className={cn(buttonVariants({ variant: 'outline', size: 'sm' }))}>
+            <Pencil className="h-4 w-4" /> Edytuj
+          </Link>
+          <Link href="/map" className={cn(buttonVariants({ variant: 'outline', size: 'sm' }))}>
+            <MapIcon className="h-4 w-4" /> Pokaż na mapie
+          </Link>
+        </div>
       </div>
       <div className="mx-auto max-w-3xl p-4 lg:p-8">
         <div className="overflow-hidden rounded-lg border bg-card">
