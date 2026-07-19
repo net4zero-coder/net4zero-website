@@ -8,6 +8,7 @@ import {
   DEMO_TASKS,
   DEMO_DOCUMENTS,
   DEMO_DEVICES,
+  DEMO_USERS,
   demoDashboardStats,
   demoLocationDetail,
   demoRegions,
@@ -28,6 +29,7 @@ import type {
   Option,
   RegionItem,
   TaskItem,
+  UserItem,
 } from '@/types';
 
 export interface LocationFilters {
@@ -321,6 +323,26 @@ export async function getDocuments(orgId: string | null): Promise<DocumentItem[]
     }));
   } catch {
     return DEMO_DOCUMENTS;
+  }
+}
+
+export async function getUsers(orgId: string | null): Promise<UserItem[]> {
+  if (IS_DEMO || !orgId) return DEMO_USERS;
+  try {
+    const rows = await prisma.user.findMany({
+      where: { organizationId: orgId },
+      orderBy: { createdAt: 'asc' },
+    });
+    return rows.map((u) => ({
+      id: u.id,
+      name: u.name,
+      email: u.email,
+      role: u.role,
+      active: u.active,
+      createdAt: u.createdAt.toISOString(),
+    }));
+  } catch {
+    return DEMO_USERS;
   }
 }
 

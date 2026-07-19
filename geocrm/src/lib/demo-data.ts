@@ -11,6 +11,7 @@ import type {
   RegionItem,
   SessionUser,
   TaskItem,
+  UserItem,
 } from '@/types';
 import { pointInPolygon } from './geo';
 
@@ -35,6 +36,16 @@ export const DEMO_CREDENTIALS = {
   email: 'admin@net4zero.pl',
   password: 'demo1234',
 };
+
+/** Użytkownicy demo (zarządzanie w Ustawieniach). */
+export const DEMO_USERS: UserItem[] = [
+  { id: 'user-admin', name: 'Maciej Machlajewski', email: 'admin@net4zero.pl', role: 'ADMIN', active: true, createdAt: '2026-06-01T00:00:00Z' },
+  { id: 'user-manager', name: 'Anna Manager', email: 'manager@net4zero.pl', role: 'MANAGER', active: true, createdAt: '2026-06-02T00:00:00Z' },
+  { id: 'user-darek', name: 'Darek Kowalczyk', email: 'darek@net4zero.pl', role: 'SALES', active: true, createdAt: '2026-06-03T00:00:00Z' },
+  { id: 'user-adam', name: 'Adam Nowak', email: 'adam@net4zero.pl', role: 'SALES', active: true, createdAt: '2026-06-04T00:00:00Z' },
+  { id: 'user-inwestor', name: 'Jan Inwestor', email: 'inwestor@net4zero.pl', role: 'INVESTOR', active: true, createdAt: '2026-06-05T00:00:00Z' },
+  { id: 'user-serwis', name: 'Piotr Serwis', email: 'serwis@net4zero.pl', role: 'SERVICE', active: false, createdAt: '2026-06-06T00:00:00Z' },
+];
 
 const AGENTS = ['Darek Kowalczyk', 'Adam Nowak', 'Michał Wiśniewski', 'Sebastian Zieliński'];
 const INVESTORS = ['Eliongroup Sp. z o.o.', 'SM Wrocław Południe', 'ZGL Zamość', 'Fundusz EkoKapitał'];

@@ -21,6 +21,8 @@ Legenda: ✅ gotowe · 🟡 częściowo (scaffold + model danych) · ⬜ zaplano
 | 13 | **Raporty** — statusy/województwa/handlowcy/inwestorzy/regiony + **eksport CSV** | ✅ (PDF/XLSX w planie) |
 | 14 | Responsywność (desktop/tablet/telefon, mobilna nawigacja) | ✅ |
 | 15 | Wygląd: minimalistyczny, tryb jasny/ciemny, animacje, zaokrąglenia | ✅ |
+| 2/16 | **Ustawienia** — zarządzanie użytkownikami (dodawanie, zmiana roli, aktywacja/dezaktywacja) | ✅ |
+| kaucyjny | **Urządzenia** — rejestr recyklomatów (statusy, serwis, KPI, powiązania) | ✅ |
 
 ## Do zrealizowania
 

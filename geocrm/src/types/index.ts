@@ -61,6 +61,15 @@ export interface DocumentItem {
   createdAt: string;
 }
 
+export interface UserItem {
+  id: string;
+  name: string | null;
+  email: string;
+  role: Role;
+  active: boolean;
+  createdAt: string;
+}
+
 export interface DeviceItem {
   id: string;
   serialNumber: string;
