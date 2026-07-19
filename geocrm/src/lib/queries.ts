@@ -9,6 +9,7 @@ import {
   DEMO_DOCUMENTS,
   DEMO_DEVICES,
   DEMO_USERS,
+  DEMO_CONTRACTS,
   demoDashboardStats,
   demoLocationDetail,
   demoRegions,
@@ -18,6 +19,7 @@ import {
 import type {
   ActivityItem,
   AgentSummary,
+  ContractItem,
   DashboardStats,
   DeviceItem,
   DocumentItem,
@@ -343,6 +345,33 @@ export async function getUsers(orgId: string | null): Promise<UserItem[]> {
     }));
   } catch {
     return DEMO_USERS;
+  }
+}
+
+export async function getContracts(orgId: string | null): Promise<ContractItem[]> {
+  if (IS_DEMO || !orgId) return DEMO_CONTRACTS;
+  try {
+    const rows = await prisma.contract.findMany({
+      where: { organizationId: orgId },
+      include: { location: true, investor: true },
+      orderBy: { createdAt: 'desc' },
+      take: 1000,
+    });
+    return rows.map((c) => ({
+      id: c.id,
+      title: c.title,
+      status: c.status,
+      value: c.value,
+      signedAt: c.signedAt?.toISOString() ?? null,
+      expiresAt: c.expiresAt?.toISOString() ?? null,
+      locationName: c.location?.name ?? null,
+      locationId: c.locationId,
+      investorName: c.investor?.name ?? null,
+      investorId: c.investorId,
+      createdAt: c.createdAt.toISOString(),
+    }));
+  } catch {
+    return DEMO_CONTRACTS;
   }
 }
 

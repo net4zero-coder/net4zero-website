@@ -16,6 +16,7 @@ Legenda: ✅ gotowe · 🟡 częściowo (scaffold + model danych) · ⬜ zaplano
 | 8 | Karta lokalizacji — zakładki: przegląd/historia/notatki/zdjęcia/dokumenty/zadania/kontakty | ✅ |
 | 9 | **Handlowcy** — portfele, statystyki (lokalizacje/podpisane/regiony/zadania/prognoza) + ranking | ✅ |
 | 10 | **Inwestorzy** — portfele: lokalizacje, urządzenia, ROI, prognoza, kontakt | ✅ |
+| 10/kaucyjny | **Umowy** — rejestr kontraktów (statusy, wartości, wygaśnięcie, powiązania z lokalizacją/inwestorem), zasilają KPI dashboardu | ✅ |
 | 11 | **Dokumenty** — lista/filtry, dodawanie (metadane + link), abstrakcja storage (Supabase/S3) | ✅ (bez fizycznego uploadu) |
 | 12 | **Zadania** — tablica kanban + lista, priorytety, terminy, osoba, lokalizacja, zmiana statusu | ✅ (bez powiadomień e-mail) |
 | 13 | **Raporty** — statusy/województwa/handlowcy/inwestorzy/regiony + **eksport CSV** | ✅ (PDF/XLSX w planie) |

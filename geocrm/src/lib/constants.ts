@@ -1,4 +1,4 @@
-import type { LocationStatus, LocationType, Role, TaskStatus, TaskPriority, DeviceStatus } from '@prisma/client';
+import type { LocationStatus, LocationType, Role, TaskStatus, TaskPriority, DeviceStatus, ContractStatus } from '@prisma/client';
 
 /**
  * Kolory i etykiety statusów lokalizacji — jedyne źródło prawdy używane
@@ -82,6 +82,16 @@ export const DEVICE_STATUS_META: Record<DeviceStatus, { label: string; color: st
 };
 
 export const DEVICE_STATUSES = Object.keys(DEVICE_STATUS_META) as DeviceStatus[];
+
+export const CONTRACT_STATUS_META: Record<ContractStatus, { label: string; color: string }> = {
+  DRAFT: { label: 'Szkic', color: '#94a3b8' },
+  SENT: { label: 'Wysłana', color: '#0ea5e9' },
+  SIGNED: { label: 'Podpisana', color: '#16a34a' },
+  EXPIRED: { label: 'Wygasła', color: '#f59e0b' },
+  TERMINATED: { label: 'Rozwiązana', color: '#dc2626' },
+};
+
+export const CONTRACT_STATUSES = Object.keys(CONTRACT_STATUS_META) as ContractStatus[];
 
 /** Domyślny środek mapy — Polska. */
 export const DEFAULT_MAP_CENTER = { lat: 52.0693, lng: 19.4803 };

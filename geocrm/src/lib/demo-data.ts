@@ -1,6 +1,7 @@
 import type {
   ActivityItem,
   AgentSummary,
+  ContractItem,
   DashboardStats,
   DeviceItem,
   DocumentItem,
@@ -187,6 +188,15 @@ export const DEMO_DEVICES: DeviceItem[] = DEMO_LOCATIONS.filter((l) => l.deviceN
   };
 });
 
+/** Umowy demo — powiązane z lokalizacjami/inwestorami. */
+export const DEMO_CONTRACTS: ContractItem[] = [
+  { id: 'contract-1', title: 'Umowa dzierżawy — Osiedle Reja 15', status: 'SIGNED', value: 48000, signedAt: '2026-07-01T00:00:00Z', expiresAt: '2029-07-01T00:00:00Z', locationName: 'Osiedle Reja 15', locationId: 'loc-1', investorName: INVESTORS[1], investorId: 'investor-2', createdAt: '2026-06-20T00:00:00Z' },
+  { id: 'contract-2', title: 'Umowa dzierżawy — Osiedle Gaj', status: 'SIGNED', value: 42000, signedAt: '2026-07-14T00:00:00Z', expiresAt: '2029-07-14T00:00:00Z', locationName: 'Osiedle Gaj', locationId: 'loc-14', investorName: INVESTORS[1], investorId: 'investor-2', createdAt: '2026-06-28T00:00:00Z' },
+  { id: 'contract-3', title: 'Umowa — Galeria Łódzka', status: 'SIGNED', value: 96000, signedAt: '2026-07-13T00:00:00Z', expiresAt: '2031-07-13T00:00:00Z', locationName: 'Galeria Łódzka', locationId: 'loc-10', investorName: INVESTORS[0], investorId: 'investor-1', createdAt: '2026-06-15T00:00:00Z' },
+  { id: 'contract-4', title: 'Umowa — CH Blue City', status: 'SENT', value: 120000, signedAt: null, expiresAt: null, locationName: 'Centrum Handlowe Blue City', locationId: 'loc-6', investorName: INVESTORS[0], investorId: 'investor-1', createdAt: '2026-07-16T00:00:00Z' },
+  { id: 'contract-5', title: 'Umowa — Galeria Kazimierz', status: 'DRAFT', value: 84000, signedAt: null, expiresAt: null, locationName: 'Galeria Kazimierz', locationId: 'loc-3', investorName: INVESTORS[3], investorId: 'investor-4', createdAt: '2026-07-15T00:00:00Z' },
+];
+
 export const DEMO_ACTIVITIES: ActivityItem[] = [
   { id: 'a1', type: 'STATUS_CHANGED', message: 'Osiedle Grunwald → status: Instalacja', user: AGENTS[3], createdAt: '2026-07-17T15:10:00Z' },
   { id: 'a2', type: 'LOCATION_CREATED', message: 'Dodano lokalizację: CH Blue City', user: AGENTS[1], createdAt: '2026-07-17T07:30:00Z' },
@@ -294,7 +304,7 @@ export function demoDashboardStats(): DashboardStats {
     locations: DEMO_LOCATIONS.length,
     activeInvestors: INVESTORS.length,
     regions: REGIONS.length,
-    signedContracts: count('SIGNED'),
+    signedContracts: DEMO_CONTRACTS.filter((c) => c.status === 'SIGNED').length,
     devices: DEMO_LOCATIONS.filter((l) => l.deviceNumber).length,
     installations: count('INSTALLATION'),
     inNegotiation: count('NEGOTIATION'),

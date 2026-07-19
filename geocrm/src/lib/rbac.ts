@@ -27,6 +27,8 @@ export type Permission =
   | 'documents:manage'
   | 'devices:view'
   | 'devices:manage'
+  | 'contracts:view'
+  | 'contracts:manage'
   | 'reports:view'
   | 'reports:export'
   | 'users:manage'
@@ -52,6 +54,8 @@ const ALL: Permission[] = [
   'documents:manage',
   'devices:view',
   'devices:manage',
+  'contracts:view',
+  'contracts:manage',
   'reports:view',
   'reports:export',
   'users:manage',
@@ -83,6 +87,8 @@ export const ROLE_PERMISSIONS: Record<Role, Permission[]> = {
     'documents:manage',
     'devices:view',
     'devices:manage',
+    'contracts:view',
+    'contracts:manage',
     'reports:view',
     'reports:export',
   ],
@@ -100,6 +106,8 @@ export const ROLE_PERMISSIONS: Record<Role, Permission[]> = {
     'tasks:manage',
     'documents:view',
     'documents:manage',
+    'contracts:view',
+    'contracts:manage',
     'reports:view',
   ],
 
@@ -109,6 +117,7 @@ export const ROLE_PERMISSIONS: Record<Role, Permission[]> = {
     'locations:view',
     'documents:view',
     'devices:view',
+    'contracts:view',
     'reports:view',
   ],
 
