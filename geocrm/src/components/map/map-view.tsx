@@ -1,10 +1,11 @@
 'use client';
 
 import { APIProvider, Map, AdvancedMarker, Pin, useMap } from '@vis.gl/react-google-maps';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { MapPinned } from 'lucide-react';
 import { STATUS_META, DEFAULT_MAP_CENTER, DEFAULT_MAP_ZOOM } from '@/lib/constants';
-import type { LocationListItem } from '@/types';
+import { geoJSONToPath } from '@/lib/geo';
+import type { LocationListItem, RegionItem } from '@/types';
 
 const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '';
 const MAP_ID = process.env.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID ?? 'DEMO_MAP_ID';
@@ -13,9 +14,10 @@ interface MapViewProps {
   locations: LocationListItem[];
   selectedId: string | null;
   onSelect: (id: string) => void;
+  regions?: RegionItem[];
 }
 
-export function MapView({ locations, selectedId, onSelect }: MapViewProps) {
+export function MapView({ locations, selectedId, onSelect, regions = [] }: MapViewProps) {
   if (!API_KEY) return <MapFallback locations={locations} />;
 
   return (
@@ -28,6 +30,7 @@ export function MapView({ locations, selectedId, onSelect }: MapViewProps) {
         disableDefaultUI={false}
         className="h-full w-full"
       >
+        <RegionOverlays regions={regions} />
         {locations.map((loc) => {
           const meta = STATUS_META[loc.status];
           const active = loc.id === selectedId;
@@ -51,6 +54,40 @@ export function MapView({ locations, selectedId, onSelect }: MapViewProps) {
       </Map>
     </APIProvider>
   );
+}
+
+/** Renderuje obszary regionów jako podkład pod markerami. */
+function RegionOverlays({ regions }: { regions: RegionItem[] }) {
+  const map = useMap();
+  const polysRef = useRef<google.maps.Polygon[]>([]);
+
+  useEffect(() => {
+    if (!map) return;
+    polysRef.current.forEach((p) => p.setMap(null));
+    polysRef.current = [];
+    for (const region of regions) {
+      if (!region.geometry) continue;
+      const color = region.color ?? '#4CAF50';
+      polysRef.current.push(
+        new google.maps.Polygon({
+          paths: geoJSONToPath(region.geometry),
+          strokeColor: color,
+          strokeOpacity: 0.8,
+          strokeWeight: 1.5,
+          fillColor: color,
+          fillOpacity: 0.08,
+          clickable: false,
+          map,
+        }),
+      );
+    }
+    return () => {
+      polysRef.current.forEach((p) => p.setMap(null));
+      polysRef.current = [];
+    };
+  }, [map, regions]);
+
+  return null;
 }
 
 /** Dopasowuje widok do markerów / centruje na wybranej lokalizacji. */

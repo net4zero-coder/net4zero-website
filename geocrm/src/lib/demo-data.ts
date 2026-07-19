@@ -3,8 +3,11 @@ import type {
   DashboardStats,
   LocationDetail,
   LocationListItem,
+  Option,
+  RegionItem,
   SessionUser,
 } from '@/types';
+import { pointInPolygon } from './geo';
 
 /**
  * Tryb demo — aktywny gdy brak DATABASE_URL. Pozwala uruchomić i zobaczyć
@@ -141,6 +144,59 @@ export const DEMO_ACTIVITIES: ActivityItem[] = [
   { id: 'a4', type: 'TASK_DONE', message: 'Zadanie ukończone: przegląd RVM-DS-014', user: 'Serwis NET4ZERO', createdAt: '2026-07-14T12:00:00Z' },
   { id: 'a5', type: 'NOTE_ADDED', message: 'Notatka do: Galeria Kazimierz', user: AGENTS[2], createdAt: '2026-07-15T14:40:00Z' },
 ];
+
+/** Opcje handlowców / inwestorów do selectów (demo). */
+export const DEMO_AGENT_OPTIONS: Option[] = AGENTS.map((name, i) => ({ id: `agent-${i + 1}`, name }));
+export const DEMO_INVESTOR_OPTIONS: Option[] = INVESTORS.map((name, i) => ({ id: `investor-${i + 1}`, name }));
+
+/** Regiony demo — prostokątne obszary CUSTOM wokół klastrów lokalizacji. */
+function box(minLng: number, minLat: number, maxLng: number, maxLat: number): RegionItem['geometry'] {
+  return {
+    type: 'Polygon',
+    coordinates: [
+      [
+        [minLng, minLat],
+        [maxLng, minLat],
+        [maxLng, maxLat],
+        [minLng, maxLat],
+        [minLng, minLat],
+      ],
+    ],
+  };
+}
+
+export const DEMO_REGIONS: RegionItem[] = [
+  {
+    id: 'region-wroclaw', name: 'Wrocław — Południe', type: 'CUSTOM', color: '#4CAF50',
+    geometry: box(16.85, 51.0, 17.15, 51.2), agentId: 'agent-1', agentName: AGENTS[0],
+    investorId: 'investor-2', investorName: INVESTORS[1], locationCount: 0,
+  },
+  {
+    id: 'region-warszawa', name: 'Warszawa — Lewobrzeżna', type: 'CUSTOM', color: '#03A9F4',
+    geometry: box(20.85, 52.1, 21.2, 52.3), agentId: 'agent-2', agentName: AGENTS[1],
+    investorId: 'investor-1', investorName: INVESTORS[0], locationCount: 0,
+  },
+  {
+    id: 'region-krakow', name: 'Kraków — Centrum', type: 'CUSTOM', color: '#8b5cf6',
+    geometry: box(19.8, 49.98, 20.05, 50.1), agentId: 'agent-3', agentName: AGENTS[2],
+    investorId: null, investorName: null, locationCount: 0,
+  },
+  {
+    id: 'region-dolnoslaskie', name: 'Dolnośląskie', type: 'WOJEWODZTWO', color: '#16a34a',
+    geometry: null, agentId: 'agent-1', agentName: AGENTS[0], investorId: null, investorName: null,
+    locationCount: 0,
+  },
+];
+
+/** Regiony demo z policzoną liczbą lokalizacji (point-in-polygon). */
+export function demoRegions(): RegionItem[] {
+  return DEMO_REGIONS.map((r) => ({
+    ...r,
+    locationCount: r.geometry
+      ? DEMO_LOCATIONS.filter((l) => pointInPolygon(l.latitude, l.longitude, r.geometry!)).length
+      : DEMO_LOCATIONS.filter((l) => l.voivodeship === r.name).length,
+  }));
+}
 
 function count(status: LocationListItem['status']) {
   return DEMO_LOCATIONS.filter((l) => l.status === status).length;

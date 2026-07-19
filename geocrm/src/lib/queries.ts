@@ -3,15 +3,21 @@ import {
   IS_DEMO,
   DEMO_LOCATIONS,
   DEMO_ACTIVITIES,
+  DEMO_AGENT_OPTIONS,
+  DEMO_INVESTOR_OPTIONS,
   demoDashboardStats,
   demoLocationDetail,
+  demoRegions,
 } from './demo-data';
 import type {
   ActivityItem,
   DashboardStats,
+  GeoJSONPolygon,
   LocationDetail,
   LocationListItem,
   LocationStatus,
+  Option,
+  RegionItem,
 } from '@/types';
 
 export interface LocationFilters {
@@ -194,6 +200,60 @@ export async function getDashboardStats(orgId: string | null): Promise<Dashboard
     };
   } catch {
     return demoDashboardStats();
+  }
+}
+
+export async function getRegions(orgId: string | null): Promise<RegionItem[]> {
+  if (IS_DEMO || !orgId) return demoRegions();
+
+  try {
+    const rows = await prisma.region.findMany({
+      where: { organizationId: orgId },
+      include: { agent: true, investor: true, _count: { select: { locations: true } } },
+      orderBy: { name: 'asc' },
+    });
+    return rows.map((r) => ({
+      id: r.id,
+      name: r.name,
+      type: r.type,
+      color: r.color,
+      geometry: (r.geometry as unknown as GeoJSONPolygon | null) ?? null,
+      agentId: r.agentId,
+      agentName: r.agent?.name ?? null,
+      investorId: r.investorId,
+      investorName: r.investor?.name ?? null,
+      locationCount: r._count.locations,
+    }));
+  } catch {
+    return demoRegions();
+  }
+}
+
+export async function getAgentOptions(orgId: string | null): Promise<Option[]> {
+  if (IS_DEMO || !orgId) return DEMO_AGENT_OPTIONS;
+  try {
+    const rows = await prisma.user.findMany({
+      where: { organizationId: orgId, role: { in: ['SALES', 'MANAGER'] }, active: true },
+      select: { id: true, name: true },
+      orderBy: { name: 'asc' },
+    });
+    return rows.map((u) => ({ id: u.id, name: u.name ?? '—' }));
+  } catch {
+    return DEMO_AGENT_OPTIONS;
+  }
+}
+
+export async function getInvestorOptions(orgId: string | null): Promise<Option[]> {
+  if (IS_DEMO || !orgId) return DEMO_INVESTOR_OPTIONS;
+  try {
+    const rows = await prisma.investor.findMany({
+      where: { organizationId: orgId, active: true },
+      select: { id: true, name: true },
+      orderBy: { name: 'asc' },
+    });
+    return rows.map((i) => ({ id: i.id, name: i.name }));
+  } catch {
+    return DEMO_INVESTOR_OPTIONS;
   }
 }
 

@@ -10,7 +10,8 @@ Legenda: ✅ gotowe · 🟡 częściowo (scaffold + model danych) · ⬜ zaplano
 | 2 | Logowanie / rejestracja / reset hasła + **RBAC (5 ról)** | ✅ |
 | 3 | Dashboard: KPI, wykresy (Recharts), ostatnie aktywności | ✅ |
 | 4 | **Mapa Google** z markerami kolorowanymi wg statusu | ✅ |
-| 6 | Dodawanie lokalizacji — formularz z pełnymi polami | 🟡 (bez auto-geocode/drag-pin) |
+| 5 | **Regiony** — rysowanie obszaru na mapie, typy (woj./powiat/miasto/custom), edycja/usuwanie, przypisanie handlowca+inwestora, auto-przypisanie lokalizacji (point-in-polygon), nakładki na mapie | ✅ |
+| 6 | Dodawanie lokalizacji — formularz + **auto-geocoding adresu i przeciąganie pinezki** | ✅ |
 | 7 | Lista CRM — szukanie, sortowanie, filtrowanie (region/status/handlowiec/…) | ✅ |
 | 8 | Karta lokalizacji — zakładki: przegląd/historia/notatki/zdjęcia/dokumenty/zadania/kontakty | ✅ |
 | 14 | Responsywność (desktop/tablet/telefon, mobilna nawigacja) | ✅ |
@@ -20,8 +21,8 @@ Legenda: ✅ gotowe · 🟡 częściowo (scaffold + model danych) · ⬜ zaplano
 
 | Etap | Moduł | Kluczowe zadania |
 |---|---|---|
-| 5 | **Regiony** | rysowanie obszarów na mapie (Drawing/Geometry), regiony TERYT (woj./powiat/miasto), edycja/usuwanie/nazwa, przypisanie handlowca+inwestora, auto-przypisanie lokalizacji (point-in-polygon) |
-| 6+ | **Lokalizacje** | auto-geocoding adresu (Google Geocoding), przeciąganie pinezki, zapis historii każdej zmiany pola, upload zdjęć |
+| 5+ | **Regiony** (rozszerzenie) | import granic TERYT (woj./powiat/miasto) z oficjalnych GeoJSON, edycja wierzchołków istniejącego obszaru |
+| 6+ | **Lokalizacje** | zapis historii każdej zmiany pola, upload zdjęć, edycja istniejącej lokalizacji |
 | 9 | **Handlowcy** | region, lokalizacje, zadania, kalendarz, cele sprzedażowe, statystyki, ranking |
 | 10 | **Inwestorzy** | portfel lokalizacji, urządzenia, ROI, przychody, status inwestycji, umowy, dokumenty, konto podglądowe |
 | 11 | **Dokumenty** | upload (PDF/Word/Excel/zdjęcia), Supabase Storage / S3, powiązanie z lokalizacją/inwestorem |

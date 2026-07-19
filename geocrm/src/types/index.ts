@@ -4,9 +4,35 @@ import type {
   Role,
   TaskStatus,
   TaskPriority,
+  RegionType,
 } from '@prisma/client';
 
-export type { LocationStatus, LocationType, Role, TaskStatus, TaskPriority };
+export type { LocationStatus, LocationType, Role, TaskStatus, TaskPriority, RegionType };
+
+/** GeoJSON Polygon: coordinates = [ring][point][lng, lat]. */
+export interface GeoJSONPolygon {
+  type: 'Polygon';
+  coordinates: [number, number][][];
+}
+
+export interface RegionItem {
+  id: string;
+  name: string;
+  type: RegionType;
+  color: string | null;
+  geometry: GeoJSONPolygon | null;
+  agentId: string | null;
+  agentName: string | null;
+  investorId: string | null;
+  investorName: string | null;
+  locationCount: number;
+}
+
+/** Uproszczona opcja do selectów (handlowcy, inwestorzy). */
+export interface Option {
+  id: string;
+  name: string;
+}
 
 export interface SessionUser {
   id: string;

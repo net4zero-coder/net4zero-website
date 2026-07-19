@@ -6,13 +6,19 @@ import { CrmList } from '@/components/locations/crm-list';
 import { LocationDetailDrawer } from '@/components/locations/location-detail-drawer';
 import { useCrmStore, applyFilters } from '@/store/crm-store';
 import { useMemo } from 'react';
-import type { LocationListItem } from '@/types';
+import type { LocationListItem, RegionItem } from '@/types';
 
 /**
  * Serce systemu — mapa Google z panelem listy CRM (po lewej) i wysuwaną kartą
  * lokalizacji (po prawej). Lista i mapa współdzielą stan filtrów oraz zaznaczenie.
  */
-export function MapExperience({ locations }: { locations: LocationListItem[] }) {
+export function MapExperience({
+  locations,
+  regions = [],
+}: {
+  locations: LocationListItem[];
+  regions?: RegionItem[];
+}) {
   const { filters, sort, selectedId, select } = useCrmStore();
 
   // Mapa pokazuje te same lokalizacje co przefiltrowana lista.
@@ -27,7 +33,7 @@ export function MapExperience({ locations }: { locations: LocationListItem[] }) 
 
       {/* Mapa + drawer */}
       <div className="relative flex-1">
-        <MapView locations={visible} selectedId={selectedId} onSelect={select} />
+        <MapView locations={visible} selectedId={selectedId} onSelect={select} regions={regions} />
         <MapLegend />
         <LocationDetailDrawer locationId={selectedId} onClose={() => select(null)} />
       </div>

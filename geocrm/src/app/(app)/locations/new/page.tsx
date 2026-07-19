@@ -7,8 +7,9 @@ import { createLocation, type LocationFormState } from '@/app/actions/locations'
 import { Input, Select } from '@/components/ui/input';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { LocationPicker } from '@/components/locations/location-picker';
 import { cn } from '@/lib/utils';
-import { LOCATION_STATUSES, STATUS_META, LOCATION_TYPE_LABELS, DEFAULT_MAP_CENTER } from '@/lib/constants';
+import { LOCATION_STATUSES, STATUS_META, LOCATION_TYPE_LABELS } from '@/lib/constants';
 import type { LocationType } from '@/types';
 
 function Label({ children }: { children: React.ReactNode }) {
@@ -68,39 +69,8 @@ export default function NewLocationPage() {
         </Card>
 
         <Card className="space-y-4 p-6">
-          <h2 className="font-semibold">Adres i koordynaty</h2>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="sm:col-span-2">
-              <Label>Adres</Label>
-              <Input name="address" placeholder="ul. Przykładowa 1" />
-            </div>
-            <div>
-              <Label>Miasto</Label>
-              <Input name="city" placeholder="Wrocław" />
-            </div>
-            <div>
-              <Label>Województwo</Label>
-              <Input name="voivodeship" placeholder="Dolnośląskie" />
-            </div>
-            <div>
-              <Label>Kod pocztowy</Label>
-              <Input name="postalCode" placeholder="50-001" />
-            </div>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div>
-              <Label>Szerokość (lat) *</Label>
-              <Input name="latitude" type="number" step="any" required defaultValue={DEFAULT_MAP_CENTER.lat} />
-            </div>
-            <div>
-              <Label>Długość (lng) *</Label>
-              <Input name="longitude" type="number" step="any" required defaultValue={DEFAULT_MAP_CENTER.lng} />
-            </div>
-          </div>
-          <p className="text-xs text-muted-foreground">
-            Wskazówka: po ustawieniu klucza Google Maps koordynaty będą uzupełniane automatycznie z adresu
-            (Geocoding) z możliwością ręcznego przesunięcia pinezki.
-          </p>
+          <h2 className="font-semibold">Adres i lokalizacja na mapie</h2>
+          <LocationPicker />
         </Card>
 
         <Card className="space-y-4 p-6">
