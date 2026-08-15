@@ -2,6 +2,7 @@
 module.exports = {
   content: [
     './*.html',
+    './slownik/*.html',
   ],
   theme: {
     extend: {
