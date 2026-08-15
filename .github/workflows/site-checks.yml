@@ -1,0 +1,29 @@
+name: Walidacja strony
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  check-site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Walidator SEO / linki / sitemap / CSS
+        run: python3 tools/check-site.py
+
+      - name: Czy output.css jest aktualny
+        run: |
+          npx --yes tailwindcss@3.4.19 \
+            -c tailwind.config.js -i src/input.css -o /tmp/output.css --minify
+          if ! diff -q output.css /tmp/output.css > /dev/null; then
+            echo "::error::output.css jest nieaktualny — uruchom tools/build-css.sh i zacommituj wynik."
+            exit 1
+          fi
+          echo "output.css aktualny."
