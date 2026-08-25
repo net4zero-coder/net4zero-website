@@ -129,6 +129,11 @@
       "source": "/rodo.html",
       "destination": "/klauzula-rodo",
       "permanent": true
+    },
+    {
+      "source": "/ankieta",
+      "destination": "/targi#ankieta",
+      "statusCode": 301
     }
   ]
 }
