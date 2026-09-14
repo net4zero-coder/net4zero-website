@@ -121,6 +121,16 @@
       "permanent": true
     },
     {
+      "source": "/recyklomat-osiedlowy",
+      "destination": "/recyklomat-spoldzielnia-ipz",
+      "permanent": true
+    },
+    {
+      "source": "/lead-magnets/wzor-pisma-mieszkanca.pdf",
+      "destination": "/lead-magnets/pismo-mieszkanca-recyklomat-net4zero.pdf",
+      "permanent": true
+    },
+    {
       "source": "/rodo",
       "destination": "/klauzula-rodo",
       "permanent": true

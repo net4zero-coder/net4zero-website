@@ -7,8 +7,15 @@ node_modules/
 .vercel
 .idea/
 .vscode/
-.claude/
 Thumbs.db
+
+# Konfiguracja Claude Code JEST wersjonowana (CLAUDE.md, .claude/settings.json,
+# .claude/commands/) — dzięki temu każda sesja i każda osoba w zespole startuje
+# z tym samym kontekstem. Lokalne nadpisania i cache zostają poza repo.
+.claude/settings.local.json
+.claude/*.local.json
+.claude/history/
+.claude/todos/
 package-lock.json
 package.json
 

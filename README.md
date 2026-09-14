@@ -6,6 +6,20 @@
 
 ---
 
+## Praca nad repo
+
+```bash
+python3 tools/check-site.py     # walidator: SEO, linki, sitemap, JSON-LD, CSS
+tools/build-css.sh              # przebudowa output.css + walidacja
+```
+
+Walidator musi kończyć się kodem 0 przed pushem — ten sam skrypt chodzi
+w GitHub Actions na każdym PR. Konwencje projektu (URL-e, SEO, Tailwind,
+zgody, czego nie ruszać) opisuje **[`CLAUDE.md`](CLAUDE.md)**; czyta go Claude
+na starcie każdej sesji. Skróty: `/artykul`, `/audyt-seo`, `/przed-deployem`.
+
+---
+
 ## Stan plików
 
 | Plik | Co to |
