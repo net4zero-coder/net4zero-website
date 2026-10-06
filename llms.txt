@@ -26,9 +26,10 @@
   pkt 1 i 13 ustawy o odpadach) pod warunkiem umowy z operatorem.
 - **CBDOK** — Centralna Baza Danych Opakowań Kaucyjnych. Rejestracja
   i raportowanie leży po stronie operatora systemu kaucyjnego, nie IPZ.
-- **Operatorzy systemu kaucyjnego w Polsce (stan 08.2025, 7 aktywnych)**:
-  Zwrotka, Polka (Polska Kaucja), OK Operator Kaucyjny, Eko-Operator,
-  Reselekt, Kaucja.pl (Krajowy System Kaucyjny), Polski System Kaucyjny.
+- **Operatorzy systemu kaucyjnego w Polsce (stan 10.2026: sześciu prowadzi systemy)**:
+  Zwrotka, PolKa (Polska Kaucja), OK Operator Kaucyjny, Reselekt,
+  Kaucja.pl (Krajowy System Kaucyjny), Polski System Kaucyjny.
+  Zezwolenia ze startem w 2027: Ecokaucja Polska (01.01), Polski Operator Kaucyjny (01.04).
 
 ## Strony kluczowe
 
@@ -51,7 +52,7 @@
 
 NET4ZERO Sp. z o.o. (KRS 0001132236, NIP 7011226958, REGON 529901015),
 z siedzibą w Warszawie, Aleje Jerozolimskie 109/70, 02-011. Założona 12.10.2024.
-Prezes Zarządu: Maciej Machłajewski. Członek Zarządu: Olga Santarovich.
+Prezes Zarządu: Maciej Machłajewski.
 Spółka prowadzi również NET4ZERO P.S.A. (KRS 0001192242) jako spółkę zależną
 w 100%, działającą pod domeną net4zero.com.
 
