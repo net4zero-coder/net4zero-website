@@ -171,8 +171,9 @@
   <link rel="stylesheet" href="/output.css">
 <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
-    .gradient-n4z { background: linear-gradient(135deg, #4CAF50 0%, #03A9F4 100%); }
-    .gradient-text { background: linear-gradient(135deg, #4CAF50 0%, #03A9F4 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .gradient-n4z { background: #132A3A; }
+    .gradient-text { color: #17692A; }
+    .bg-slate-900 .gradient-text, .t-navy .gradient-text { color: #2CB34A; }
     details summary { cursor: pointer; list-style: none; }
     details summary::-webkit-details-marker { display: none; }
     details[open] .chev { transform: rotate(180deg); }
@@ -187,11 +188,11 @@
       will-change: transform;
     }
     .hero-mesh::before {
-      width: 520px; height: 520px; background: radial-gradient(circle, #4CAF50 0%, transparent 70%);
+      width: 520px; height: 520px; background: radial-gradient(circle, #2CB34A 0%, transparent 70%);
       top: -180px; left: -120px; animation: meshDrift1 18s ease-in-out infinite alternate;
     }
     .hero-mesh::after {
-      width: 480px; height: 480px; background: radial-gradient(circle, #03A9F4 0%, transparent 70%);
+      width: 480px; height: 480px; background: radial-gradient(circle, #17692A 0%, transparent 70%);
       bottom: -160px; right: -100px; animation: meshDrift2 22s ease-in-out infinite alternate;
     }
     @keyframes meshDrift1 {
@@ -214,9 +215,9 @@
           rgba(255,255,255,0.028) 0px, rgba(255,255,255,0.028) 1px,
           transparent 1px, transparent 3px),
         radial-gradient(ellipse at 34% 28%,
-          #81C784 0%, #66BB6A 10%,
-          #4CAF50 24%, #26C6DA 46%,
-          #1565C0 68%, #0D47A1 90%);
+          #7BD98F 0%, #4FC66B 10%,
+          #2CB34A 24%, #1E8F56 46%,
+          #17536B 68%, #132A3A 90%);
       /* Chromowa otoczka: jasna wewnętrzna krawędź + srebrny pierścień */
       box-shadow:
         inset 0 2px 4px rgba(255,255,255,0.55),
@@ -224,8 +225,8 @@
         0 0 0 2.5px rgba(255,255,255,0.92),
         0 0 0 5.5px #78909C,
         0 0 0 7px rgba(176,213,224,0.4),
-        0 10px 28px -4px rgba(3,169,244,0.55),
-        0 4px 10px -2px rgba(76,175,80,0.38);
+        0 10px 28px -4px rgba(19,42,58,0.55),
+        0 4px 10px -2px rgba(44,179,74,0.38);
       /* 3D tekst jak litera Z w logo */
       text-shadow:
         0 1px 0 rgba(0,0,0,0.55),
@@ -265,9 +266,9 @@
         0 0 0 2.5px rgba(255,255,255,0.98),
         0 0 0 5.5px #90A4AE,
         0 0 0 8px rgba(176,213,224,0.55),
-        0 18px 44px -6px rgba(3,169,244,0.8),
-        0 6px 14px -2px rgba(76,175,80,0.55),
-        0 0 32px rgba(129,212,250,0.28);
+        0 18px 44px -6px rgba(19,42,58,0.8),
+        0 6px 14px -2px rgba(44,179,74,0.55),
+        0 0 32px rgba(44,179,74,0.22);
     }
     /* ===== PATH BADGE — czysty gradient-border badge dla kart A/B ===== */
     .path-badge {
@@ -277,7 +278,7 @@
     }
     .path-badge::before {
       content: ''; position: absolute; inset: 0; border-radius: 50%;
-      background: linear-gradient(135deg, #4CAF50 0%, #03A9F4 100%);
+      background: #17692A;
     }
     .path-badge::after {
       content: ''; position: absolute; inset: 2.5px; border-radius: 50%;
@@ -285,10 +286,10 @@
     }
     .path-badge > span {
       position: relative; z-index: 2; font-weight: 900; font-size: 1.1rem; line-height: 1;
-      background: linear-gradient(135deg, #4CAF50 0%, #03A9F4 100%);
-      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      color: #17692A;
     }
-    .path-badge-dark::after { background: #0F172A; }
+    .path-badge-dark > span { color: #2CB34A; }
+    .path-badge-dark::after { background: #132A3A; }
     .path-badge-dark > span {
       background: linear-gradient(135deg, #81C784 0%, #4FC3F7 100%);
       -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
@@ -314,27 +315,27 @@
     .area-icon {
       width: 44px; height: 44px; border-radius: 10px;
       display: inline-flex; align-items: center; justify-content: center;
-      background: linear-gradient(135deg, rgba(76,175,80,0.10) 0%, rgba(3,169,244,0.10) 100%);
-      border: 1px solid rgba(76,175,80,0.22);
+      background: linear-gradient(135deg, rgba(44,179,74,0.10) 0%, rgba(19,42,58,0.10) 100%);
+      border: 1px solid rgba(44,179,74,0.22);
       color: #2E7D32;
       transition: background .25s ease, border-color .25s ease, transform .25s ease;
     }
     .area-icon svg { width: 22px; height: 22px; stroke: url(#n4z-grad); }
     .lift:hover .area-icon, .orb-hover:hover .area-icon {
-      background: linear-gradient(135deg, rgba(76,175,80,0.18) 0%, rgba(3,169,244,0.18) 100%);
-      border-color: rgba(3,169,244,0.42);
+      background: linear-gradient(135deg, rgba(44,179,74,0.18) 0%, rgba(19,42,58,0.18) 100%);
+      border-color: rgba(44,179,74,0.45);
       transform: translateY(-1px);
     }
 
     /* ===== HOVER LIFT FOR CARDS ===== */
     .lift { transition: transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, border-color .35s ease; }
-    .lift:hover { transform: translateY(-4px); box-shadow: 0 24px 50px -20px rgba(15,23,42,0.18), 0 8px 16px -8px rgba(3,169,244,0.18); }
+    .lift:hover { transform: translateY(-4px); box-shadow: 0 24px 50px -20px rgba(19,42,58,0.18), 0 8px 16px -8px rgba(19,42,58,0.18); }
 
     /* ===== ANIMATED CTA GLOW ===== */
     .cta-glow { position: relative; }
     .cta-glow::after {
       content: ""; position: absolute; inset: -4px; border-radius: inherit;
-      background: linear-gradient(135deg, #4CAF50, #03A9F4);
+      background: #2CB34A;
       filter: blur(14px); opacity: 0; transition: opacity .35s ease; z-index: -1;
     }
     .cta-glow:hover::after { opacity: .55; }
@@ -343,7 +344,7 @@
     .nav-link { position: relative; }
     .nav-link::after {
       content: ""; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px;
-      background: linear-gradient(90deg, #4CAF50, #03A9F4);
+      background: #2CB34A;
       transform: scaleX(0); transform-origin: left; transition: transform .25s ease;
       border-radius: 2px;
     }
@@ -364,17 +365,17 @@
     }
     .eco-badge {
       display: flex; align-items: center; gap: 0.85rem; padding: 0.9rem 1.25rem;
-      background: #fff; border: 1px solid rgba(15,23,42,0.08); border-radius: 14px;
-      box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 8px 24px -16px rgba(3,169,244,0.18);
+      background: #fff; border: 1px solid rgba(19,42,58,0.08); border-radius: 14px;
+      box-shadow: 0 1px 2px rgba(19,42,58,0.04), 0 8px 24px -16px rgba(19,42,58,0.18);
       min-width: 240px; flex-shrink: 0; transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
     }
-    .eco-badge:hover { transform: translateY(-2px); border-color: rgba(76,175,80,0.4);
-      box-shadow: 0 6px 14px rgba(15,23,42,0.06), 0 20px 38px -18px rgba(3,169,244,0.35); }
+    .eco-badge:hover { transform: translateY(-2px); border-color: rgba(44,179,74,0.4);
+      box-shadow: 0 6px 14px rgba(19,42,58,0.06), 0 20px 38px -18px rgba(19,42,58,0.35); }
     .eco-icon {
       width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0;
       display: inline-flex; align-items: center; justify-content: center;
-      background: linear-gradient(135deg, rgba(76,175,80,0.12), rgba(3,169,244,0.12));
-      color: #03A9F4;
+      background: linear-gradient(135deg, rgba(44,179,74,0.12), rgba(19,42,58,0.12));
+      color: #17692A;
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
     }
     .eco-icon svg { width: 22px; height: 22px; }
@@ -383,31 +384,31 @@
     .stat-icon {
       width: 56px; height: 56px; border-radius: 50%; flex-shrink: 0;
       display: inline-flex; align-items: center; justify-content: center;
-      background: linear-gradient(135deg, rgba(76,175,80,0.14) 0%, rgba(3,169,244,0.14) 100%);
-      color: #03A9F4;
-      border: 1.5px solid rgba(3,169,244,0.18);
+      background: linear-gradient(135deg, rgba(44,179,74,0.14) 0%, rgba(19,42,58,0.14) 100%);
+      color: #17692A;
+      border: 1.5px solid rgba(44,179,74,0.30);
     }
     .stat-icon svg { width: 26px; height: 26px; }
 
     /* ===== STATS COUNT-UP CARD (brand promise) ===== */
     .stat-card {
       position: relative; padding: 2rem 1.75rem; border-radius: 1.5rem; background: #fff;
-      border: 1px solid rgba(15,23,42,0.06);
-      box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 12px 30px -16px rgba(3,169,244,0.2);
+      border: 1px solid rgba(19,42,58,0.06);
+      box-shadow: 0 1px 2px rgba(19,42,58,0.04), 0 12px 30px -16px rgba(19,42,58,0.2);
       overflow: hidden;
     }
     .stat-card::before {
       content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(90deg, #4CAF50, #03A9F4);
+      background: linear-gradient(90deg,#2CB34A,#132A3A);
     }
     .stat-num { font-size: clamp(2.5rem, 5vw, 3.75rem); font-weight: 900; line-height: 1;
-      background: linear-gradient(135deg, #4CAF50 0%, #03A9F4 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      color:#17692A;
       letter-spacing: -0.02em; }
 
     /* ===== LOGO SHEEN ON HOVER ===== */
     .logo-wrap { position: relative; display: inline-flex; }
     .logo-wrap img { transition: filter .35s ease, transform .35s ease; }
-    .logo-wrap:hover img { filter: drop-shadow(0 0 14px rgba(3,169,244,0.5)); transform: scale(1.05); }
+    .logo-wrap:hover img { filter: drop-shadow(0 0 14px rgba(19,42,58,0.5)); transform: scale(1.05); }
 
     /* ===== STICKY MOBILE CTA — odsuń body, żeby nie zasłaniał kontentu ===== */
     @media (max-width: 767px) {
@@ -490,7 +491,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="mt-14 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
       <a href="#lokalizacja" class="group lift bg-white rounded-2xl p-8 border-2 border-transparent hover:border-n4z-green reveal">
         <div class="path-badge mb-4"><span>A</span></div>
-        <p class="text-xs font-mono uppercase tracking-wider text-slate-500 mb-2">Ścieżka A · Spółdzielnia, gmina, ZGL, szkoła, urząd</p>
+        <p class="text-xs font-mono uppercase tracking-wider text-slate-600 mb-2">Ścieżka A · Spółdzielnia, gmina, ZGL, szkoła, urząd</p>
         <h2 class="text-2xl font-bold mb-3">Mam lokalizację.</h2>
         <p class="text-slate-700 mb-6">Wydzierżawiają nam Państwo od 5 do 30 m². Pobierają czynsz. Zostają Innym Punktem Zbierającym (IPZ). Bez maszyny, bez BDO, bez ryzyka operacyjnego.</p>
         <span class="cta-glow inline-flex items-center gap-2 gradient-n4z text-white font-semibold px-6 py-3 rounded-lg shadow-md">Wydzierżaw nam teren →</span>
@@ -553,7 +554,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="stat-card lift reveal text-center">
         <div class="stat-icon mx-auto mb-5">
           <!-- Lucide: wallet z przekreśleniem (CAPEX = 0) -->
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7a2 2 0 0 0-2-2H5a2 2 0 0 0 0 4h16v4"/><path d="M3 7v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-3"/><circle cx="17" cy="14" r="1.5"/><line x1="4" y1="4" x2="20" y2="20" stroke="#03A9F4" stroke-width="2.5"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7a2 2 0 0 0-2-2H5a2 2 0 0 0 0 4h16v4"/><path d="M3 7v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-3"/><circle cx="17" cy="14" r="1.5"/><line x1="4" y1="4" x2="20" y2="20" stroke="#132A3A" stroke-width="2.5"/></svg>
         </div>
         <p class="stat-num"><span class="gradient-text">0</span><span class="text-3xl ml-1">zł</span></p>
         <p class="font-bold mt-3">CAPEX dla lokalizacji</p>
@@ -656,7 +657,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </div>
-  <p class="text-center text-xs text-slate-500 mt-6 px-6">Konkretnych dostawców przedstawiamy w briefie wdrożeniowym na etapie rozmowy.</p>
+  <p class="text-center text-xs text-slate-600 mt-6 px-6">Konkretnych dostawców przedstawiamy w briefie wdrożeniowym na etapie rozmowy.</p>
 </section>
 
 <!-- 2. CO TO JEST IPZ -->
@@ -746,7 +747,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
       </div>
       <div class="lift reveal bg-white rounded-2xl p-8">
-        <p class="text-sm font-semibold text-slate-500 uppercase tracking-wider mb-3">Czas i forma umowy</p>
+        <p class="text-sm font-semibold text-slate-600 uppercase tracking-wider mb-3">Czas i forma umowy</p>
         <h3 class="text-2xl font-bold mb-4">~8 tygodni od podpisu</h3>
         <ul class="space-y-2 text-slate-700 text-sm">
           <li>• Tydzień 1: konsultacja, audyt powierzchni</li>
@@ -779,8 +780,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
         <defs>
           <linearGradient id="n4z-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#4CAF50"/>
-            <stop offset="100%" stop-color="#03A9F4"/>
+            <stop offset="0%" stop-color="#2CB34A"/>
+            <stop offset="100%" stop-color="#17692A"/>
           </linearGradient>
         </defs>
       </svg>
@@ -915,7 +916,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="mt-12 bg-white border-2 border-slate-200 rounded-3xl p-8 sm:p-12">
       <h3 class="text-2xl font-bold mb-4">Model finansowy</h3>
       <p class="text-slate-700 leading-relaxed mb-6">Każda lokalizacja jest kalkulowana indywidualnie w trzech scenariuszach (P10 / P50 / P90), z uwzględnieniem gęstości zaludnienia, wynegocjowanej stawki handling fee i potencjału reklamowego. <strong>Pełny model z IRR 60 miesięcy</strong> przekazujemy po audycie lokalizacji.</p>
-      <p class="text-xs text-slate-500 mb-6">Materiały i kalkulacje mają charakter informacyjny i nie stanowią oferty w rozumieniu art. 66 Kodeksu cywilnego.</p>
+      <p class="text-xs text-slate-600 mb-6">Materiały i kalkulacje mają charakter informacyjny i nie stanowią oferty w rozumieniu art. 66 Kodeksu cywilnego.</p>
       <div class="flex flex-wrap gap-4">
         <a href="#formularz-inwestor" class="inline-block gradient-n4z hover:opacity-90 text-white font-semibold px-8 py-4 rounded-lg shadow-lg">Zamów audyt i model finansowy →</a>
         <button onclick="openLeadModal()" class="inline-block bg-white border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-semibold px-8 py-4 rounded-lg transition cursor-pointer">Pobierz Pakiet Operator (one-pager)</button>
@@ -936,31 +937,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="orb w-12 h-12 rounded-lg text-xl mb-4"><span>1</span></div>
         <p class="font-bold mb-2">Konsultacja i audyt lokalizacji</p>
         <p class="text-sm text-slate-600">Analiza demografii, weryfikacja powierzchni, dobór modelu RVM.</p>
-        <p class="text-xs text-slate-400 mt-3 font-mono">Tydzień 1</p>
+        <p class="text-xs text-slate-600 mt-3 font-mono">Tydzień 1</p>
       </div>
       <div class="lift reveal bg-white rounded-2xl p-6">
         <div class="orb w-12 h-12 rounded-lg text-xl mb-4"><span>2</span></div>
         <p class="font-bold mb-2">Umowa ramowa i wybór pakietu</p>
         <p class="text-sm text-slate-600">Finalizacja modelu finansowego, podpisanie umów.</p>
-        <p class="text-xs text-slate-400 mt-3 font-mono">Tydzień 2-3</p>
+        <p class="text-xs text-slate-600 mt-3 font-mono">Tydzień 2-3</p>
       </div>
       <div class="lift reveal bg-white rounded-2xl p-6">
         <div class="orb w-12 h-12 rounded-lg text-xl mb-4"><span>3</span></div>
         <p class="font-bold mb-2">Finansowanie i zamówienie</p>
         <p class="text-sm text-slate-600">Proces leasingowy, produkcja maszyny u producenta.</p>
-        <p class="text-xs text-slate-400 mt-3 font-mono">Tydzień 3-6</p>
+        <p class="text-xs text-slate-600 mt-3 font-mono">Tydzień 3-6</p>
       </div>
       <div class="lift reveal bg-white rounded-2xl p-6">
         <div class="orb w-12 h-12 rounded-lg text-xl mb-4"><span>4</span></div>
         <p class="font-bold mb-2">Montaż, integracja, testy</p>
         <p class="text-sm text-slate-600">Transport, instalacja, integracja z operatorem, testy funkcjonalne.</p>
-        <p class="text-xs text-slate-400 mt-3 font-mono">Tydzień 6-8</p>
+        <p class="text-xs text-slate-600 mt-3 font-mono">Tydzień 6-8</p>
       </div>
       <div class="lift reveal bg-white rounded-2xl p-6">
         <div class="orb w-12 h-12 rounded-lg text-xl mb-4"><span>5</span></div>
         <p class="font-bold mb-2">Uruchomienie i start serwisu</p>
         <p class="text-sm text-slate-600">Odbiór techniczny, szkolenie, kampania informacyjna dla mieszkańców.</p>
-        <p class="text-xs text-slate-400 mt-3 font-mono">Tydzień 8</p>
+        <p class="text-xs text-slate-600 mt-3 font-mono">Tydzień 8</p>
       </div>
     </div>
   </div>
@@ -1518,7 +1519,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      STICKY MOBILE CTA — widoczny <768 px (tylko mobile / tablet small)
      ============================================================ -->
 <div class="md:hidden fixed bottom-0 left-0 right-0 z-30 bg-white/95 backdrop-blur border-t border-slate-200 px-3 py-2.5"
-     style="box-shadow: 0 -4px 16px rgba(15,23,42,0.08); padding-bottom: calc(0.625rem + env(safe-area-inset-bottom));">
+     style="box-shadow: 0 -4px 16px rgba(19,42,58,0.08); padding-bottom: calc(0.625rem + env(safe-area-inset-bottom));">
   <div class="flex gap-2 max-w-md mx-auto">
     <a href="#lokalizacja" class="flex-1 text-center text-xs font-bold text-slate-900 bg-white border-2 border-n4z-green px-3 py-2.5 rounded-lg">A · Mam lokalizację</a>
     <a href="#inwestor" class="flex-1 text-center text-xs font-bold text-white gradient-n4z px-3 py-2.5 rounded-lg">B · Chcę inwestować</a>
@@ -1529,7 +1530,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      LEAD GATE MODAL — Pakiet Operator
      ============================================================ -->
 <div id="lead-modal" role="dialog" aria-modal="true" aria-labelledby="lead-modal-title"
-     style="display:none; position:fixed; inset:0; z-index:9999; overflow-y:auto; background:rgba(15,23,42,0.75); backdrop-filter:blur(4px);">
+     style="display:none; position:fixed; inset:0; z-index:9999; overflow-y:auto; background:rgba(19,42,58,0.75); backdrop-filter:blur(4px);">
   <div style="min-height:100%; display:flex; align-items:center; justify-content:center; padding:24px;">
     <div style="background:#fff; border-radius:20px; max-width:480px; width:100%; padding:40px 36px; position:relative; box-shadow:0 24px 60px rgba(0,0,0,0.18);">
 
@@ -1539,8 +1540,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <!-- Header -->
       <div style="margin-bottom:28px;">
-        <p style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#4CAF50; margin-bottom:8px;">Pakiet Operator · one-pager PDF</p>
-        <h2 id="lead-modal-title" style="font-size:22px; font-weight:900; color:#0f172a; margin:0 0 8px;">Zostaw dane — pobierz dokument</h2>
+        <p style="font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#2CB34A; margin-bottom:8px;">Pakiet Operator · one-pager PDF</p>
+        <h2 id="lead-modal-title" style="font-size:22px; font-weight:900; color:#132A3A; margin:0 0 8px;">Zostaw dane — pobierz dokument</h2>
         <p style="font-size:14px; color:#64748b; margin:0;">Dokument jest poufny. Prześlemy go na podany adres e-mail.</p>
       </div>
 
@@ -1548,71 +1549,71 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <form id="lead-form" onsubmit="submitLeadForm(event)" novalidate>
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px;">
           <div>
-            <label style="display:block; font-size:13px; font-weight:600; margin-bottom:5px; color:#0f172a;" for="lg-name">Imię *</label>
+            <label style="display:block; font-size:13px; font-weight:600; margin-bottom:5px; color:#132A3A;" for="lg-name">Imię *</label>
             <input id="lg-name" name="name" type="text" required autocomplete="given-name"
                    style="width:100%; padding:10px 12px; border:1.5px solid #e2e8f0; border-radius:8px; font-size:14px; outline:none; box-sizing:border-box; transition:border-color 0.15s;"
-                   onfocus="this.style.borderColor='#4CAF50'" onblur="this.style.borderColor='#e2e8f0'">
+                   onfocus="this.style.borderColor='#2CB34A'" onblur="this.style.borderColor='#e2e8f0'">
           </div>
           <div>
-            <label style="display:block; font-size:13px; font-weight:600; margin-bottom:5px; color:#0f172a;" for="lg-last">Nazwisko *</label>
+            <label style="display:block; font-size:13px; font-weight:600; margin-bottom:5px; color:#132A3A;" for="lg-last">Nazwisko *</label>
             <input id="lg-last" name="last_name" type="text" required autocomplete="family-name"
                    style="width:100%; padding:10px 12px; border:1.5px solid #e2e8f0; border-radius:8px; font-size:14px; outline:none; box-sizing:border-box; transition:border-color 0.15s;"
-                   onfocus="this.style.borderColor='#4CAF50'" onblur="this.style.borderColor='#e2e8f0'">
+                   onfocus="this.style.borderColor='#2CB34A'" onblur="this.style.borderColor='#e2e8f0'">
           </div>
         </div>
 
         <div style="margin-bottom:14px;">
-          <label style="display:block; font-size:13px; font-weight:600; margin-bottom:5px; color:#0f172a;" for="lg-email">E-mail służbowy *</label>
+          <label style="display:block; font-size:13px; font-weight:600; margin-bottom:5px; color:#132A3A;" for="lg-email">E-mail służbowy *</label>
           <input id="lg-email" name="email" type="email" required autocomplete="email"
                  style="width:100%; padding:10px 12px; border:1.5px solid #e2e8f0; border-radius:8px; font-size:14px; outline:none; box-sizing:border-box; transition:border-color 0.15s;"
-                 onfocus="this.style.borderColor='#4CAF50'" onblur="this.style.borderColor='#e2e8f0'">
+                 onfocus="this.style.borderColor='#2CB34A'" onblur="this.style.borderColor='#e2e8f0'">
         </div>
 
         <div style="margin-bottom:14px;">
-          <label style="display:block; font-size:13px; font-weight:600; margin-bottom:5px; color:#0f172a;" for="lg-phone">Telefon *</label>
+          <label style="display:block; font-size:13px; font-weight:600; margin-bottom:5px; color:#132A3A;" for="lg-phone">Telefon *</label>
           <input id="lg-phone" name="phone" type="tel" required autocomplete="tel" placeholder="+48 ..."
                  style="width:100%; padding:10px 12px; border:1.5px solid #e2e8f0; border-radius:8px; font-size:14px; outline:none; box-sizing:border-box; transition:border-color 0.15s;"
-                 onfocus="this.style.borderColor='#4CAF50'" onblur="this.style.borderColor='#e2e8f0'">
+                 onfocus="this.style.borderColor='#2CB34A'" onblur="this.style.borderColor='#e2e8f0'">
         </div>
 
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px;">
           <div>
-            <label style="display:block; font-size:13px; font-weight:600; margin-bottom:5px; color:#0f172a;" for="lg-company">Firma</label>
+            <label style="display:block; font-size:13px; font-weight:600; margin-bottom:5px; color:#132A3A;" for="lg-company">Firma</label>
             <input id="lg-company" name="company" type="text" autocomplete="organization"
                    style="width:100%; padding:10px 12px; border:1.5px solid #e2e8f0; border-radius:8px; font-size:14px; outline:none; box-sizing:border-box; transition:border-color 0.15s;"
-                   onfocus="this.style.borderColor='#4CAF50'" onblur="this.style.borderColor='#e2e8f0'">
+                   onfocus="this.style.borderColor='#2CB34A'" onblur="this.style.borderColor='#e2e8f0'">
           </div>
           <div>
-            <label style="display:block; font-size:13px; font-weight:600; margin-bottom:5px; color:#0f172a;" for="lg-stanowisko">Stanowisko</label>
+            <label style="display:block; font-size:13px; font-weight:600; margin-bottom:5px; color:#132A3A;" for="lg-stanowisko">Stanowisko</label>
             <input id="lg-stanowisko" name="stanowisko" type="text"
                    style="width:100%; padding:10px 12px; border:1.5px solid #e2e8f0; border-radius:8px; font-size:14px; outline:none; box-sizing:border-box; transition:border-color 0.15s;"
-                   onfocus="this.style.borderColor='#4CAF50'" onblur="this.style.borderColor='#e2e8f0'">
+                   onfocus="this.style.borderColor='#2CB34A'" onblur="this.style.borderColor='#e2e8f0'">
           </div>
         </div>
 
         <p style="font-size:11px; color:#94a3b8; margin-bottom:20px;">
           Wysyłając formularz akceptujesz
-          <a href="/polityka-prywatnosci" style="color:#4CAF50;" target="_blank">Politykę prywatności</a>
+          <a href="/polityka-prywatnosci" style="color:#2CB34A;" target="_blank">Politykę prywatności</a>
           NET4ZERO Sp. z o.o. Twoje dane są przetwarzane wyłącznie w celu przekazania materiału i ewentualnego kontaktu handlowego.
         </p>
 
         <div id="lead-error" style="display:none; background:#fef2f2; border:1px solid #fca5a5; color:#dc2626; padding:10px 14px; border-radius:8px; font-size:13px; margin-bottom:16px;"></div>
 
         <button type="submit" id="lead-submit"
-                style="width:100%; padding:14px; background:linear-gradient(135deg,#4CAF50,#03A9F4); color:#fff; font-weight:700; font-size:15px; border:none; border-radius:10px; cursor:pointer; transition:opacity 0.15s;">
+                style="width:100%; padding:14px; background:#132A3A; color:#fff; font-weight:700; font-size:15px; border:none; border-radius:10px; cursor:pointer; transition:opacity 0.15s;">
           Pobierz Pakiet Operator →
         </button>
       </form>
 
       <!-- Stan: sukces / link do pobrania -->
       <div id="lead-success" style="display:none; text-align:center; padding:8px 0;">
-        <div style="width:56px; height:56px; background:linear-gradient(135deg,rgba(76,175,80,0.12),rgba(3,169,244,0.12)); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 16px;">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <div style="width:56px; height:56px; background:linear-gradient(135deg,rgba(44,179,74,0.12),rgba(19,42,58,0.12)); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 16px;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#2CB34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
-        <h3 style="font-size:18px; font-weight:800; color:#0f172a; margin:0 0 8px;">Dane zapisane — dziękujemy!</h3>
+        <h3 style="font-size:18px; font-weight:800; color:#132A3A; margin:0 0 8px;">Dane zapisane — dziękujemy!</h3>
         <p style="font-size:14px; color:#64748b; margin:0 0 24px;">Dokument otworzy się w nowej karcie. Sprawdź też skrzynkę e-mail.</p>
         <a id="lead-download-link" href="#" target="_blank" rel="noopener"
-           style="display:inline-block; padding:14px 28px; background:linear-gradient(135deg,#4CAF50,#03A9F4); color:#fff; font-weight:700; font-size:15px; border-radius:10px; text-decoration:none;">
+           style="display:inline-block; padding:14px 28px; background:#132A3A; color:#fff; font-weight:700; font-size:15px; border-radius:10px; text-decoration:none;">
           Otwórz Pakiet Operator →
         </a>
         <p style="font-size:12px; color:#94a3b8; margin-top:16px;">Wyślemy Ci również link na podany adres e-mail.</p>
