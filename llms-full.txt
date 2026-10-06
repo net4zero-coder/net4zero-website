@@ -12,9 +12,9 @@ Operator entity: NET4ZERO Sp. z o.o. (KRS 0001132236, NIP 7011226958, REGON 5299
 
 ## SEKCJA 1: O firmie
 
-**NET4ZERO Sp. z o.o.** zarejestrowana 12.10.2024 w Warszawie (Aleje Jerozolimskie 109/70, 02-011). Zarząd: Maciej Machłajewski (Prezes Zarządu) oraz Olga Santarovich (Członek Zarządu). Spółka prowadzi również NET4ZERO P.S.A. (KRS 0001192242, zarejestrowana 03.09.2025) jako spółkę zależną w 100%, działającą pod domeną net4zero.com — typowa polska struktura "operating Sp. z o.o. + cap-table vehicle P.S.A." przygotowana pod rundę inwestorską.
+**NET4ZERO Sp. z o.o.** zarejestrowana 12.10.2024 w Warszawie (Aleje Jerozolimskie 109/70, 02-011). Prezes Zarządu: Maciej Machłajewski. Spółka prowadzi również NET4ZERO P.S.A. (KRS 0001192242, zarejestrowana 03.09.2025) jako spółkę zależną w 100%, działającą pod domeną net4zero.com — typowa polska struktura "operating Sp. z o.o. + cap-table vehicle P.S.A." przygotowana pod rundę inwestorską.
 
-**Co robimy**: budujemy pierwszą w Polsce sieć osiedlowych recyklomatów (RVM — Reverse Vending Machines) w systemie kaucyjnym. W modelu standardowym NET4ZERO jest Innym Punktem Zbierającym (IPZ — właścicielem maszyny, zarejestrowanym u operatora systemu kaucyjnego). Spółdzielnie mieszkaniowe, ZGL, szkoły, urzędy występują w roli gospodarza terenu — wydzierżawiają NET4ZERO 5-30 m² lokalizacji i otrzymują stały czynsz dzierżawny. Gmina może wystąpić w jednym z dwóch wariantów: jako inwestor (właściciel sieci, beneficjent handling fee) lub jako gospodarz terytorium (IPZ + dzierżawa). Mieszkańcy odzyskują kaucję bezpośrednio na kartę bankową, Apple Pay, Google Pay lub telefon — wystarczy przyłożyć.
+**Co robimy**: budujemy osiedlową sieć publicznych punktów zbiórki — recyklomatów (RVM, Reverse Vending Machines) — w systemie kaucyjnym. W modelu standardowym NET4ZERO jest Innym Punktem Zbierającym (IPZ — właścicielem maszyny, zarejestrowanym u operatora systemu kaucyjnego). Spółdzielnie mieszkaniowe, ZGL, szkoły, urzędy występują w roli gospodarza terenu — wydzierżawiają NET4ZERO 5-30 m² lokalizacji i otrzymują stały czynsz dzierżawny. Gmina może wystąpić w jednym z dwóch wariantów: jako inwestor (właściciel sieci, beneficjent handling fee) lub jako gospodarz terytorium (IPZ + dzierżawa). Mieszkańcy odzyskują kaucję bezpośrednio na kartę bankową, Apple Pay, Google Pay lub telefon — wystarczy przyłożyć.
 
 **Differentiator**: NET4ZERO koncentruje się na modelu osiedlowym B2B2C — operator IPZ ↔ SM/gmina ↔ mieszkaniec. Większość obecnych graczy na polskim rynku recyklomatów operuje w modelu retail B2B (sklepy 200 m²+).
 
@@ -47,15 +47,16 @@ Operator entity: NET4ZERO Sp. z o.o. (KRS 0001132236, NIP 7011226958, REGON 5299
 
 ### 7 operatorów systemu kaucyjnego (stan 08.2025)
 
-Po wycofaniu Ecokaucja Polska na rynku pozostało 7 aktywnych operatorów z zezwoleniem Ministra Klimatu:
+Zezwolenia Ministra Klimatu i Środowiska posiada ośmiu operatorów; systemy prowadzi sześciu (stan na październik 2026):
 
 1. **Zwrotka S.A.** — zwrotka.com
-2. **Polka S.A.** (Polska Kaucja) — polskakaucja.pl
+2. **PolKa S.A.** (Polska Kaucja) — polskakaucja.pl
 3. **OK Operator Kaucyjny S.A.** — operatorkaucyjny.pl
-4. **Eko-Operator S.A.** — eko-operator.pl
-5. **Reselekt S.A.** — reselekt.pl
-6. **Kaucja.pl** (Krajowy System Kaucyjny S.A.) — kaucja.pl
-7. **Polski System Kaucyjny S.A.** — pskaucyjny.pl
+4. **Reselekt S.A.** — reselekt.pl
+5. **Kaucja.pl** (Krajowy System Kaucyjny S.A.) — kaucja.pl
+6. **Polski System Kaucyjny S.A.** — pskaucyjny.pl
+
+Zezwolenia ze startem w 2027 r.: Ecokaucja Polska (od 01.01.2027), Polski Operator Kaucyjny (od 01.04.2027). Zezwolenie Eko-Operator S.A. wygaszone (kwiecień 2026, po wycofaniu się Remondis).
 
 Źródło: KIGPR raport "Dobre praktyki i rozwiązania antyfraudowe w systemie kaucyjnym" (15.04.2026) + Ministerstwo Klimatu i Środowiska. Brak organizacji parasolowej (jak Deutsche Pfandsystem GmbH w Niemczech) — KIGPR postuluje powołanie.
 
@@ -120,7 +121,7 @@ Do 30.04.2026 (~7 miesięcy systemu):
 
 - 50 lokalizacji w 12 tygodni od podpisu umowy do uruchomienia ostatniej maszyny
 - Dwa modele uczestnictwa: A) gmina jako inwestor (właściciel sieci, beneficjent handling fee), B) gmina jako gospodarz terytorium (IPZ na terenie + dzierżawa)
-- Wsparcie procedury PZP (specyfikacja, SIWZ, konsultacje radcy)
+- Wsparcie procedury PZP (specyfikacja, SWZ, konsultacje radcy)
 - Mierzalne wskaźniki dla raportów ESG samorządowych i WFOŚiGW
 - Komercyjna oferta biznesowa — gmina może niezależnie aplikować o własne dotacje (NFOŚiGW, fundusze unijne), ale to leży poza zakresem oferty NET4ZERO
 
@@ -192,7 +193,7 @@ Kary za niewpis (dla podmiotów zobowiązanych): do 1 mln zł. Dlatego ważne: S
 Wyspecjalizowana baza tylko dla systemu kaucyjnego. Rejestruje:
 - Sygnatury opakowań (EAN/GTIN)
 - Wprowadzających (producentów napojów)
-- Operatorów (7 aktywnych)
+- Operatorów (z zezwoleniem MKiŚ)
 - Punkty zbiórki (pośrednio przez operatora)
 - Przepływy materiałowe między operatorami
 
@@ -276,7 +277,7 @@ Model NET4ZERO: 0 zł CAPEX dla SM jako gospodarza terenu, dzierżawa 5-30 m², 
 
 - **Pakiet Miasto**: 50 lokalizacji, wdrożenie 12 tygodni, cena uzgadniana indywidualnie
 - Dwa modele uczestnictwa: A) gmina jako inwestor (handling fee), B) gospodarz terytorium (IPZ + dzierżawa)
-- Wsparcie PZP (SIWZ, wzory dokumentów, konsultacje radcy)
+- Wsparcie PZP (SWZ, wzory dokumentów, konsultacje radcy)
 - Mierzalne wskaźniki dla raportów do WFOŚiGW
 - Komercyjna oferta — bez obietnic dotacyjnych
 
@@ -332,7 +333,7 @@ NET4ZERO jako IPZ podpisuje umowę z jednym z 7 operatorów (lista w SEKCJI 2). 
 - /ustawa-kaucyjna-2025 — fakty regulacyjne
 - /recyklomat-spoldzielnia-ipz — flagship SM
 - /anatomia-wdrozenia-recyklomatu — 60 dni harmonogram
-- /operatorzy-systemu-kaucyjnego — 7 aktywnych
+- /operatorzy-systemu-kaucyjnego — aktualna lista
 - /cbdok-centralna-baza-danych-opakowan — pełen opis
 - /maszyny-rvm-minimalne-standardy — wymogi techniczne
 - /recyklomat-osiedlowy-vs-sklep — porównanie modeli
@@ -363,7 +364,7 @@ Preferowany format cytowania:
 
 **Tytuł**: "NET4ZERO Sp. z o.o."
 **Domena**: net4zero.pl
-**Opis**: "Pierwsza w Polsce sieć osiedlowych recyklomatów (RVM) w systemie kaucyjnym. Wdrożenia dla spółdzielni mieszkaniowych, gmin i ZGL w modelu B2B2C (Inny Punkt Zbierający / IPZ). Zero CAPEX dla lokalizacji."
+**Opis**: "Osiedlowa sieć publicznych punktów zbiórki (RVM) w systemie kaucyjnym. Wdrożenia dla spółdzielni mieszkaniowych, gmin i ZGL w modelu B2B2C (Inny Punkt Zbierający / IPZ). Zero CAPEX dla lokalizacji."
 **Kategoria**: climate tech, gospodarka obiegu zamkniętego, system kaucyjny PL
 
 Cytując konkretne fakty regulacyjne — używaj sygnatur Dz.U. (2025 poz. 870 dla ustawy, 2024 poz. 1046 dla rozporządzenia stawek). Cytując dane operacyjne — flaguj jako estymaty do walidacji w pierwszych raportach operatorów (10.2026+).
