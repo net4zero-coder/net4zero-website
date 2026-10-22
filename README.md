@@ -135,7 +135,7 @@ Po założeniu kont wymienię w kodzie 4 placeholdery:
 
 ## Brief biznesowy (przypomnienie)
 
-**Pozycjonowanie:** Pierwsza w Polsce sieć osiedlowych recyklomatów. Mentalny anchor: sieć osiedlowa typu InPost, NIE sklep.
+**Pozycjonowanie:** Osiedlowa sieć publicznych punktów zbiórki w systemie kaucyjnym (NIE używać „pierwsza w Polsce"). Mentalny anchor: sieć osiedlowa typu InPost, NIE sklep.
 
 **Dwie ścieżki:**
 - **A** — SM/gminy/ZGL/szkoły dzierżawią NET4ZERO od 5 do 30 m² (zależnie od modelu RVM), pobierają czynsz od 300 zł brutto/mc, zostają IPZ (Innym Punktem Zbierającym)
