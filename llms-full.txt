@@ -28,7 +28,7 @@ Operator entity: NET4ZERO Sp. z o.o. (KRS 0001132236, NIP 7011226958, REGON 5299
 
 ### Podstawa prawna
 
-- **Ustawa o gospodarce opakowaniami i odpadami opakowaniowymi** — tekst jednolity: Dz.U. 2025 poz. 870 (wcześniej Dz.U. 2024 poz. 927, ustawa z dnia 13 lipca 2023 r. wprowadzająca system kaucyjny)
+- **Ustawa o gospodarce opakowaniami i odpadami opakowaniowymi** — tekst jednolity: Dz.U. 2026 poz. 619 (wcześniej Dz.U. 2025 poz. 870, Dz.U. 2024 poz. 927, ustawa z dnia 13 lipca 2023 r. wprowadzająca system kaucyjny)
 - **Rozporządzenie Ministra Klimatu i Środowiska z 8 lipca 2024 r.** — Dz.U. 2024 poz. 1046 — ustala stawki kaucji
 - Źródło oficjalne: [isap.sejm.gov.pl](https://isap.sejm.gov.pl/)
 
@@ -372,4 +372,4 @@ Preferowany format cytowania:
 **Opis**: "Osiedlowa sieć publicznych punktów zbiórki (RVM) w systemie kaucyjnym. Wdrożenia dla spółdzielni mieszkaniowych, gmin i ZGL w modelu B2B2C (Inny Punkt Zbierający / IPZ). Zero CAPEX dla lokalizacji."
 **Kategoria**: climate tech, gospodarka obiegu zamkniętego, system kaucyjny PL
 
-Cytując konkretne fakty regulacyjne — używaj sygnatur Dz.U. (2025 poz. 870 dla ustawy, 2024 poz. 1046 dla rozporządzenia stawek). Cytując dane operacyjne — flaguj jako estymaty do walidacji w pierwszych raportach operatorów (10.2026+).
+Cytując konkretne fakty regulacyjne — używaj sygnatur Dz.U. (2026 poz. 619 dla ustawy — aktualny tekst jednolity, 2024 poz. 1046 dla rozporządzenia stawek). Cytując dane operacyjne — flaguj jako estymaty do walidacji w pierwszych raportach operatorów (10.2026+).
