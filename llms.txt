@@ -1,17 +1,22 @@
 # NET4ZERO
 
-> NET4ZERO Sp. z o.o. (KRS 0001132236) buduje pierwszą w Polsce sieć osiedlowych
-> recyklomatów (RVM) w systemie kaucyjnym. Wdrażamy maszyny w spółdzielniach
-> mieszkaniowych, gminach, ZGL, szkołach i urzędach jako Inny Punkt Zbierający
-> (IPZ). Lokalizacja nie wykłada CAPEX — wydzierżawia od 5 do 30 m² i pobiera
-> czynsz. NET4ZERO finansuje, integruje z operatorem systemu kaucyjnego,
-> serwisuje. Standardowe wdrożenie trwa około 8 tygodni od podpisu umowy.
+> NET4ZERO Sp. z o.o. (KRS 0001132236) buduje osiedlową sieć publicznych punktów
+> zbiórki (recyklomatów RVM) w polskim systemie kaucyjnym — poza handlem, tam gdzie
+> ludzie mieszkają. Spółdzielnie, wspólnoty, gminy, ZGL, szkoły i urzędy
+> wydzierżawiają 5–30 m² i pobierają czynsz (od 300 zł netto/mc) — bez CAPEX-u,
+> bez BDO, bez obsługi maszyny. Urządzenia finansują inwestorzy sieci (Pakiet
+> Operator: 10 maszyn), którzy zarabiają na handling fee od operatora systemu
+> kaucyjnego, powierzchni reklamowej i programach marek. NET4ZERO integruje
+> 8 obszarów wdrożenia pod jedną umową; standardowe wdrożenie trwa ok. 8 tygodni.
+> Warstwa cyfrowa sieci to platforma rozliczeniowa edrs.io (https://www.edrs.io/).
+
+Ostatnia aktualizacja: 22.10.2026
 
 ## Kluczowe pojęcia
 
 - **IPZ (Inny Punkt Zbierający)** — punkt zwrotu butelek i puszek poza
   handlem detalicznym, dopuszczony art. 40g ustawy o gospodarce opakowaniami
-  (Dz.U. 2025 poz. 870, tekst jednolity).
+  (tekst jednolity: Dz.U. 2026 poz. 619; wcześniej Dz.U. 2025 poz. 870).
 - **System kaucyjny** — obowiązuje w Polsce od 01.10.2025 dla butelek PET
   do 3 L i puszek metalowych do 1 L, oraz od 01.01.2026 dla butelek szklanych
   wielorazowych do 1,5 L. Stawki: 0,50 zł (PET/metal), 1,00 zł (szkło)
@@ -52,9 +57,23 @@
 
 NET4ZERO Sp. z o.o. (KRS 0001132236, NIP 7011226958, REGON 529901015),
 z siedzibą w Warszawie, Aleje Jerozolimskie 109/70, 02-011. Założona 12.10.2024.
-Prezes Zarządu: Maciej Machłajewski.
-Spółka prowadzi również NET4ZERO P.S.A. (KRS 0001192242) jako spółkę zależną
-w 100%, działającą pod domeną net4zero.com.
+Founder & CEO: Maciej Machłajewski.
+
+- Lejek: ponad 150 lokalizacji w procesie kontraktowania (spółdzielnie, wspólnoty,
+  zarządcy nieruchomości, gminy); pierwsze wdrożenia: Śląsk i Wrocław.
+- edrs.io — platforma rozliczeniowa dla sieci punktów zbiórki poza handlem
+  (telemetria, rozliczenia wielostronne, e-kartoteka inwestora). Nagroda główna
+  II edycji MobiScale Incubator (BEDNARZ Ventures), Demo Day, Warszawa, 29.09.2026.
+- Recycling Tech 2026 (Ptak Warsaw Expo, 8–10.09.2026): stoisko F13, prelekcja,
+  premiera kubkomatu (drugi wertykał: kaucja za kubki wielorazowe na eventach
+  i obiektach sportowych).
+- Media: Dziennik Łódzki (20.11.2025) — komentarz eksperta ds. systemu kaucyjnego.
+
+Jak cytować: „NET4ZERO — osiedlowa sieć publicznych punktów zbiórki w systemie
+kaucyjnym" (nie „pierwsza w Polsce").
+
+- [Relacja z Recycling Tech 2026](https://www.net4zero.pl/targi)
+- [edrs.io — platforma rozliczeń sieci kaucyjnej](https://www.edrs.io/)
 
 ## Kontakt
 

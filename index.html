@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recyklomat na osiedlu — IPZ dla spółdzielni i gmin | NET4ZERO</title>
-  <meta name="description" content="Osiedlowa sieć publicznych punktów zbiórki w systemie kaucyjnym. Recyklomat bez CAPEX-u dla spółdzielni i gmin. Status IPZ, zwolnienie z BDO, wdrożenie pod klucz w 8 tygodni.">
+  <meta name="description" content="Recyklomat na osiedlu bez CAPEX-u: spółdzielnia lub gmina dzierżawi 5–30 m², pobiera czynsz i zostaje IPZ. Bez BDO, wdrożenie pod klucz w 8 tygodni.">
   <meta name="keywords" content="system kaucyjny, recyklomat, RVM, IPZ, inny punkt zbierający, spółdzielnia mieszkaniowa, gmina, art. 40g, BDO, handling fee">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.net4zero.pl/">
@@ -74,9 +74,10 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "NET4ZERO Sp. z o.o.",
-    "alternateName": "NET4ZERO",
-    "url": "https://www.net4zero.pl",
+    "@id": "https://www.net4zero.pl/#organization",
+    "name": "NET4ZERO",
+    "legalName": "NET4ZERO Sp. z o.o.",
+    "url": "https://www.net4zero.pl/",
     "logo": "https://www.net4zero.pl/logo-512.webp",
     "image": "https://www.net4zero.pl/og-image.png",
     "email": "biuro@net4zero.pl",
@@ -89,10 +90,33 @@
       "addressCountry": "PL"
     },
     "vatID": "PL7011226958",
-    "taxID": "0001132236",
+    "taxID": "7011226958",
+    "identifier": [
+      {"@type": "PropertyValue", "propertyID": "KRS", "value": "0001132236"},
+      {"@type": "PropertyValue", "propertyID": "REGON", "value": "529901015"}
+    ],
     "foundingDate": "2024-10-12",
-    "description": "Osiedlowa sieć publicznych punktów zbiórki (RVM) w systemie kaucyjnym. Wdrażamy, integrujemy, obsługujemy.",
-    "sameAs": []
+    "founder": {"@type": "Person", "@id": "https://www.net4zero.pl/#person-maciej-machlajewski", "name": "Maciej Machłajewski", "jobTitle": "Founder & CEO", "sameAs": ["https://www.linkedin.com/in/maciej-machlajewski/"]},
+    "description": "Osiedlowa sieć publicznych punktów zbiórki (recyklomatów RVM) w systemie kaucyjnym. Wdrażamy, integrujemy i obsługujemy punkty dla spółdzielni, wspólnot, gmin i inwestorów. Warstwa cyfrowa sieci: platforma rozliczeniowa edrs.io.",
+    "areaServed": {"@type": "Country", "name": "Polska"},
+    "knowsAbout": ["system kaucyjny", "recyklomat", "RVM", "Inny Punkt Zbierający (IPZ)", "handling fee", "gospodarka obiegu zamkniętego"],
+    "brand": [{"@type": "Brand", "name": "edrs.io", "url": "https://www.edrs.io/"}],
+    "sameAs": [
+      "https://www.linkedin.com/company/net4zero/",
+      "https://www.instagram.com/net4zero/",
+      "https://rejestr.io/krs/1132236/net4zero"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.net4zero.pl/#website",
+    "name": "NET4ZERO",
+    "url": "https://www.net4zero.pl/",
+    "inLanguage": "pl-PL",
+    "publisher": {"@id": "https://www.net4zero.pl/#organization"}
   }
   </script>
 
@@ -516,7 +540,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hidden sm:block w-px h-4 bg-slate-200"></div>
     <div class="flex items-center gap-2">
       <span class="w-2 h-2 rounded-full bg-n4z-blue inline-block shrink-0"></span>
-      <span>Wdrożenie pod klucz <strong class="text-slate-900">w 60 dni</strong></span>
+      <span>Wdrożenie pod klucz <strong class="text-slate-900">w 8 tygodni</strong></span>
     </div>
     <div class="hidden sm:block w-px h-4 bg-slate-200"></div>
     <div class="flex items-center gap-2">
@@ -538,7 +562,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-10 reveal">
       <p class="text-n4z-green font-semibold text-sm uppercase tracking-widest mb-3">Standard NET4ZERO</p>
-      <h2 class="text-4xl sm:text-5xl font-bold">Trzy konkretne fakty.</h2>
+      <h2 class="text-4xl sm:text-5xl font-bold">Recyklomat na osiedlu: trzy konkretne fakty.</h2>
       <p class="text-lg text-slate-600 mt-4 max-w-3xl mx-auto">Każdy wynika z modelu wdrożenia, nie z deklaracji marketingowej.</p>
     </div>
     <div class="grid sm:grid-cols-3 gap-6">
@@ -618,39 +642,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Relacje</p><p class="font-bold text-sm leading-tight">Negocjacje i zgody</p></div>
       </div>
       <!-- ZESTAW 2 (duplikat dla nieskończonej pętli) -->
-      <div class="eco-badge">
+      <div class="eco-badge" aria-hidden="true">
         <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span>
         <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Hardware</p><p class="font-bold text-sm leading-tight">Producenci RVM</p></div>
       </div>
-      <div class="eco-badge">
+      <div class="eco-badge" aria-hidden="true">
         <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 11h20M6 16h4"/></svg></span>
         <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Finansowanie</p><p class="font-bold text-sm leading-tight">Partnerzy finansujący</p></div>
       </div>
-      <div class="eco-badge">
+      <div class="eco-badge" aria-hidden="true">
         <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
         <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Kaucja</p><p class="font-bold text-sm leading-tight">Operatorzy kaucyjni</p></div>
       </div>
-      <div class="eco-badge">
+      <div class="eco-badge" aria-hidden="true">
         <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M16 14h2M3 10h18"/></svg></span>
         <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Płatności</p><p class="font-bold text-sm leading-tight">Dostawcy płatności bezgotówkowych</p></div>
       </div>
-      <div class="eco-badge">
+      <div class="eco-badge" aria-hidden="true">
         <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h13l5 5v5h-2"/><path d="M3 7v10h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg></span>
         <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Logistyka</p><p class="font-bold text-sm leading-tight">Operatorzy logistyczni</p></div>
       </div>
-      <div class="eco-badge">
+      <div class="eco-badge" aria-hidden="true">
         <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2v6h6"/><path d="M4 4v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6a2 2 0 0 0-2 2z"/><path d="M8 13h8M8 17h5"/></svg></span>
         <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Rozliczenia</p><p class="font-bold text-sm leading-tight">Księgowość i back-office</p></div>
       </div>
-      <div class="eco-badge">
+      <div class="eco-badge" aria-hidden="true">
         <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 9-8 10c-4.5-1-8-5-8-10V6l8-4z"/><path d="M9 12l2 2l4-4"/></svg></span>
         <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">SLA</p><p class="font-bold text-sm leading-tight">Niezawodny serwis · all-risk</p></div>
       </div>
-      <div class="eco-badge">
+      <div class="eco-badge" aria-hidden="true">
         <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
         <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Ekspozycja</p><p class="font-bold text-sm leading-tight">Branding · sieci reklamowe</p></div>
       </div>
-      <div class="eco-badge">
+      <div class="eco-badge" aria-hidden="true">
         <span class="eco-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2l4-4"/><path d="M14 2v6h6"/><path d="M4 4v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6a2 2 0 0 0-2 2z"/></svg></span>
         <div class="text-left"><p class="text-xs font-mono uppercase tracking-wider text-slate-500">Relacje</p><p class="font-bold text-sm leading-tight">Negocjacje i zgody</p></div>
       </div>
@@ -1200,7 +1224,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="max-w-7xl mx-auto">
     <div class="text-center mb-16">
       <p class="text-n4z-green font-semibold text-sm uppercase tracking-widest mb-3">Kontakt</p>
-      <h2 class="text-4xl sm:text-5xl font-bold">Dwie ścieżki, dwa formularze.</h2>
+      <h2 class="text-4xl sm:text-5xl font-bold">Dzierżawa terenu albo inwestycja w recyklomaty.</h2>
       <p class="text-lg text-slate-600 mt-4 max-w-3xl mx-auto">Odpowiadamy w ciągu 24 godzin roboczych.</p>
     </div>
 
@@ -1410,7 +1434,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><a href="/polityka-prywatnosci" class="hover:text-white">Polityka prywatności</a></li>
         <li><a href="/polityka-cookies" class="hover:text-white">Polityka cookies</a></li>
         <li><a href="/klauzula-rodo" class="hover:text-white">Klauzula informacyjna RODO</a></li>
-        <li><a href="#" data-cc="c-settings" class="hover:text-white">Ustawienia cookies</a></li>
+        <li><a href="javascript:Cookiebot.renew()" class="hover:text-white">Ustawienia cookies</a></li>
       </ul>
     </div>
     <div>
@@ -1419,6 +1443,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <li><a href="mailto:biuro@net4zero.pl" class="hover:text-white">biuro@net4zero.pl</a></li>
         <li>+48 575 161 266</li>
         <li><a href="https://www.linkedin.com/company/net4zero/" target="_blank" rel="noopener" class="hover:text-white">LinkedIn</a></li>
+        <li><a href="https://www.edrs.io/" target="_blank" rel="noopener" class="hover:text-white">edrs.io — platforma rozliczeń sieci</a></li>
       </ul>
     </div>
   </div>
