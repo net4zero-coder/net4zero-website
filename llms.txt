@@ -1,7 +1,7 @@
 # NET4ZERO
 
-> NET4ZERO Sp. z o.o. (KRS 0001132236) buduje pierwszą w Polsce sieć osiedlowych
-> recyklomatów (RVM) w systemie kaucyjnym. Wdrażamy maszyny w spółdzielniach
+> NET4ZERO Sp. z o.o. (KRS 0001132236) buduje osiedlową sieć publicznych
+> punktów zbiórki (recyklomatów RVM) w systemie kaucyjnym. Wdrażamy maszyny w spółdzielniach
 > mieszkaniowych, gminach, ZGL, szkołach i urzędach jako Inny Punkt Zbierający
 > (IPZ). Lokalizacja nie wykłada CAPEX — wydzierżawia od 5 do 30 m² i pobiera
 > czynsz. NET4ZERO finansuje, integruje z operatorem systemu kaucyjnego,
@@ -47,6 +47,16 @@
 - [Rok 2026 — pierwszy pełny rok systemu kaucyjnego](https://www.net4zero.pl/rok-2026-pierwszy-pelny-rok-systemu): czego oczekiwać, okna decyzyjne dla samorządu.
 - [Recyklomat osiedlowy vs recyklomat sklepowy](https://www.net4zero.pl/recyklomat-osiedlowy-vs-sklep): porównanie modeli zbiórki.
 - [Bon kaucyjny](https://www.net4zero.pl/bon-kaucyjny): forma zwrotu kaucji bez gotówki.
+
+### Poradnik mieszkańca (gdzie i jak oddać butelki)
+
+- [Gdzie oddać butelki z kaucją](https://www.net4zero.pl/gdzie-oddac-butelki): sklepy powyżej 200 m², automaty, niedziela, co gdy butelkomat nie działa, bez paragonu.
+- [Gdzie oddać szklane butelki](https://www.net4zero.pl/gdzie-oddac-szklane-butelki): szkło wielokrotnego użytku do 1,5 l, kaucja 1 zł, butelki po piwie.
+- [Kaucja za puszki](https://www.net4zero.pl/kaucja-za-puszki): 0,50 zł, nie zgniatać, puszki bez kaucji.
+- [Jak działa recyklomat (butelkomat, kaucjomat)](https://www.net4zero.pl/jak-dziala-recyklomat): instrukcja krok po kroku, dlaczego automat odrzuca opakowania.
+- [Zwrot kaucji: gotówka, karta czy bon](https://www.net4zero.pl/zwrot-kaucji-gotowka-karta): bon wymienialny na gotówkę, ważność min. 30 dni, wypłata na kartę.
+- Lokalne przewodniki: [Warszawa](https://www.net4zero.pl/system-kaucyjny-warszawa), [Kraków](https://www.net4zero.pl/system-kaucyjny-krakow), [Wrocław](https://www.net4zero.pl/system-kaucyjny-wroclaw), [Łódź](https://www.net4zero.pl/system-kaucyjny-lodz), [Poznań](https://www.net4zero.pl/system-kaucyjny-poznan).
+- [O nas](https://www.net4zero.pl/o-nas): kim jesteśmy, dane firmy, media, wydarzenia.
 
 ## O firmie
 
