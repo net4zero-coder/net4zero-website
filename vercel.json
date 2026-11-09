@@ -171,6 +171,11 @@
       "source": "/recyklomat-osiedlowy",
       "destination": "/recyklomat-osiedlowy-vs-sklep",
       "permanent": true
+    },
+    {
+      "source": "/lead-magnets/wzor-pisma-mieszkanca.pdf",
+      "destination": "/lead-magnets/pismo-mieszkanca-recyklomat-net4zero.pdf",
+      "permanent": true
     }
   ]
 }
