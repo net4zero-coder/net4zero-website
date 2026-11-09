@@ -3,6 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Consent Mode v2 — defaults denied (Cookiebot zaktualizuje po zgodzie) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'functionality_storage': 'granted',
+      'personalization_storage': 'denied',
+      'security_storage': 'granted',
+      'wait_for_update': 500
+    });
+    gtag('set', 'ads_data_redaction', true);
+    gtag('set', 'url_passthrough', false);
+  </script>
+
+  <!-- Cookiebot CMP (NET4ZERO Production) — manual blocking mode (jawnie owijamy GTM/Clarity, Tailwind CDN nie jest blokowany) -->
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7d17a287-61b5-4e51-bdce-7c1308a665da" data-blockingmode="manual" type="text/javascript"></script>
+
+  <!-- Google Tag Manager (NET4ZERO container) -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NWN45P2K');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Microsoft Clarity (NET4ZERO Production - blokowane przez Cookiebot do zgody na statystyki) -->
+  <script type="text/plain" data-cookieconsent="statistics">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wljiauzpe7");
+  </script>
+
+  <!-- Search Console: zweryfikowano przez DNS, meta tag niepotrzebny -->
+
   <title>Chcesz recyklomat na swoim osiedlu? Pomóż mu się tam pojawić | NET4ZERO</title>
   <meta name="description" content="Brakuje recyklomatu w Twoim osiedlu? Pobierz wzór pisma do zarządu spółdzielni. NET4ZERO dogada się z administracją — bez Twojego CAPEX-u i bez Twoich kosztów.">
   <meta name="keywords" content="recyklomat na osiedlu, recyklomat w bloku, wzór pisma do zarządu spółdzielni, kaucja butelki bliskko domu, chcę recyklomat">
@@ -61,6 +101,10 @@
   </style>
 </head>
 <body class="bg-white text-slate-900 antialiased">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NWN45P2K"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <header class="border-b border-slate-100 sticky top-0 bg-white/95 backdrop-blur z-40">
   <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
@@ -81,7 +125,7 @@
     <h1 class="text-4xl sm:text-5xl font-black mt-4 leading-tight">Brakuje <span class="gradient-text">recyklomatu</span> w Twoim osiedlu?<br>Pomóż mu się tu pojawić.</h1>
     <p class="text-slate-700 mt-6 text-lg max-w-3xl">System kaucyjny obowiązuje od 01.10.2025. Sklepy 200 m²+ muszą przyjmować butelki, ale w wielu osiedlach najbliższy duży sklep to ponad kilometr. Pobierz wzór pisma do zarządu Twojej spółdzielni — my zajmiemy się resztą.</p>
     <div class="mt-8">
-      <a href="/lead-magnets/wzor-pisma-mieszkanca.pdf" class="inline-block px-8 py-4 gradient-n4z text-white rounded-lg font-bold text-lg">📄 Pobierz wzór pisma (PDF) →</a>
+      <a href="/lead-magnets/pismo-mieszkanca-recyklomat-net4zero.pdf" class="inline-block px-8 py-4 gradient-n4z text-white rounded-lg font-bold text-lg">📄 Pobierz wzór pisma (PDF) →</a>
     </div>
   </div>
 </section>
@@ -105,7 +149,7 @@
         <span class="step-num">1</span>
         <h3 class="font-bold text-lg mt-2 mb-2">Pobierz wzór pisma</h3>
         <p class="text-slate-700 text-sm">Gotowe pismo do zarządu spółdzielni mieszkaniowej. PDF, ~2 strony. Zawiera wszystkie argumenty merytoryczne (ustawa, BDO, czynsz dzierżawny dla SM, zero CAPEX).</p>
-        <a href="/lead-magnets/wzor-pisma-mieszkanca.pdf" class="text-n4z-green font-semibold text-sm mt-3 inline-block">Pobierz PDF →</a>
+        <a href="/lead-magnets/pismo-mieszkanca-recyklomat-net4zero.pdf" class="text-n4z-green font-semibold text-sm mt-3 inline-block">Pobierz PDF →</a>
       </div>
       <div class="step-card">
         <span class="step-num">2</span>
@@ -168,7 +212,11 @@
       <li><strong>Lokalna gmina</strong> — alternatywnie, mogą wdrożyć recyklomat w urzędzie / szkole / parku miejskim (Pakiet Miasto)</li>
     </ul>
 
-  </div>
+      <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:1rem;padding:1.25rem 1.5rem;margin:2rem 0">
+      <p style="font-weight:800;color:#0F172A;margin:0 0 .5rem">Gdzie oddać butelki z kaucją w Twoim mieście?</p>
+      <p style="margin:0"><a href="/system-kaucyjny-warszawa">Warszawa</a> · <a href="/system-kaucyjny-krakow">Kraków</a> · <a href="/system-kaucyjny-wroclaw">Wrocław</a> · <a href="/system-kaucyjny-lodz">Łódź</a> · <a href="/system-kaucyjny-poznan">Poznań</a></p>
+    </div>
+</div>
 </main>
 
 <section class="py-16 px-6 bg-slate-900 text-white">
